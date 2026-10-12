@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wakaf Masjid Ar Ridhwan | PHBI 1448 H</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f9f6, #e8f3ec);
+      color: #24352b;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+    header {
+      background: linear-gradient(135deg, #0b5d3b, #087f4f);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    header .arabic {
+      font-size: 30px;
+      margin-bottom: 8px;
+      direction: rtl;
+    }
+
+    header h1 {
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 15px;
+      opacity: 0.95;
+    }
+
+    /* =====================================================
+       NAVBAR
+       ===================================================== */
+    nav {
+      background: #ffffff;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      color: #0b5d3b;
+      white-space: nowrap;
+    }
+
+    .logo img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #24543b;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: 0.3s;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #e5f3eb;
+      color: #087f4f;
+    }
+
+    /* =====================================================
+       KONTEN UTAMA
+       ===================================================== */
+    main {
+      flex: 1;
+      max-width: 950px;
+      width: 92%;
+      margin: 35px auto 50px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .page-title h2 {
+      font-size: 26px;
+      color: #0b5d3b;
+      margin-bottom: 6px;
+    }
+
+    .page-title p {
+      color: #607268;
+      font-size: 15px;
+    }
+
+    /* =====================================================
+       KARTU INFORMASI & TIMELINE WAKAF
+       ===================================================== */
+    .info-guideline {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+      border: 1px solid #dceede;
+    }
+
+    .guideline-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .guideline-header h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0b5d3b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .guideline-header .verse-quote {
+      font-size: 13.5px;
+      color: #53645a;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 15px;
+    }
+
+    .timeline-item {
+      background: #f7faf8;
+      border: 1px solid #e3efe7;
+      border-radius: 12px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .timeline-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #dff1e7;
+      color: #0b5d3b;
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .timeline-period {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0b5d3b;
+      margin-bottom: 6px;
+    }
+
+    .timeline-desc {
+      font-size: 13px;
+      color: #4b5e53;
+      line-height: 1.45;
+    }
+
+    /* =====================================================
+       PILIHAN PAKET WAKAF
+       ===================================================== */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 25px;
+    }
+
+    .package-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 22px 18px;
+      text-align: center;
+      border: 1px solid #dceede;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .package-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .package-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0b5d3b;
+      margin-bottom: 4px;
+    }
+
+    .package-amount {
+      font-size: 18px;
+      font-weight: 800;
+      color: #24543b;
+      margin: 8px 0;
+    }
+
+    .package-desc {
+      font-size: 12.5px;
+      color: #607268;
+      line-height: 1.4;
+    }
+
+    /* =====================================================
+       KOTAK REKENING & KONFIRMASI DONASI
+       ===================================================== */
+    .donation-box {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #dceede;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .donation-box h3 {
+      font-size: 18px;
+      color: #0b5d3b;
+      margin-bottom: 12px;
+    }
+
+    .bank-card {
+      background: #f4f9f6;
+      border: 1px dashed #0b5d3b;
+      border-radius: 12px;
+      padding: 16px;
+      display: inline-block;
+      margin: 10px auto 16px;
+      min-width: 280px;
+    }
+
+    .bank-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #607268;
+      text-transform: uppercase;
+    }
+
+    .account-number {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0b5d3b;
+      letter-spacing: 1.5px;
+      margin: 4px 0;
+    }
+
+    .account-holder {
+      font-size: 13px;
+      color: #24352b;
+      font-weight: 600;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.3s;
+      margin-top: 8px;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+    }
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+    footer {
+      background: #0b5d3b;
+      color: white;
+      text-align: center;
+      padding: 35px 20px 25px;
+      margin-top: 30px;
+    }
+
+    footer h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    footer .footer-subtitle {
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: white;
+      text-decoration: none;
+      padding: 9px 16px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 30px;
+      background: rgba(255,255,255,0.08);
+      transition: 0.3s;
+      font-size: 13.5px;
+    }
+
+    .social-link:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-2px);
+    }
+
+    /* Logo Instagram */
+    .instagram-icon {
+      width: 25px;
+      height: 25px;
+      border: 2px solid white;
+      border-radius: 7px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .instagram-icon::before {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border: 2px solid white;
+      border-radius: 50%;
+      top: 5px;
+      left: 5px;
+    }
+
+    .instagram-icon::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      top: 3px;
+      right: 3px;
+    }
+
+    /* Logo YouTube */
+    .youtube-icon {
+      width: 30px;
+      height: 21px;
+      background: white;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .youtube-icon::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 9px solid #0b5d3b;
+      margin-left: 2px;
+    }
+
+    /* Logo Email */
+    .email-icon {
+      width: 27px;
+      height: 20px;
+      border: 2px solid white;
+      border-radius: 4px;
+      display: inline-block;
+      position: relative;
+    }
+
+    .email-icon::after,
+    .email-icon::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 2px;
+      background: white;
+      top: 6px;
+    }
+
+    .email-icon::before {
+      left: 0;
+      transform: rotate(31deg);
+      transform-origin: left;
+    }
+
+    .email-icon::after {
+      right: 0;
+      transform: rotate(-31deg);
+      transform-origin: right;
+    }
+
+    footer .copyright {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* =====================================================
+       RESPONSIF
+       ===================================================== */
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; gap: 10px; }
+      .timeline-grid { grid-template-columns: 1fr; }
+      .packages-grid { grid-template-columns: 1fr; }
+      .bank-card { width: 100%; min-width: auto; }
+      .social-links { flex-direction: column; }
+      .social-link { width: 240px; justify-content: center; }
+    }
+  
+/* Tampilan opsi Tunai yang sedang dinonaktifkan.
+   Hapus/ubah aturan ini jika opsi Tunai diaktifkan kembali. */
+.radio-option input[type="radio"]:disabled + label {
+  opacity: .45;
+  cursor: not-allowed;
+}
+</style>
+  
+<style>
+  /* =====================================================
+     TAB WAKAF
+     ===================================================== */
+  .wakaf-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 25px;
+    flex-wrap: wrap;
+  }
+
+  .wakaf-tab {
+    border: 1px solid #cfe5d7;
+    background: #ffffff;
+    color: #24543b;
+    border-radius: 12px;
+    padding: 12px 22px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+  }
+
+  .wakaf-tab:hover {
+    transform: translateY(-2px);
+    background: #f0f8f3;
+  }
+
+  .wakaf-tab.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, #0b5d3b, #087f4f);
+    border-color: #0b5d3b;
+    box-shadow: 0 5px 15px rgba(11,93,59,0.20);
+  }
+
+  .wakaf-panel {
+    display: none;
+    animation: fadeIn 0.25s ease;
+  }
+
+  .wakaf-panel.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .program-banner {
+    background: linear-gradient(135deg, #eef8f1, #ffffff);
+    border: 1px solid #dceede;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  .program-banner .big-icon {
+    font-size: 42px;
+    margin-bottom: 8px;
+  }
+
+  .program-banner h3 {
+    color: #0b5d3b;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .program-banner p {
+    color: #607268;
+    font-size: 13.5px;
+  }
+
+  .sound-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 25px;
+  }
+
+  .sound-card {
+    background: #ffffff;
+    border: 1px solid #dceede;
+    border-radius: 14px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  }
+
+  .sound-card .icon {
+    font-size: 38px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .sound-card h4 {
+    color: #0b5d3b;
+    font-size: 15px;
+    margin-bottom: 7px;
+  }
+
+  .sound-card p {
+    color: #607268;
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
+
+  .sound-card .tag {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #e5f3eb;
+    color: #0b5d3b;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .report-box {
+    margin-top: 25px;
+    background: linear-gradient(135deg, #ffffff, #f3faf6);
+    border: 1px solid #cfe5d7;
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+  }
+
+  .report-box .report-icon {
+    font-size: 32px;
+    margin-bottom: 5px;
+  }
+
+  .report-box h3 {
+    color: #0b5d3b;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .report-box p {
+    color: #607268;
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .report-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0b5d3b;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 28px;
+    font-size: 13.5px;
+    font-weight: 700;
+    transition: 0.25s ease;
+  }
+
+  .report-btn:hover {
+    background: #087f4f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(11,93,59,0.25);
+  }
+
+  @media (max-width: 768px) {
+    .sound-grid { grid-template-columns: 1fr; }
+    .wakaf-tab { width: 100%; max-width: 330px; }
+  }
+
+  /* =====================================================
+     TABEL LAPORAN WAKAF
+     ===================================================== */
+  .table-status {
+    margin: 14px 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #f4f9f6;
+    color: #607268;
+    font-size: 12.5px;
+  }
+
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #dceede;
+    border-radius: 12px;
+    background: #ffffff;
+    margin-top: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #wakafReportTable {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    color: #33483b;
+  }
+
+  #wakafReportTable th {
+    background: #0b5d3b;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 11px 12px;
+    text-align: left;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  #wakafReportTable td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e3efe7;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  #wakafReportTable tbody tr:nth-child(even) {
+    background: #f7faf8;
+  }
+
+  #wakafReportTable tbody tr:hover {
+    background: #eef8f1;
+  }
+
+  #wakafReportTable td:first-child,
+  #wakafReportTable th:first-child {
+    text-align: center;
+  }
+
+  .report-footer {
+    margin-top: 15px;
+  }
+
+  @media (max-width: 768px) {
+    #wakafReportTable {
+      min-width: 600px;
+      font-size: 12px;
+    }
+
+    #wakafReportTable th,
+    #wakafReportTable td {
+      padding: 9px 10px;
+    }
+  }
+
+
+.report-tabs{display:flex;justify-content:center;gap:10px;margin:25px auto 18px;flex-wrap:wrap}.report-tab{border:1px solid #cfe5d7;background:#fff;color:#24543b;border-radius:12px;padding:12px 24px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.25s}.report-tab:hover{background:#f0f8f3;transform:translateY(-1px)}.report-tab.active{color:#fff;background:linear-gradient(135deg,#0b5d3b,#087f4f);border-color:#0b5d3b}.report-panel{display:none;animation:fadeIn .25s ease}.report-panel.active{display:block}.wakaf-form{max-width:720px;margin:0 auto;text-align:left}.form-card{background:#fff;border:1px solid #dceede;border-radius:16px;padding:24px;box-shadow:0 4px 18px rgba(0,0,0,.05)}.form-card h3{text-align:center;color:#0b5d3b;font-size:20px;margin-bottom:5px}.form-intro{text-align:center;color:#607268;font-size:13px;margin-bottom:22px}.form-group{margin-bottom:17px}.form-label,.form-group label{display:block;color:#345244;font-size:13px;font-weight:700;margin-bottom:7px}.form-input{width:100%;border:1px solid #cfe2d5;border-radius:10px;padding:11px 13px;font:inherit;color:#24352b;background:#fbfdfb;outline:none}.form-input:focus{border-color:#0b7c4d;box-shadow:0 0 0 3px rgba(11,124,77,.1);background:#fff}.radio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.radio-option{position:relative}.radio-option input{position:absolute;opacity:0;pointer-events:none}.radio-option label{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 12px;border:1px solid #cfe2d5;border-radius:10px;background:#f8fbf9;color:#345244;cursor:pointer;font-size:13px;font-weight:700;text-align:center}.radio-option input:checked+label{background:#e5f3eb;border-color:#0b7f4f;color:#0b5d3b;box-shadow:0 0 0 2px rgba(11,127,79,.08)}.amount-wrap{position:relative}.amount-prefix{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#607268;font-weight:700;pointer-events:none}.amount-input{padding-left:42px}.form-submit{width:100%;border:0;border-radius:11px;padding:12px 18px;background:linear-gradient(135deg,#0b5d3b,#087f4f);color:#fff;font:inherit;font-size:14px;font-weight:800;cursor:pointer}.form-submit:disabled{opacity:.65;cursor:wait}.transfer-proof-group[hidden]{display:none}.transfer-proof-group input[type=file]{padding:10px;background:#fbfdfb}.date-note{display:block;margin-top:6px;color:#607268;font-size:12px}.form-status{margin-top:14px;border-radius:10px;padding:10px 13px;font-size:12.5px;display:none}.form-status.success{display:block;background:#e9f7ee;color:#17663f;border:1px solid #bfe2cc}.form-status.error{display:block;background:#fff0f0;color:#a13a3a;border:1px solid #efc5c5}.form-status.info{display:block;background:#eef6ff;color:#315d8a;border:1px solid #c8def5}.transparency-note{margin-top:16px;padding:13px 15px;border-radius:11px;background:#f4f9f6;color:#607268;font-size:12px;line-height:1.5}.report-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}.refresh-report{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:9px;padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}@media(max-width:768px){.radio-grid{grid-template-columns:1fr}.form-card{padding:18px}.report-tab{width:100%;max-width:330px}}
+
+</style>
+
+
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="arabic">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+    <h1>Panitia Ramadhan, Idul Fitri, dan Idul Adha 1448 H</h1>
+    <p>Masjid Ar Ridhwan · Puri Nirwana 1</p>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="logo_arridhwan.jpg" alt="Logo Masjid Ar Ridhwan">
+        <span>PHBI 1448 H</span>
+      </div>
+
+      <div class="nav-links">
+        <!-- 1. HOME --><a href="../puri.html">🏠 Home</a>
+        <!-- 2. TENTANG --><a href="profile.html">ℹ️ Tentang</a>
+        <!-- 3. PENCERAMAH --><a href="penceramah.html">🎙️ Penceramah</a>
+        <!-- 4. IFTHOR --><a href="ifthor.html">🍽️ Ifthor</a>
+        <!-- 5. PENGAJUAN MUSTAHIQ --><a href="mustahiq.html">🤲 Pengajuan Mustahiq</a>
+        <!-- 6. PENYALURAN ZAKAT / QURBAN --><a href="penyaluran.html">🤝 Penyaluran Zakat/ Qurban</a>
+        <!-- 7. LAPORAN --><a href="rekap.html">📊 Laporan</a>
+        <!-- 8. IDUL FITRI / IDUL ADHA --><a href="fitri.html">☪️ Idul Fitri/ Adha</a>
+        <!-- 9. WAKAF --><a href="wakaf.html">🕌 Wakaf</a>
+        <!-- 10. HEWAN KURBAN --> <a href="kurban.html">🐂 Hewan Kurban</a> 
+        <!-- 11. ESTIMATOR DAGING --><a href="daging.html">🥩 Estimator Daging</a>
+        <!-- 12. PROPOSAL --><a href="proposal.html">📄 Proposal</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- KONTEN UTAMA -->
+  <main>
+    <div class="page-title">
+      <h2>Program Wakaf Masjid Ar Ridhwan</h2>
+      <h2>TUNTAS: Ta'awun · Ukhuwah · Nyata · Transparan · Amanah · Syar'i</h2>
+      <p>Menabung Amal Jariyah yang Tiada Terputus, untuk Manfaat Hari ini dan Nanti...</p>
+      
+    </div>
+
+    <!-- TAB PILIHAN PROGRAM -->
+    <div class="wakaf-tabs" role="tablist" aria-label="Pilihan program wakaf">
+      <button class="wakaf-tab active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="wakaf-renovasi"
+              data-target="wakaf-renovasi">
+        🕌 Wakaf Renovasi Masjid
+      </button>
+
+      <button class="wakaf-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="wakaf-sound"
+              data-target="wakaf-sound">
+        🎛️ Wakaf Sound System
+      </button>
+    </div>
+
+    <!-- =====================================================
+         TAB 1: WAKAF RENOVASI
+         ===================================================== -->
+    <section id="wakaf-renovasi" class="wakaf-panel active" role="tabpanel">
+      <section class="info-guideline">
+        <div class="guideline-header">
+          <h3>✨ Sedekah Jariyah: Investasi Akhirat</h3>
+          <p class="verse-quote">"Jika seseorang meninggal dunia, maka terputuslah amalannya kecuali tiga perkara: sedekah jariyah (wakaf), ilmu yang bermanfaat, dan anak saleh yang mendoakannya." (HR. Muslim)</p>
+        </div>
+
+        <div class="timeline-grid">
+          <div class="timeline-item">
+            <span class="timeline-badge">Tahap 1: Penggalangan Dana</span>
+            <div class="timeline-period">November 2026 – Mei 2027</div>
+            <div class="timeline-desc">
+              Penghimpunan komitmen dan setoran dana wakaf dari para jamaah, muhsinin, serta warga Puri Nirwana 1 dan sekitarnya.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-badge">Tahap 2: Realisasi Proyek</span>
+            <div class="timeline-period">Juli 2027 (Safar 1449 H)</div>
+            <div class="timeline-desc">
+              Pelaksanaan pekerjaan fisik renovasi masjid mencakup perluasan serambi ibadah, perbaikan atap, serta sarana wudhu & sanitasi.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="packages-grid">
+        <div class="package-card">
+          <div>
+            <div class="package-icon">🧱</div>
+            <div class="package-title">Paket Na'im</div>
+            <div class="package-amount">Rp 100.000 / paket</div>
+            <div class="package-desc">Alokasi untuk pembayaran jasa tukang, instalasi elektrik, dan bahan material.</div>
+          </div>
+        </div>
+
+        <div class="package-card">
+          <div>
+            <div class="package-icon">📐</div>
+            <div class="package-title">Paket Firdaus</div>
+            <div class="package-amount">Rp 250.000 / m²</div>
+            <div class="package-desc">Alokasi untuk pengadaan semen, pasir, dan material pondasi renovasi atap.</div>
+          </div>
+        </div>
+
+        <div class="package-card">
+          <div>
+            <div class="package-icon">🌟</div>
+            <div class="package-title">Paket Darussalam</div>
+            <div class="package-amount">Nominal Bebas</div>
+            <div class="package-desc">Menerima donasi wakaf dengan nominal sukarela.</div>
+          </div>
+        </div>
+      </div>
+
+      <section class="donation-box">
+        <h3>Kebutuhan Dana Renovasi</h3>
+        <p style="color:#607268;font-size:14px;">Estimasi Rencana Anggaran Biaya (RAB):</p>
+
+        <div class="bank-card">
+          <div class="account-number">Rp. 250.000.000,-</div>
+        </div>
+
+        <p style="font-size:13px;color:#607268;">
+          Direncanakan Renovasi Selesai Dalam 60 Hari Kalender.
+        </p>
+      </section>
+
+      <section class="donation-box" style="margin-top:25px;">
+        <h3>Rekening Penampungan Wakaf</h3>
+        <p style="color:#607268;font-size:14px;">
+          Salurkan wakaf terbaik Bapak/Ibu melalui transfer ke rekening resmi Bendahara Panitia Wakaf:
+        </p>
+
+        <div class="bank-card">
+          <div class="bank-name">Bank Syariah Indonesia (BSI)</div>
+          <div class="account-number">715-075-3362</div>
+          <div class="account-holder">a.n. Masjid Ar Ridhwan</div>
+        </div>
+
+        <p style="font-size:13px;color:#607268;">
+          Mohon konfirmasi transfer melalui WhatsApp Panitia untuk pencatatan wakaf:
+        </p>
+
+        <a class="whatsapp-btn"
+           href="https://wa.me/6285775309775?text=Assalamualaikum..%20Saya%20konfirmasi%20Wakaf%20Renovasi%20Masjid%20Ar%20Ridhwan"
+           target="_blank"
+           rel="noopener noreferrer">
+          <span>📱</span> Konfirmasi via WhatsApp
+        </a>
+      </section>
+    </section>
+
+    <!-- =====================================================
+         TAB 2: WAKAF SOUND SYSTEM
+         ===================================================== -->
+    <section id="wakaf-sound" class="wakaf-panel" role="tabpanel">
+      <div class="program-banner">
+        <div class="big-icon">🎙️</div>
+        <h3>Wakaf Sound System Masjid Ar Ridhwan</h3>
+        <p>
+          Program wakaf untuk pengadaan perangkat audio yang menunjang
+          khutbah, kajian, ceramah, pengumuman, dan kegiatan ibadah di masjid.
+        </p>
+      </div>
+
+      <div class="sound-grid">
+        <div class="sound-card">
+          <div class="icon">🎛️</div>
+          <h4>Mixer Audio</h4>
+          <p>
+            Pengadaan mixer audio untuk mengatur dan mencampur beberapa
+            sumber suara agar penyampaian suara lebih terkontrol.
+          </p>
+          <span class="tag">Perangkat Utama</span>
+        </div>
+
+        <div class="sound-card">
+          <div class="icon">🎤</div>
+          <h4>Set Microphone</h4>
+          <p>
+            Pengadaan set microphone untuk kebutuhan khatib, imam,
+            penceramah, MC, dan kegiatan masjid lainnya.
+          </p>
+          <span class="tag">Perangkat Suara</span>
+        </div>
+
+        <div class="sound-card">
+          <div class="icon">📡</div>
+          <h4>Receiver</h4>
+          <p>
+            Pengadaan receiver sebagai bagian dari sistem microphone
+            agar perangkat dapat digunakan secara praktis dalam kegiatan masjid.
+          </p>
+          <span class="tag">Wireless System</span>
+        </div>
+      </div>
+
+      <section class="donation-box">
+        <h3>Wakaf Pengadaan Sound System</h3>
+        <p style="color:#607268;font-size:14px;">
+          Bapak/Ibu dapat ikut berwakaf untuk pembelian mixer, set microphone,
+          dan receiver sesuai kebutuhan sistem audio Masjid Ar Ridhwan.
+        </p>
+
+        <div class="bank-card">
+          <div class="bank-name">Bank Syariah Indonesia (BSI)</div>
+          <div class="account-number">715-075-3362</div>
+          <div class="account-holder">a.n. Masjid Ar Ridhwan</div>
+        </div>
+
+        <p style="font-size:13px;color:#607268;">
+          Mohon konfirmasi transfer melalui WhatsApp Panitia dengan menyebutkan
+          <strong>Wakaf Sound System</strong>.
+        </p>
+
+        <a class="whatsapp-btn"
+           href="https://wa.me/6285775309775?text=Assalamualaikum..%20Saya%20konfirmasi%20Wakaf%20Sound%20System%20Masjid%20Ar%20Ridhwan"
+           target="_blank"
+           rel="noopener noreferrer">
+          <span>📱</span> Konfirmasi via WhatsApp
+        </a>
+      </section>
+    </section>
+<section class="report-box" id="wakafTransparency"><div class="report-icon">🤲</div><h3>Transparansi Data Muwakif</h3><p>Data wakaf ditampilkan langsung dari Google Sheets dan konfirmasi wakaf dapat dilakukan melalui formulir mandiri.</p><div class="report-tabs"><button class="report-tab active" type="button" data-report-target="reportPanel">📊 Data Muwakif Tercatat</button><button class="report-tab" type="button" data-report-target="confirmPanel">✅ Konfirmasi Mandiri</button></div><section id="reportPanel" class="report-panel active"><div class="report-summary"><div class="table-status" id="reportStatus">⏳ Memuat data muwakif...</div><button type="button" class="refresh-report" onclick="loadWakafReport()">🔄 Perbarui Laporan</button></div><div class="table-wrapper"><table id="wakafReportTable"><thead></thead><tbody></tbody></table></div></section><section id="confirmPanel" class="report-panel"><div class="form-card"><h3>Konfirmasi Wakaf Mandiri</h3><p class="form-intro">Silakan masukkan data wakaf yang telah dilakukan. Karena transaksi mandiri hanya untuk Transfer, unggah bukti transfer berupa JPG/JPEG atau PDF. Saat tombol Kirim ditekan, data dan lampiran dikirim ke layanan pencatatan untuk disimpan ke Google Sheets dan Google Drive.</p><form id="wakafConfirmForm" class="wakaf-form" onsubmit="submitWakafConfirmation(event)"><div class="form-group"><label for="tanggalWakaf">📅 Tanggal Wakaf</label><input class="form-input" type="date" id="tanggalWakaf" required max="">
+            <small class="date-note">Tanggal tidak boleh melebihi hari ini.</small></div><div class="form-group"><label for="namaLengkap">👤 Nama Lengkap</label><input class="form-input" type="text" id="namaLengkap" placeholder="Masukkan nama lengkap" required></div><div class="form-group"><span class="form-label">💳 Jenis Transaksi</span><div class="radio-grid"><!--
+  TUNAI DINONAKTIFKAN SEMENTARA.
+  Untuk mengaktifkan kembali, hapus atribut disabled dan gunakan kembali required
+  pada input di bawah, lalu pastikan validasi submit juga mengizinkan nilai "Tunai".
+-->
+<div class="radio-option"><input type="radio" id="transaksiTunai" name="jenisTransaksi" value="Tunai" disabled><label for="transaksiTunai">💵 Tunai (diisi Bendahara)</label></div><div class="radio-option"><input type="radio" id="transaksiTransfer" name="jenisTransaksi" value="Transfer"><label for="transaksiTransfer">🏦 Transfer</label></div></div></div><div class="form-group"><label for="nominalWakaf">💰 Nominal Wakaf</label><div class="amount-wrap"><span class="amount-prefix">Rp</span><input class="form-input amount-input" type="number" id="nominalWakaf" min="1" step="1" placeholder="Contoh: 100000" required></div></div><div class="form-group"><span class="form-label">🕌 Pilihan Wakaf</span><div class="radio-grid"><div class="radio-option"><input type="radio" id="wakafRenovasi" name="pilihanWakaf" value="Renovasi Masjid" required><label for="wakafRenovasi">🕌 Renovasi Masjid</label></div><div class="radio-option"><input type="radio" id="wakafSound" name="pilihanWakaf" value="Sound System"><label for="wakafSound">🎛️ Sound System</label></div></div></div><div class="form-group transfer-proof-group" id="transferProofBox" hidden><label for="buktiTransfer">📎 Upload Bukti Transfer (JPG/JPEG atau PDF) <span aria-hidden="true">*</span></label><input class="form-input" type="file" id="buktiTransfer" accept="image/jpeg,.jpg,.jpeg,application/pdf,.pdf" required><small class="date-note">Wajib diisi. Format JPG/JPEG atau PDF, ukuran maksimal 5 MB.</small></div><button type="submit" class="form-submit" id="submitWakafBtn">Kirim Konfirmasi Wakaf</button><div id="formStatus" class="form-status"></div></form><div class="transparency-note">🔐 <strong>Transparansi:</strong> konfirmasi ini digunakan sebagai pencatatan mandiri dari muwakif. 
+  <br>Data konfirmasi dan tautan bukti transfer dicatat ke Google Sheets; berkas bukti disimpan di Google Drive panitia.</div></div></section></section></main>
+
+  <!-- FOOTER -->
+  <footer>
+    <h3>Panitia Ramadhan, Idul Fitri, dan Idul Adha 1448 H</h3>
+
+    <p class="footer-subtitle">
+      Masjid Ar Ridhwan · Puri Nirwana 1
+    </p>
+
+    <div class="social-links">
+      <a class="social-link"
+         href="https://www.instagram.com/arridhwandkm"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="instagram-icon"></span>
+        <span>@arridhwandkm</span>
+      </a>
+
+      <a class="social-link"
+         href="https://www.youtube.com/@dakwaharridhwan4872"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="youtube-icon"></span>
+        <span>Dakwah Ar Ridhwan</span>
+      </a>
+
+      <a class="social-link" href="mailto:arridhwan.dkm@gmail.com">
+        <span class="email-icon"></span>
+        <span>arridhwan.dkm@gmail.com</span>
+      </a>
+    </div>
+
+    <p>Menjalin Ukhuwah · Menggapai Mardhatillah</p>
+
+    <div class="copyright">
+      © 2026/2027 Panitia Ramadhan, Idul Fitri, dan Idul Adha
+      Masjid Ar Ridhwan
+    </div>
+  </footer>
+
+<script>
+  // =====================================================
+  // TAB PROGRAM WAKAF
+  // =====================================================
+  const wakafTabs = document.querySelectorAll(".wakaf-tab");
+  const wakafPanels = document.querySelectorAll(".wakaf-panel");
+
+  wakafTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      const targetId = tab.dataset.target;
+
+      wakafTabs.forEach(item => {
+        item.classList.remove("active");
+        item.setAttribute("aria-selected", "false");
+      });
+
+      wakafPanels.forEach(panel => {
+        panel.classList.remove("active");
+      });
+
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
+
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add("active");
+      }
+
+      document.querySelector("main").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  });
+
+const reportTabs=document.querySelectorAll('.report-tab');const reportPanels=document.querySelectorAll('.report-panel');reportTabs.forEach(tab=>tab.addEventListener('click',()=>{reportTabs.forEach(x=>x.classList.remove('active'));reportPanels.forEach(x=>x.classList.remove('active'));tab.classList.add('active');document.getElementById(tab.dataset.reportTarget).classList.add('active');if(tab.dataset.reportTarget==='reportPanel')loadWakafReport()}));
+// =====================================================
+// KONFIGURASI GOOGLE SHEETS UNTUK DATA MUWAKIF
+// =====================================================
+const spreadsheetId='1F9HUDR27NEVIKH3lAg-VKdgjl7gvQVc0opfqqnzAdGk';
+const spreadsheetUrl='https://docs.google.com/spreadsheets/d/'+spreadsheetId+'/gviz/tq?sheet=Form%20Responses%201';
+
+// Memuat hanya 5 kolom yang ditampilkan kepada publik:
+// B = Tanggal, C = Nama, D = Nominal, E = Jenis Transaksi, F = Pilihan Wakaf.
+// Kolom Timestamp dan Upload Bukti Transfer sengaja TIDAK ditampilkan.
+function loadWakafReport(){
+  const status=document.getElementById('reportStatus');
+  const table=document.getElementById('wakafReportTable');
+  const thead=table.querySelector('thead');
+  const tbody=table.querySelector('tbody');
+
+  status.textContent='⏳ Memuat data laporan wakaf...';
+  thead.innerHTML='';
+  tbody.innerHTML='';
+
+  const query=new google.visualization.Query(spreadsheetUrl);
+
+  // HANYA ambil 5 kolom publik.
+  // Jika suatu saat ingin menampilkan kolom lain, ubah daftar SELECT ini.
+  query.setQuery('SELECT B, C, D, E, F');
+  query.setRefreshInterval(0);
+
+  query.send(response=>{
+    if(response.isError()){
+      console.error(response.getMessage(),response.getDetailedMessage());
+      status.textContent='⚠️ Data belum dapat ditampilkan. Pastikan Google Sheets dapat diakses secara publik.';
+      return;
+    }
+
+    const data=response.getDataTable();
+    const cols=data.getNumberOfColumns();
+    const rows=data.getNumberOfRows();
+    const trh=document.createElement('tr');
+
+    // Membuat header tabel dari label kolom Google Sheets.
+    for(let c=0;c<cols;c++){
+      const th=document.createElement('th');
+      th.textContent=data.getColumnLabel(c)||('Kolom '+(c+1));
+      trh.appendChild(th);
+    }
+    thead.appendChild(trh);
+
+    // Menampilkan isi 5 kolom yang sudah dipilih di atas.
+    for(let r=0;r<rows;r++){
+      const tr=document.createElement('tr');
+      for(let c=0;c<cols;c++){
+        const td=document.createElement('td');
+        td.textContent=data.getFormattedValue(r,c);
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+    }
+
+    status.textContent='✅ Menampilkan '+rows+' data dari laporan wakaf.';
+  });
+}
+
+/*
+ * KONFIGURASI PENGIRIMAN KONFIRMASI WAKAF
+ * Setelah Apps Script backend dideploy sebagai Web App, tempel URL /exec di bawah.
+ * Instruksi setup tersedia pada file wakaf_backend.gs.
+ */
+const WAKAF_WEB_APP_URL='PASTE_DEPLOYED_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+// Tanggal hari ini menjadi batas maksimum.
+function setTanggalMaksimum(){
+  const input=document.getElementById('tanggalWakaf');
+  if(!input) return;
+  const today=new Date();
+  input.max=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+}
+setTanggalMaksimum();
+
+function toggleTransferProof(){
+  const selected=document.querySelector('input[name="jenisTransaksi"]:checked');
+  const box=document.getElementById('transferProofBox');
+  const file=document.getElementById('buktiTransfer');
+  const isTransfer=!!selected && selected.value==='Transfer';
+  box.hidden=!isTransfer;
+  file.required=isTransfer;
+  if(!isTransfer) file.value='';
+}
+document.querySelectorAll('input[name="jenisTransaksi"]').forEach(r=>r.addEventListener('change',toggleTransferProof));
+
+function fileToBase64(file){
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>{
+      const result=String(reader.result||'');
+      resolve(result.substring(result.indexOf(',')+1));
+    };
+    reader.onerror=()=>reject(new Error('Berkas tidak dapat dibaca. Silakan pilih ulang.'));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function submitWakafConfirmation(e){
+  e.preventDefault();
+  const form=document.getElementById('wakafConfirmForm');
+  const status=document.getElementById('formStatus');
+  const button=document.getElementById('submitWakafBtn');
+  const tanggal=document.getElementById('tanggalWakaf').value;
+  const nama=document.getElementById('namaLengkap').value.trim();
+  const jenis=document.querySelector('input[name="jenisTransaksi"]:checked')?.value;
+  const nominal=document.getElementById('nominalWakaf').value;
+  const pilihan=document.querySelector('input[name="pilihanWakaf"]:checked')?.value;
+  const file=document.getElementById('buktiTransfer').files[0];
+
+  if(!tanggal||!nama||!jenis||!nominal||!pilihan){
+    status.className='form-status error'; status.textContent='⚠️ Mohon lengkapi seluruh data.'; return;
+  }
+  if(jenis!=='Transfer'){
+    status.className='form-status error'; status.textContent='⚠️ Konfirmasi mandiri hanya tersedia untuk transaksi Transfer.'; return;
+  }
+  if(!file){
+    status.className='form-status error'; status.textContent='⚠️ Bukti transfer wajib diunggah.'; return;
+  }
+  const allowedTypes=['image/jpeg','application/pdf'];
+  const lowerName=file.name.toLowerCase();
+  const validExtension=lowerName.endsWith('.jpg')||lowerName.endsWith('.jpeg')||lowerName.endsWith('.pdf');
+  if(!allowedTypes.includes(file.type)||!validExtension){
+    status.className='form-status error'; status.textContent='⚠️ Format bukti harus JPG/JPEG atau PDF.'; return;
+  }
+  if(file.size>5*1024*1024){
+    status.className='form-status error'; status.textContent='⚠️ Ukuran bukti transfer maksimal 5 MB.'; return;
+  }
+  const today=new Date();
+  const todayString=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+  if(tanggal>todayString){
+    status.className='form-status error'; status.textContent='⚠️ Tanggal wakaf tidak boleh melebihi hari ini.'; return;
+  }
+  if(!WAKAF_WEB_APP_URL.startsWith('https://script.google.com/macros/s/')||!WAKAF_WEB_APP_URL.endsWith('/exec')){
+    status.className='form-status error';
+    status.textContent='⚠️ Layanan penyimpanan belum dikonfigurasi. Tempel URL Web App pada variabel WAKAF_WEB_APP_URL setelah mengikuti petunjuk di wakaf_backend.gs.';
+    return;
+  }
+
+  button.disabled=true;
+  button.textContent='Mengirim data dan bukti...';
+  status.className='form-status info';
+  status.textContent='⏳ Menyiapkan bukti transfer dan mengirim data...';
+  try{
+    const fileData=await fileToBase64(file);
+    const payload={
+      tanggal, nama, jenisTransaksi:jenis, nominal:Number(nominal), pilihanWakaf:pilihan,
+      fileName:file.name, fileMimeType:file.type, fileData
+    };
+    // text/plain menghindari preflight CORS. Apps Script menyimpan data di server.
+    // Browser tidak dapat membaca respons lintas-domain, sehingga jangan klaim sukses pasti.
+    await fetch(WAKAF_WEB_APP_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(payload)});
+    status.className='form-status info';
+    status.textContent='📨 Permintaan pengiriman telah dikirim. Karena browser tidak dapat membaca tanda terima dari Google Apps Script, periksa tab Data Muwakif beberapa saat lagi untuk memastikan data tercatat. Jangan kirim ulang kecuali data belum muncul.';
+    form.reset();
+    toggleTransferProof();
+    setTanggalMaksimum();
+    setTimeout(()=>loadWakafReport(),4000);
+  }catch(err){
+    console.error(err);
+    status.className='form-status error';
+    status.textContent='⚠️ Pengiriman gagal dimulai: '+(err.message||'terjadi kesalahan')+'. Silakan coba kembali.';
+  }finally{
+    button.disabled=false;
+    button.textContent='Kirim Konfirmasi Wakaf';
+  }
+}
+
+google.charts.load('current',{packages:['table']});google.charts.setOnLoadCallback(loadWakafReport);</script>
+
+</body>
+</html>
