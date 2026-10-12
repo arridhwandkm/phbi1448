@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wakaf Masjid Ar Ridhwan | PHBI 1448 H</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f9f6, #e8f3ec);
+      color: #24352b;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+    header {
+      background: linear-gradient(135deg, #0b5d3b, #087f4f);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    header .arabic {
+      font-size: 30px;
+      margin-bottom: 8px;
+      direction: rtl;
+    }
+
+    header h1 {
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 15px;
+      opacity: 0.95;
+    }
+
+    /* =====================================================
+       NAVBAR
+       ===================================================== */
+    nav {
+      background: #ffffff;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      color: #0b5d3b;
+      white-space: nowrap;
+    }
+
+    .logo img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #24543b;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: 0.3s;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #e5f3eb;
+      color: #087f4f;
+    }
+
+    /* =====================================================
+       KONTEN UTAMA
+       ===================================================== */
+    main {
+      flex: 1;
+      max-width: 950px;
+      width: 92%;
+      margin: 35px auto 50px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .page-title h2 {
+      font-size: 26px;
+      color: #0b5d3b;
+      margin-bottom: 6px;
+    }
+
+    .page-title p {
+      color: #607268;
+      font-size: 15px;
+    }
+
+    /* =====================================================
+       KARTU INFORMASI & TIMELINE WAKAF
+       ===================================================== */
+    .info-guideline {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+      border: 1px solid #dceede;
+    }
+
+    .guideline-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .guideline-header h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0b5d3b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .guideline-header .verse-quote {
+      font-size: 13.5px;
+      color: #53645a;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 15px;
+    }
+
+    .timeline-item {
+      background: #f7faf8;
+      border: 1px solid #e3efe7;
+      border-radius: 12px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .timeline-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #dff1e7;
+      color: #0b5d3b;
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .timeline-period {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0b5d3b;
+      margin-bottom: 6px;
+    }
+
+    .timeline-desc {
+      font-size: 13px;
+      color: #4b5e53;
+      line-height: 1.45;
+    }
+
+    /* =====================================================
+       PILIHAN PAKET WAKAF
+       ===================================================== */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 25px;
+    }
+
+    .package-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 22px 18px;
+      text-align: center;
+      border: 1px solid #dceede;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .package-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .package-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0b5d3b;
+      margin-bottom: 4px;
+    }
+
+    .package-amount {
+      font-size: 18px;
+      font-weight: 800;
+      color: #24543b;
+      margin: 8px 0;
+    }
+
+    .package-desc {
+      font-size: 12.5px;
+      color: #607268;
+      line-height: 1.4;
+    }
+
+    /* =====================================================
+       KOTAK REKENING & KONFIRMASI DONASI
+       ===================================================== */
+    .donation-box {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #dceede;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .donation-box h3 {
+      font-size: 18px;
+      color: #0b5d3b;
+      margin-bottom: 12px;
+    }
+
+    .bank-card {
+      background: #f4f9f6;
+      border: 1px dashed #0b5d3b;
+      border-radius: 12px;
+      padding: 16px;
+      display: inline-block;
+      margin: 10px auto 16px;
+      min-width: 280px;
+    }
+
+    .bank-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #607268;
+      text-transform: uppercase;
+    }
+
+    .account-number {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0b5d3b;
+      letter-spacing: 1.5px;
+      margin: 4px 0;
+    }
+
+    .account-holder {
+      font-size: 13px;
+      color: #24352b;
+      font-weight: 600;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.3s;
+      margin-top: 8px;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+    }
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+    footer {
+      background: #0b5d3b;
+      color: white;
+      text-align: center;
+      padding: 35px 20px 25px;
+      margin-top: 30px;
+    }
+
+    footer h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    footer .footer-subtitle {
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: white;
+      text-decoration: none;
+      padding: 9px 16px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 30px;
+      background: rgba(255,255,255,0.08);
+      transition: 0.3s;
+      font-size: 13.5px;
+    }
+
+    .social-link:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-2px);
+    }
+
+    /* Logo Instagram */
+    .instagram-icon {
+      width: 25px;
+      height: 25px;
+      border: 2px solid white;
+      border-radius: 7px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .instagram-icon::before {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border: 2px solid white;
+      border-radius: 50%;
+      top: 5px;
+      left: 5px;
+    }
+
+    .instagram-icon::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      top: 3px;
+      right: 3px;
+    }
+
+    /* Logo YouTube */
+    .youtube-icon {
+      width: 30px;
+      height: 21px;
+      background: white;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .youtube-icon::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 9px solid #0b5d3b;
+      margin-left: 2px;
+    }
+
+    /* Logo Email */
+    .email-icon {
+      width: 27px;
+      height: 20px;
+      border: 2px solid white;
+      border-radius: 4px;
+      display: inline-block;
+      position: relative;
+    }
+
+    .email-icon::after,
+    .email-icon::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 2px;
+      background: white;
+      top: 6px;
+    }
+
+    .email-icon::before {
+      left: 0;
+      transform: rotate(31deg);
+      transform-origin: left;
+    }
+
+    .email-icon::after {
+      right: 0;
+      transform: rotate(-31deg);
+      transform-origin: right;
+    }
+
+    footer .copyright {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* =====================================================
+       RESPONSIF
+       ===================================================== */
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; gap: 10px; }
+      .timeline-grid { grid-template-columns: 1fr; }
+      .packages-grid { grid-template-columns: 1fr; }
+      .bank-card { width: 100%; min-width: auto; }
+      .social-links { flex-direction: column; }
+      .social-link { width: 240px; justify-content: center; }
+    }
+  
+/* Tampilan opsi Tunai yang sedang dinonaktifkan.
+   Hapus/ubah aturan ini jika opsi Tunai diaktifkan kembali. */
+.radio-option input[type="radio"]:disabled + label {
+  opacity: .45;
+  cursor: not-allowed;
+}
+</style>
+  
+<style>
+  /* =====================================================
+     TAB WAKAF
+     ===================================================== */
+  .wakaf-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 25px;
+    flex-wrap: wrap;
+  }
+
+  .wakaf-tab {
+    border: 1px solid #cfe5d7;
+    background: #ffffff;
+    color: #24543b;
+    border-radius: 12px;
+    padding: 12px 22px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+  }
+
+  .wakaf-tab:hover {
+    transform: translateY(-2px);
+    background: #f0f8f3;
+  }
+
+  .wakaf-tab.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, #0b5d3b, #087f4f);
+    border-color: #0b5d3b;
+    box-shadow: 0 5px 15px rgba(11,93,59,0.20);
+  }
+
+  .wakaf-panel {
+    display: none;
+    animation: fadeIn 0.25s ease;
+  }
+
+  .wakaf-panel.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .program-banner {
+    background: linear-gradient(135deg, #eef8f1, #ffffff);
+    border: 1px solid #dceede;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  .program-banner .big-icon {
+    font-size: 42px;
+    margin-bottom: 8px;
+  }
+
+  .program-banner h3 {
+    color: #0b5d3b;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .program-banner p {
+    color: #607268;
+    font-size: 13.5px;
+  }
+
+  .sound-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 25px;
+  }
+
+  .sound-card {
+    background: #ffffff;
+    border: 1px solid #dceede;
+    border-radius: 14px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  }
+
+  .sound-card .icon {
+    font-size: 38px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .sound-card h4 {
+    color: #0b5d3b;
+    font-size: 15px;
+    margin-bottom: 7px;
+  }
+
+  .sound-card p {
+    color: #607268;
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
+
+  .sound-card .tag {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #e5f3eb;
+    color: #0b5d3b;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .report-box {
+    margin-top: 25px;
+    background: linear-gradient(135deg, #ffffff, #f3faf6);
+    border: 1px solid #cfe5d7;
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+  }
+
+  .report-box .report-icon {
+    font-size: 32px;
+    margin-bottom: 5px;
+  }
+
+  .report-box h3 {
+    color: #0b5d3b;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .report-box p {
+    color: #607268;
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .report-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0b5d3b;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 28px;
+    font-size: 13.5px;
+    font-weight: 700;
+    transition: 0.25s ease;
+  }
+
+  .report-btn:hover {
+    background: #087f4f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(11,93,59,0.25);
+  }
+
+  @media (max-width: 768px) {
+    .sound-grid { grid-template-columns: 1fr; }
+    .wakaf-tab { width: 100%; max-width: 330px; }
+  }
+
+  /* =====================================================
+     TABEL LAPORAN WAKAF
+     ===================================================== */
+  .table-status {
+    margin: 14px 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #f4f9f6;
+    color: #607268;
+    font-size: 12.5px;
+  }
+
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #dceede;
+    border-radius: 12px;
+    background: #ffffff;
+    margin-top: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #wakafReportTable {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    color: #33483b;
+  }
+
+  #wakafReportTable th {
+    background: #0b5d3b;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 11px 12px;
+    text-align: left;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  #wakafReportTable td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e3efe7;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  #wakafReportTable tbody tr:nth-child(even) {
+    background: #f7faf8;
+  }
+
+  #wakafReportTable tbody tr:hover {
+    background: #eef8f1;
+  }
+
+  #wakafReportTable td:first-child,
+  #wakafReportTable th:first-child {
+    text-align: center;
+  }
+
+  .report-footer {
+    margin-top: 15px;
+  }
+
+  @media (max-width: 768px) {
+    #wakafReportTable {
+      min-width: 600px;
+      font-size: 12px;
+    }
+
+    #wakafReportTable th,
+    #wakafReportTable td {
+      padding: 9px 10px;
+    }
+  }
+
+
+.report-tabs{display:flex;justify-content:center;gap:10px;margin:25px auto 18px;flex-wrap:wrap}.report-tab{border:1px solid #cfe5d7;background:#fff;color:#24543b;border-radius:12px;padding:12px 24px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.25s}.report-tab:hover{background:#f0f8f3;transform:translateY(-1px)}.report-tab.active{color:#fff;background:linear-gradient(135deg,#0b5d3b,#087f4f);border-color:#0b5d3b}.report-panel{display:none;animation:fadeIn .25s ease}.report-panel.active{display:block}.wakaf-form{max-width:720px;margin:0 auto;text-align:left}.form-card{background:#fff;border:1px solid #dceede;border-radius:16px;padding:24px;box-shadow:0 4px 18px rgba(0,0,0,.05)}.form-card h3{text-align:center;color:#0b5d3b;font-size:20px;margin-bottom:5px}.form-intro{text-align:center;color:#607268;font-size:13px;margin-bottom:22px}.form-group{margin-bottom:17px}.form-label,.form-group label{display:block;color:#345244;font-size:13px;font-weight:700;margin-bottom:7px}.form-input{width:100%;border:1px solid #cfe2d5;border-radius:10px;padding:11px 13px;font:inherit;color:#24352b;background:#fbfdfb;outline:none}.form-input:focus{border-color:#0b7c4d;box-shadow:0 0 0 3px rgba(11,124,77,.1);background:#fff}.radio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.radio-option{position:relative}.radio-option input{position:absolute;opacity:0;pointer-events:none}.radio-option label{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 12px;border:1px solid #cfe2d5;border-radius:10px;background:#f8fbf9;color:#345244;cursor:pointer;font-size:13px;font-weight:700;text-align:center}.radio-option input:checked+label{background:#e5f3eb;border-color:#0b7f4f;color:#0b5d3b;box-shadow:0 0 0 2px rgba(11,127,79,.08)}.amount-wrap{position:relative}.amount-prefix{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#607268;font-weight:700;pointer-events:none}.amount-input{padding-left:42px}.form-submit{width:100%;border:0;border-radius:11px;padding:12px 18px;background:linear-gradient(135deg,#0b5d3b,#087f4f);color:#fff;font:inherit;font-size:14px;font-weight:800;cursor:pointer}.form-submit:disabled{opacity:.65;cursor:wait}.transfer-proof-group[hidden]{display:none}.transfer-proof-group input[type=file]{padding:10px;background:#fbfdfb}.date-note{display:block;margin-top:6px;color:#607268;font-size:12px}.form-status{margin-top:14px;border-radius:10px;padding:10px 13px;font-size:12.5px;display:none}.form-status.success{display:block;background:#e9f7ee;color:#17663f;border:1px solid #bfe2cc}.form-status.error{display:block;background:#fff0f0;color:#a13a3a;border:1px solid #efc5c5}.form-status.info{display:block;background:#eef6ff;color:#315d8a;border:1px solid #c8def5}.transparency-note{margin-top:16px;padding:13px 15px;border-radius:11px;background:#f4f9f6;color:#607268;font-size:12px;line-height:1.5}.report-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}.refresh-report{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:9px;padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}@media(max-width:768px){.radio-grid{grid-template-columns:1fr}.form-card{padding:18px}.report-tab{width:100%;max-width:330px}}
+
+</style>
+
+
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+<style>
+/* Estimator page */
+.estimator-main { max-width: 1050px; margin: 32px auto 48px; padding: 0 20px; }
+.estimator-heading { text-align:center; margin-bottom:24px; }
+.estimator-heading h2 { margin-bottom:8px; }
+.estimator-heading p { color:#5f6b65; margin:0; }
+.estimator-tabs { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:24px 0; }
+.estimator-tab { border:1px solid #c9d8ce; background:#f4f8f5; color:#244c35; padding:12px 22px; border-radius:10px; font-weight:700; cursor:pointer; }
+.estimator-tab.active { background:#176b3a; border-color:#176b3a; color:white; }
+.estimator-panel { background:#fff; border:1px solid #dfe7e1; border-radius:16px; padding:clamp(18px,3vw,30px); box-shadow:0 5px 20px rgba(20,60,35,.07); }
+.estimator-panel h3 { margin-top:0; color:#245638; }
+.zakat-verse { margin:0 0 24px; padding:20px 22px; border:1px solid #d4e8d9; border-left:5px solid #0b7f4f; border-radius:12px; background:linear-gradient(135deg,#f3faf5,#fff); }
+.zakat-verse-label { color:#0b5d3b; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; margin-bottom:10px; }
+.zakat-verse-text { color:#344b3c; font-size:15px; line-height:1.8; }
+.zakat-verse-reference { color:#0b5d3b; font-size:13px; font-weight:700; margin-top:12px; }
+.estimator-form { display:grid; grid-template-columns:minmax(0,1fr); gap:18px; max-width:680px; margin:22px auto 0; }
+.estimator-field label, .estimator-field .field-label { display:block; font-weight:700; margin-bottom:8px; }
+.estimator-field input[type=number], .estimator-field select { box-sizing:border-box; width:100%; border:1px solid #cbd5ce; border-radius:9px; padding:12px 13px; font:inherit; background:#fff; }
+.estimator-field input:focus, .estimator-field select:focus { outline:2px solid #a6d5b5; border-color:#287b47; }
+.estimator-units { display:flex; flex-direction:column; gap:10px; align-items:stretch; width:100%; }
+.estimator-units label { display:flex; gap:10px; align-items:center; margin:0; font-weight:500; cursor:pointer; width:100%; min-height:46px; padding:10px 13px; border:1px solid #cbd5ce; border-radius:9px; background:#fff; }
+.estimator-results { margin-top:24px; padding:20px; border-radius:12px; background:#f1f8f3; border:1px solid #d1e5d7; }
+.estimator-results h4 { margin:0 0 14px; color:#245638; }
+.estimator-result-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.estimator-result-item { background:white; padding:14px; border-radius:10px; border:1px solid #e0ebe3; }
+.estimator-result-item span { display:block; color:#58665d; font-size:.9rem; margin-bottom:6px; }
+.estimator-result-item strong { display:block; font-size:1.15rem; color:#194f2d; overflow-wrap:anywhere; }
+.estimator-note { margin:16px 0 0; color:#5b675f; font-size:.9rem; }
+.estimator-placeholder { text-align:center; padding:45px 18px; color:#68756c; }
+.estimator-placeholder p { margin-bottom:0; }
+@media(max-width:650px) { .estimator-form {grid-template-columns:minmax(0,1fr); width:100%;} .estimator-result-grid {grid-template-columns:1fr;} .estimator-main {padding:0 14px;} .estimator-panel {padding:18px 14px;} }
+</style>
+
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="arabic">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+    <h1>Panitia Ramadhan, Idul Fitri, dan Idul Adha 1448 H</h1>
+    <p>Masjid Ar Ridhwan · Puri Nirwana 1</p>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="logo_arridhwan.jpg" alt="Logo Masjid Ar Ridhwan">
+        <span>PHBI 1448 H</span>
+      </div>
+
+      <div class="nav-links">
+        <!-- 1. HOME --><a href="../puri.html">🏠 Home</a>
+        <!-- 2. TENTANG --><a href="profile.html">ℹ️ Tentang</a>
+        <!-- 3. PENCERAMAH --><a href="penceramah.html">🎙️ Penceramah</a>
+        <!-- 4. IFTHOR --><a href="ifthor.html">🍽️ Ifthor</a>
+        <!-- 5. PENGAJUAN MUSTAHIQ --><a href="mustahiq.html">🤲 Pengajuan Mustahiq</a>
+        <!-- 6. PENYALURAN ZAKAT / QURBAN --><a href="penyaluran.html">🤝 Penyaluran Zakat/ Qurban</a>
+        <!-- 7. LAPORAN --><a href="rekap.html">📊 Laporan</a>
+        <!-- 8. IDUL FITRI / IDUL ADHA --><a href="fitri.html">☪️ Idul Fitri/ Adha</a>
+        <!-- 9. WAKAF --><a href="wakaf.html">🕌 Wakaf</a>
+        <!-- 10. HEWAN KURBAN --> <a href="kurban.html">🐂 Hewan Kurban</a> 
+        <!-- 11. ESTIMATOR DAGING --><a href="daging.html">🥩 Estimator Daging</a>
+        <!-- 12. PROPOSAL --><a href="proposal.html">📄 Proposal</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- KONTEN UTAMA -->
+  <main class="estimator-main">
+  <div class="estimator-heading">
+    <h2>Estimator Zakat dan Daging</h2>
+    <p>Perkiraan kebutuhan zakat fitrah berdasarkan satuan, harga beras, dan jumlah jiwa.</p>
+  </div>
+
+  <div class="estimator-tabs" role="tablist" aria-label="Pilihan estimator">
+    <button class="estimator-tab active" id="tab-zakat" type="button" role="tab" aria-selected="true" aria-controls="panel-zakat">🧮 Estimator Zakat</button>
+    <button class="estimator-tab" id="tab-daging" type="button" role="tab" aria-selected="false" aria-controls="panel-daging">🥩 Estimator Daging</button>
+  </div>
+
+  <section class="estimator-panel" id="panel-zakat" role="tabpanel" aria-labelledby="tab-zakat">
+    <div class="zakat-verse">
+      <div class="zakat-verse-label">Landasan tentang penerima zakat</div>
+      <p class="zakat-verse-text">“Sesungguhnya zakat itu hanyalah untuk orang-orang fakir, orang-orang miskin, amil zakat, yang dilunakkan hatinya (mualaf), untuk (memerdekakan) hamba sahaya, untuk (membebaskan) orang yang berutang, untuk jalan Allah dan untuk orang yang sedang dalam perjalanan, sebagai kewajiban dari Allah. Allah Maha Mengetahui, Mahabijaksana.”</p>
+      <p class="zakat-verse-reference">QS. At-Taubah [9]: 60 · Terjemahan makna</p>
+    </div>
+    <h3>Estimator Zakat Fitrah</h3>
+    <div class="estimator-form">
+      <div class="estimator-field">
+        <span class="field-label">Satuan zakat</span>
+        <div class="estimator-units">
+          <label><input type="radio" name="zakat-unit" value="kg" checked> Kilogram (kg)</label>
+          <label><input type="radio" name="zakat-unit" value="liter"> Liter</label>
+        </div>
+      </div>
+      <div class="estimator-field">
+        <label for="rice-price">Harga beras per kg (Rp)</label>
+        <input id="rice-price" type="number" min="0" step="1" inputmode="numeric" placeholder="15000" value="15000">
+      </div>
+      <div class="estimator-field">
+        <label for="family-count">Jumlah jiwa</label>
+        <select id="family-count">
+          <option value="1">1 jiwa</option><option value="2">2 jiwa</option><option value="3">3 jiwa</option><option value="4">4 jiwa</option><option value="5">5 jiwa</option><option value="6">6 jiwa</option><option value="7">7 jiwa</option><option value="8">8 jiwa</option><option value="9">9 jiwa</option><option value="10">10 jiwa</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="estimator-results" aria-live="polite" aria-atomic="true">
+      <h4>Hasil Estimasi</h4>
+      <div class="estimator-result-grid">
+        <div class="estimator-result-item"><span>Zakat per jiwa</span><strong id="per-person-quantity">2,5 kg</strong></div>
+        <div class="estimator-result-item"><span>Total zakat</span><strong id="total-quantity">2,5 kg</strong></div>
+        <div class="estimator-result-item"><span>Estimasi nilai uang</span><strong id="total-money">Rp37.500</strong></div>
+      </div>
+      <p class="estimator-note" id="zakat-note">Perhitungan menggunakan 2,5 kg beras per jiwa dan harga beras yang Anda masukkan.</p>
+    </div>
+  </section>
+
+  <section class="estimator-panel" id="panel-daging" role="tabpanel" aria-labelledby="tab-daging" hidden>
+    <div class="estimator-placeholder">
+      <h3>Estimator Daging</h3>
+      <p>Fitur ini akan ditambahkan setelah file <strong>daging.html</strong> dipelajari dan diintegrasikan.</p>
+    </div>
+  </section>
+</main>
+<footer>
+    <h3>Panitia Ramadhan, Idul Fitri, dan Idul Adha 1448 H</h3>
+
+    <p class="footer-subtitle">
+      Masjid Ar Ridhwan · Puri Nirwana 1
+    </p>
+
+    <div class="social-links">
+      <a class="social-link"
+         href="https://www.instagram.com/arridhwandkm"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="instagram-icon"></span>
+        <span>@arridhwandkm</span>
+      </a>
+
+      <a class="social-link"
+         href="https://www.youtube.com/@dakwaharridhwan4872"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="youtube-icon"></span>
+        <span>Dakwah Ar Ridhwan</span>
+      </a>
+
+      <a class="social-link" href="mailto:arridhwan.dkm@gmail.com">
+        <span class="email-icon"></span>
+        <span>arridhwan.dkm@gmail.com</span>
+      </a>
+    </div>
+
+    <p>Menjalin Ukhuwah · Menggapai Mardhatillah</p>
+
+    <div class="copyright">
+      © 2026/2027 Panitia Ramadhan, Idul Fitri, dan Idul Adha
+      Masjid Ar Ridhwan
+    </div>
+  </footer>
+<script>
+(function(){
+  const unitInputs = document.querySelectorAll('input[name="zakat-unit"]');
+  const priceInput = document.getElementById('rice-price');
+  const peopleInput = document.getElementById('family-count');
+  const priceLabel = document.querySelector('label[for="rice-price"]');
+  const perPerson = document.getElementById('per-person-quantity');
+  const totalQuantity = document.getElementById('total-quantity');
+  const totalMoney = document.getElementById('total-money');
+  const note = document.getElementById('zakat-note');
+  const formatRp = value => new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(value);
+  const formatNumber = value => new Intl.NumberFormat('id-ID',{maximumFractionDigits:2}).format(value);
+  function calculate(){
+    const unit = document.querySelector('input[name="zakat-unit"]:checked').value;
+    const price = Math.max(0, Number(priceInput.value) || 0);
+    const people = Number(peopleInput.value);
+    const amount = unit === 'liter' ? 3.5 : 2.5;
+    priceLabel.textContent = 'Harga beras per ' + (unit === 'liter' ? 'liter (Rp)' : 'kg (Rp)');
+    perPerson.textContent = formatNumber(amount) + ' ' + unit;
+    totalQuantity.textContent = formatNumber(amount * people) + ' ' + unit;
+    totalMoney.textContent = formatRp(amount * price * people);
+    note.textContent = 'Perhitungan menggunakan ' + formatNumber(amount) + ' ' + unit + ' per jiwa, dikalikan ' + people + ' jiwa dan harga beras per ' + (unit === 'liter' ? 'liter' : 'kg') + ' yang Anda masukkan.';
+  }
+  unitInputs.forEach(el => el.addEventListener('change', calculate));
+  priceInput.addEventListener('input', calculate);
+  peopleInput.addEventListener('change', calculate);
+  const tabZakat=document.getElementById('tab-zakat'), tabDaging=document.getElementById('tab-daging');
+  const panelZakat=document.getElementById('panel-zakat'), panelDaging=document.getElementById('panel-daging');
+  function showTab(which){
+    const zakat=which==='zakat';
+    tabZakat.classList.toggle('active',zakat); tabDaging.classList.toggle('active',!zakat);
+    tabZakat.setAttribute('aria-selected',String(zakat)); tabDaging.setAttribute('aria-selected',String(!zakat));
+    panelZakat.hidden=!zakat; panelDaging.hidden=zakat;
+  }
+  tabZakat.addEventListener('click',()=>showTab('zakat'));
+  tabDaging.addEventListener('click',()=>showTab('daging'));
+  calculate();
+})();
+</script>
+
+</body>
+</html>
