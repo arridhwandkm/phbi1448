@@ -1216,7 +1216,7 @@ async function submitWakafConfirmation(e){
     // Browser tidak dapat membaca respons lintas-domain, sehingga jangan klaim sukses pasti.
     await fetch(WAKAF_WEB_APP_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(payload)});
     status.className='form-status info';
-    status.textContent='✅ Permohonan pencatatan telah dikirim. Mohon periksa tab Data Muwakif Tercatat untuk memastikan data telah masuk. <br>Mohon tidak menginput ulang kecuali data belum muncul.</br>';
+    status.textContent='✅ Permohonan pencatatan telah dikirim. Mohon periksa tab Data Muwakif Tercatat untuk memastikan data telah masuk. <br>🙏 Mohon tidak menginput ulang kecuali data belum muncul.</br>';
     form.reset();
     toggleTransferProof();
     setTanggalMaksimum();
