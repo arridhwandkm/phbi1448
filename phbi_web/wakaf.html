@@ -608,6 +608,53 @@
     font-weight: 700;
   }
 
+  /* STYLING CAP LUNAS / TERPENUHI UNTUK WAKAF SOUND SYSTEM */
+  .relative-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stamp-lunas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-14deg);
+    border: 4px double #b81414;
+    color: #b81414;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 8px 24px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 0 0 2px rgba(184, 20, 20, 0.2), 0 6px 20px rgba(184, 20, 20, 0.25);
+    z-index: 10;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .stamp-lunas small {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+  }
+
+  .lunas-notice {
+    background: #fff3f3;
+    border: 1px solid #f5c2c2;
+    color: #9c1a1a;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-align: center;
+  }
+
   .report-box {
     margin-top: 25px;
     background: linear-gradient(135deg, #ffffff, #f3faf6);
@@ -810,7 +857,7 @@
               aria-selected="false"
               aria-controls="wakaf-sound"
               data-target="wakaf-sound">
-        🎛️ Wakaf Sound System
+        🎛️ Wakaf Sound System (LUNAS / TERCAPAI)
       </button>
     </div>
 
@@ -920,6 +967,10 @@
          TAB 2: WAKAF SOUND SYSTEM
          ===================================================== -->
     <section id="wakaf-sound" class="wakaf-panel" role="tabpanel">
+      <div class="lunas-notice">
+        Alhamdulillah, target pengadaan Wakaf Sound System telah <strong>TERPENUHI / LUNAS</strong>. Panitia mengucapkan jazakumullahu khairan kepada seluruh muhsinin.
+      </div>
+
       <div class="program-banner">
         <div class="big-icon">🎙️</div>
         <h3>Wakaf Sound System Masjid Ar Ridhwan</h3>
@@ -962,14 +1013,19 @@
         </div>
       </div>
 
-      <section class="donation-box">
+      <section class="donation-box relative-container">
+        <div class="stamp-lunas">
+          LUNAS
+          <small>TARGET TERCAPAI</small>
+        </div>
+
         <h3>Wakaf Pengadaan Sound System</h3>
         <p style="color:#607268;font-size:14px;">
           Bapak/Ibu dapat ikut berwakaf untuk pembelian mixer, set microphone,
           dan receiver sesuai kebutuhan sistem audio Masjid Ar Ridhwan.
         </p>
 
-        <div class="bank-card">
+        <div class="bank-card" style="opacity: 0.65;">
           <div class="bank-name">Bank Mandiri</div>
           <div class="account-number">157-001-456-1147</div>
           <div class="account-holder">a.n. Fathunah Nur Rochmah</div>
@@ -981,15 +1037,14 @@
         </p>
 
         <a class="whatsapp-btn"
-           href="https://wa.me/6287770895897?text=Assalamualaikum..Mas Arief Gandhi..%20Saya%20konfirmasi%20Wakaf%20Sound%20System%20Masjid%20Ar%20Ridhwan"
-           target="_blank"
-           rel="noopener noreferrer">
-          <span>📱</span> Konfirmasi via WhatsApp
+           style="background: #8fa398; pointer-events: none; cursor: not-allowed;"
+           href="javascript:void(0);">
+          <span>🔒</span> Kuota Wakaf Terpenuhi
         </a>
       </section>
     </section>
 <section class="report-box" id="wakafTransparency"><div class="report-icon">📊🔍🧾</div><h3>Transparansi Data Wakaf</h3><p>Data wakaf ditampilkan langsung dari Formulir yang di-input oleh Muwakif secara mandiri atau Bendahara melalui Google Sheets.<br>Konfirmasi mandiri dapat dilakukan melalui tab menu yang tersedia di bawah ini.</p><div class="report-tabs"><button class="report-tab active" type="button" data-report-target="reportPanel">📊 Data Wakaf Tercatat</button><button class="report-tab" type="button" data-report-target="confirmPanel">✅ Konfirmasi Mandiri</button></div><section id="reportPanel" class="report-panel active"><div class="report-summary"><div class="table-status" id="reportStatus">⏳ Memuat data muwakif...</div><button type="button" class="refresh-report" onclick="loadWakafReport()">🔄 Perbarui Laporan</button></div><div class="report-controls"><input type="search" id="reportSearch" class="form-input" placeholder="🔍 Cari nama, tanggal, nominal, atau pilihan wakaf..." aria-label="Cari data laporan wakaf"><label for="reportPageSize">Baris per halaman</label><select id="reportPageSize" class="form-input" aria-label="Jumlah baris per halaman"><option value="5">5</option><option value="10">10</option><option value="15" selected>5</option></select></div><div class="table-wrapper"><table id="wakafReportTable"><thead></thead><tbody></tbody></table></div><div id="reportPagination" class="report-pagination" aria-label="Navigasi halaman laporan"></div></section><section id="confirmPanel" class="report-panel"><div class="form-card"><h3>Formulir Konfirmasi Wakaf Mandiri</h3><p class="form-intro">Silakan masukkan data wakaf yang telah dilakukan.<br>Formulir ini khusus untuk transaksi "Transfer" saja.<br>Silahkan upload bukti transfer (JPG/JPEG/PNG atau PDF).</p><form id="wakafConfirmForm" class="wakaf-form" onsubmit="submitWakafConfirmation(event)"><div class="form-group"><label for="tanggalWakaf">📅 Tanggal Wakaf</label><input class="form-input" type="date" id="tanggalWakaf" required max="">
-            <small class="date-note">Tanggal transfer dilakukan.</small></div><div class="form-group"><label for="namaLengkap">👤 Nama Lengkap</label><input class="form-input" type="text" id="namaLengkap" placeholder="Masukkan nama lengkap" required></div><div class="form-group"><span class="form-label">💳 Jenis Transaksi</span><div class="radio-grid"><div class="radio-option"><input type="radio" id="transaksiTunai" name="jenisTransaksi" value="Tunai"><label for="transaksiTunai">💵 Tunai (diisi Bendahara)</label></div><div class="radio-option"><input type="radio" id="transaksiTransfer" name="jenisTransaksi" value="Transfer"><label for="transaksiTransfer">🏦 Transfer</label></div></div></div><div class="form-group"><label for="nominalWakaf">💰 Nominal Wakaf</label><div class="amount-wrap"><span class="amount-prefix">Rp</span><input class="form-input amount-input" type="number" id="nominalWakaf" min="1" step="1" placeholder="Ex: 100000 (tidak pakai titik/koma)" required></div></div><div class="form-group"><span class="form-label">🕌 Pilihan Wakaf</span><div class="radio-grid"><div class="radio-option"><input type="radio" id="wakafRenovasi" name="pilihanWakaf" value="Renovasi Masjid" required><label for="wakafRenovasi">🕌 Renovasi Masjid</label></div><div class="radio-option"><input type="radio" id="wakafSound" name="pilihanWakaf" value="Sound System"><label for="wakafSound">🎛️ Sound System</label></div></div></div><div class="form-group transfer-proof-group" id="transferProofBox" hidden><div class="qris-wakaf-card"><h4>📲 Pembayaran melalui QRIS</h4><p>Silakan pindai QRIS berikut untuk melakukan transfer wakaf.</p><img src="qris_wakaf.jpeg" alt="QRIS Wakaf Masjid Ar Ridhwan" class="qris-wakaf-image" loading="lazy"><small class="date-note">Mohon pastikan nama penerima dan nominal sudah benar.</small></div><label for="buktiTransfer">📎 Upload Bukti Transfer (JPG/JPEG atau PDF) <span aria-hidden="true">*</span></label><input class="form-input" type="file" id="buktiTransfer" accept="image/jpeg,.jpg,.jpeg,application/pdf,.pdf" required><small class="date-note">Wajib diisi. Format JPG/JPEG atau PDF, ukuran maksimal 5 MB.</small></div><button type="submit" class="form-submit" id="submitWakafBtn">Kirim Konfirmasi Wakaf</button><div id="formStatus" class="form-status"></div></form><div class="transparency-note">🔐 <strong>Transparansi:</strong> konfirmasi ini digunakan sebagai pencatatan mandiri dari muwakif. 
+            <small class="date-note">Tanggal transfer dilakukan.</small></div><div class="form-group"><label for="namaLengkap">👤 Nama Lengkap</label><input class="form-input" type="text" id="namaLengkap" placeholder="Masukkan nama lengkap" required></div><div class="form-group"><span class="form-label">💳 Jenis Transaksi</span><div class="radio-grid"><div class="radio-option"><input type="radio" id="transaksiTunai" name="jenisTransaksi" value="Tunai"><label for="transaksiTunai">💵 Tunai (diisi Bendahara)</label></div><div class="radio-option"><input type="radio" id="transaksiTransfer" name="jenisTransaksi" value="Transfer"><label for="transaksiTransfer">🏦 Transfer</label></div></div></div><div class="form-group"><label for="nominalWakaf">💰 Nominal Wakaf</label><div class="amount-wrap"><span class="amount-prefix">Rp</span><input class="form-input amount-input" type="number" id="nominalWakaf" min="1" step="1" placeholder="Ex: 100000 (tidak pakai titik/koma)" required></div></div><div class="form-group"><span class="form-label">🕌 Pilihan Wakaf</span><div class="radio-grid"><div class="radio-option"><input type="radio" id="wakafRenovasi" name="pilihanWakaf" value="Renovasi Masjid" required checked><label for="wakafRenovasi">🕌 Renovasi Masjid</label></div><div class="radio-option"><input type="radio" id="wakafSound" name="pilihanWakaf" value="Sound System" disabled><label for="wakafSound" style="opacity: 0.45; cursor: not-allowed; text-decoration: line-through;">🎛️ Sound System (LUNAS)</label></div></div></div><div class="form-group transfer-proof-group" id="transferProofBox" hidden><div class="qris-wakaf-card"><h4>📲 Pembayaran melalui QRIS</h4><p>Silakan pindai QRIS berikut untuk melakukan transfer wakaf.</p><img src="qris_wakaf.jpeg" alt="QRIS Wakaf Masjid Ar Ridhwan" class="qris-wakaf-image" loading="lazy"><small class="date-note">Mohon pastikan nama penerima dan nominal sudah benar.</small></div><label for="buktiTransfer">📎 Upload Bukti Transfer (JPG/JPEG atau PDF) <span aria-hidden="true">*</span></label><input class="form-input" type="file" id="buktiTransfer" accept="image/jpeg,.jpg,.jpeg,application/pdf,.pdf" required><small class="date-note">Wajib diisi. Format JPG/JPEG atau PDF, ukuran maksimal 5 MB.</small></div><button type="submit" class="form-submit" id="submitWakafBtn">Kirim Konfirmasi Wakaf</button><div id="formStatus" class="form-status"></div></form><div class="transparency-note">🔐 <strong>Transparansi:</strong> konfirmasi ini digunakan sebagai pencatatan mandiri dari muwakif. 
   <br>Data konfirmasi dan tautan bukti transfer dicatat ke Google Sheets; berkas bukti disimpan di Google Drive panitia.</div></div></section></section></main>
 
   <!-- MODAL AUTENTIKASI BENDAHARA -->
