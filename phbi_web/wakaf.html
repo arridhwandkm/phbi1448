@@ -817,6 +817,23 @@
     border-color: #90caf9;
     color: #1565c0;
   }
+  .btn-bendahara-mode.active-badge {
+    background: #e6f4ea;
+    border-color: #34a853;
+    color: #137333;
+    cursor: default;
+  }
+
+  #defaultTransaksiGrid[hidden],
+  #bendaharaTransaksiGrid[hidden] {
+    display: none !important;
+  }
+
+  #bendaharaTransaksiGrid {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed #cfe2d5;
+  }
 
   .bendahara-hint {
     font-size: 12px;
@@ -1126,11 +1143,11 @@
               <input class="form-input" type="text" id="namaLengkap" placeholder="Masukkan nama lengkap" required>
             </div>
 
-            <!-- JENIS TRANSAKSI (TIDAK ADA YANG TERPILIH OTOMATIS) -->
+            <!-- JENIS TRANSAKSI -->
             <div class="form-group" id="jenisTransaksiGroup">
               <span class="form-label">💳 Jenis Transaksi</span>
               
-              <!-- TAMPILAN DEFAULT (SEBELUM LOGIN BENDAHARA) -->
+              <!-- BARIS ATAS: TOMBOL BENDAHARA & TRANSFER MANDIRI -->
               <div class="radio-grid" id="defaultTransaksiGrid">
                 <div>
                   <button type="button" class="btn-bendahara-mode" id="bendaharaLoginTrigger" onclick="openBendaharaAuth()">
@@ -1143,7 +1160,7 @@
                 </div>
               </div>
 
-              <!-- TAMPILAN KHUSUS SETELAH BENDAHARA SUKSES LOGIN -->
+              <!-- BARIS KHUSUS SETELAH BENDAHARA SUKSES LOGIN -->
               <div id="bendaharaTransaksiGrid" hidden>
                 <span class="bendahara-hint">✅ Mode Bendahara Aktif — Wajib pilih salah satu jenis transaksi:</span>
                 <div class="radio-grid">
@@ -1450,22 +1467,30 @@
   });
 
   async function backendJsonp(params) {
-  const query = new URLSearchParams(params);
-  const res = await fetch(WAKAF_WEB_APP_URL + '?' + query.toString(), {
-    method: 'GET',
-    redirect: 'follow'
-  });
-  if (!res.ok) {
-    throw new Error('Gagal menghubungi server (' + res.status + ')');
+    const query = new URLSearchParams(params);
+    const res = await fetch(WAKAF_WEB_APP_URL + '?' + query.toString(), {
+      method: 'GET',
+      redirect: 'follow'
+    });
+    if (!res.ok) {
+      throw new Error('Gagal menghubungi server (' + res.status + ')');
+    }
+    return await res.json();
   }
-  return await res.json();
-}
 
   function activateBendaharaUI() {
-    document.getElementById('defaultTransaksiGrid').hidden = true;
-    document.getElementById('transaksiTransferDefault').checked = false;
-    document.getElementById('transaksiTransferDefault').required = false;
+    // Biarkan baris atas tetap tampil, ubah status Bendahara & disable Transfer di sebelahnya
+    const triggerBtn = document.getElementById('bendaharaLoginTrigger');
+    triggerBtn.textContent = '✅ Bendahara Aktif';
+    triggerBtn.classList.add('active-badge');
+    triggerBtn.disabled = true;
 
+    const defTrans = document.getElementById('transaksiTransferDefault');
+    defTrans.checked = false;
+    defTrans.required = false;
+    defTrans.disabled = true;
+
+    // Munculkan satu pasang pilihan transaksi khusus Bendahara (Tunai / Transfer)
     const bGrid = document.getElementById('bendaharaTransaksiGrid');
     bGrid.hidden = false;
 
@@ -1486,8 +1511,14 @@
 
   function resetBendaharaUI() {
     bendaharaSessionToken = '';
-    document.getElementById('defaultTransaksiGrid').hidden = false;
+
+    const triggerBtn = document.getElementById('bendaharaLoginTrigger');
+    triggerBtn.textContent = '🔐 Bendahara';
+    triggerBtn.classList.remove('active-badge');
+    triggerBtn.disabled = false;
+
     const defTrans = document.getElementById('transaksiTransferDefault');
+    defTrans.disabled = false;
     defTrans.checked = false;
     defTrans.required = true;
 
