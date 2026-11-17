@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pesantren Linsia (Lintas Usia) | Masjid Ar Ridhwan</title>
+  <!-- Google Fonts Eksklusif: Plus Jakarta Sans & Amiri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -12,9 +17,9 @@
     }
 
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #f5f9f6, #e8f3ec);
-      color: #24352b;
+      font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #f3f7f6, #e5efec);
+      color: #1f332e;
       line-height: 1.6;
       display: flex;
       flex-direction: column;
@@ -22,144 +27,221 @@
     }
 
     /* =====================================================
-       HEADER & NAVBAR (SELARAS DENGAN WEB MASJID)
+       HEADER EKSKLUSIF (DEEP TEAL & WARM GOLD + DINAMIS)
        ===================================================== */
-    header {
-      background: linear-gradient(135deg, #0b5d3b, #087f4f);
-      color: white;
+    header.linsia-header {
+      background: radial-gradient(circle at 15% 20%, #134e44 0%, #072f29 55%, #041d19 100%);
+      color: #ffffff;
       text-align: center;
-      padding: 28px 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      padding: 36px 20px 32px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid #d4a84b;
+      box-shadow: 0 8px 25px rgba(4, 29, 25, 0.28);
     }
 
-    header .arabic {
-      font-size: 28px;
+    /* Ornamen Geometris / Cahaya Mengambang */
+    .header-orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 168, 75, 0.22) 0%, transparent 70%);
+      pointer-events: none;
+      animation: floatOrb 8s ease-in-out infinite alternate;
+    }
+    .header-orb.orb-1 { width: 280px; height: 280px; top: -90px; left: -60px; }
+    .header-orb.orb-2 { width: 220px; height: 220px; bottom: -80px; right: -40px; animation-delay: 2s; }
+
+    @keyframes floatOrb {
+      from { transform: translateY(0) scale(1); }
+      to   { transform: translateY(15px) scale(1.08); }
+    }
+
+    .linsia-header .arabic {
+      font-family: "Amiri", serif;
+      font-size: 32px;
+      color: #f3d284;
       margin-bottom: 6px;
       direction: rtl;
+      letter-spacing: 0.5px;
+      position: relative;
+      z-index: 2;
     }
 
-    header h1 {
-      font-size: 24px;
+    .linsia-header h1 {
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
       margin-bottom: 4px;
+      position: relative;
+      z-index: 2;
     }
 
-    header p {
+    .linsia-header .subtitle {
       font-size: 14.5px;
-      opacity: 0.95;
+      color: #b7dad2;
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
     }
 
-    nav {
-      background: #ffffff;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    /* =====================================================
+       NAVBAR MINIMALIS (HANYA MENU HOME)
+       ===================================================== */
+    nav.linsia-nav {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 14px rgba(7, 47, 41, 0.08);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
     .nav-container {
-      max-width: 1400px;
+      max-width: 1100px;
       margin: auto;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 30px;
-      padding: 10px 20px;
+      justify-content: space-between;
+      padding: 10px 24px;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: bold;
-      color: #0b5d3b;
-      white-space: nowrap;
+      gap: 11px;
+      font-weight: 800;
+      color: #093b33;
+      font-size: 15px;
     }
 
     .logo img {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       object-fit: contain;
       border-radius: 50%;
+      border: 2px solid #d4a84b;
     }
 
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-      justify-content: center;
+    .nav-links a.home-only-btn {
+      display: inline-flex;
       align-items: center;
-    }
-
-    .nav-links a {
+      gap: 7px;
       text-decoration: none;
-      color: #24543b;
-      font-weight: 600;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: 0.3s;
-      white-space: nowrap;
-      font-size: 14px;
+      background: #093b33;
+      color: #ffffff;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-size: 13.5px;
+      transition: 0.25s ease;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      background: #e5f3eb;
-      color: #087f4f;
+    .nav-links a.home-only-btn:hover {
+      background: #145c50;
+      transform: translateY(-1px);
     }
 
     /* =====================================================
-       HERO LANDING SECTION
+       HERO LANDING SECTION + LIVE COUNTDOWN
        ===================================================== */
     .hero-landing {
-      background: linear-gradient(135deg, #09492e 0%, #0b5d3b 55%, #128757 100%);
+      background: linear-gradient(135deg, #0b463c 0%, #12695b 60%, #198271 100%);
       color: #ffffff;
-      padding: 55px 20px 65px;
+      padding: 50px 20px 68px;
       text-align: center;
       position: relative;
-      overflow: hidden;
     }
 
     .hero-badge {
       display: inline-block;
-      background: rgba(255, 255, 255, 0.16);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      padding: 6px 16px;
+      background: rgba(212, 168, 75, 0.22);
+      border: 1px solid #f3d284;
+      color: #fae1a3;
+      padding: 6px 18px;
       border-radius: 30px;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.9px;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .hero-landing h2 {
-      font-size: 34px;
+      font-size: 36px;
       font-weight: 800;
       margin-bottom: 12px;
       line-height: 1.25;
     }
 
     .hero-landing .hero-sub {
-      max-width: 720px;
+      max-width: 730px;
+      margin: 0 auto 24px;
+      font-size: 15.5px;
+      opacity: 0.95;
+      line-height: 1.65;
+    }
+
+    /* COUNTDOWN TIMER KE 1 APRIL 2028 */
+    .countdown-wrapper {
+      background: rgba(4, 29, 25, 0.45);
+      border: 1px solid rgba(243, 210, 132, 0.4);
+      border-radius: 18px;
+      max-width: 540px;
       margin: 0 auto 26px;
-      font-size: 16px;
-      opacity: 0.94;
-      line-height: 1.6;
+      padding: 18px 20px;
+      backdrop-filter: blur(6px);
+    }
+
+    .countdown-label {
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #f3d284;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .cd-box {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 10px 6px;
+    }
+
+    .cd-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .cd-unit {
+      font-size: 11px;
+      color: #cbe6df;
+      text-transform: uppercase;
+      margin-top: 4px;
+      font-weight: 600;
     }
 
     .hero-pills {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 30px;
+      gap: 10px;
+      margin-bottom: 28px;
     }
 
     .hero-pill {
-      background: rgba(255, 255, 255, 0.12);
-      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.13);
+      padding: 8px 15px;
       border-radius: 10px;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 600;
     }
 
@@ -171,31 +253,31 @@
     }
 
     .btn-primary {
-      background: #ffffff;
-      color: #0b5d3b;
+      background: #d4a84b;
+      color: #072f29;
       text-decoration: none;
       padding: 13px 26px;
       border-radius: 30px;
       font-weight: 800;
-      font-size: 14.5px;
+      font-size: 14px;
       transition: 0.25s;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.22);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      background: #eef8f2;
+      background: #e5bc63;
     }
 
     .btn-outline {
       background: transparent;
       color: #ffffff;
-      border: 1.5px solid rgba(255,255,255,0.7);
+      border: 1.5px solid rgba(255,255,255,0.75);
       text-decoration: none;
       padding: 12px 24px;
       border-radius: 30px;
       font-weight: 700;
-      font-size: 14.5px;
+      font-size: 14px;
       transition: 0.25s;
     }
 
@@ -230,8 +312,8 @@
       border-radius: 16px;
       padding: 24px 20px;
       text-align: center;
-      border: 1px solid #dceede;
-      box-shadow: 0 8px 24px rgba(11, 93, 59, 0.08);
+      border: 1px solid #d5e5e1;
+      box-shadow: 0 8px 24px rgba(7, 47, 41, 0.07);
     }
 
     .pillar-icon {
@@ -240,15 +322,15 @@
     }
 
     .pillar-card h3 {
-      color: #0b5d3b;
+      color: #0b463c;
       font-size: 17px;
       margin-bottom: 8px;
     }
 
     .pillar-card p {
-      color: #5b6e63;
+      color: #546b65;
       font-size: 13.5px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     /* =====================================================
@@ -258,7 +340,7 @@
       background: #ffffff;
       border-radius: 20px;
       padding: 30px 26px;
-      border: 1px solid #dceede;
+      border: 1px solid #d5e5e1;
       box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
       margin-bottom: 32px;
     }
@@ -270,13 +352,13 @@
 
     .section-header h3 {
       font-size: 22px;
-      color: #0b5d3b;
+      color: #0b463c;
       margin-bottom: 6px;
     }
 
     .section-header p {
       font-size: 14px;
-      color: #607268;
+      color: #5b726c;
     }
 
     .slider-viewport {
@@ -292,8 +374,8 @@
 
     .slide-card {
       min-width: 100%;
-      background: linear-gradient(135deg, #f6fbf8, #ebf6ef);
-      border: 1px solid #cde5d6;
+      background: linear-gradient(135deg, #f4f9f8, #e8f3f0);
+      border: 1px solid #c6dfd9;
       border-radius: 16px;
       padding: 28px 26px;
       display: flex;
@@ -311,7 +393,7 @@
     }
 
     .slide-session {
-      background: #0b5d3b;
+      background: #0b463c;
       color: #ffffff;
       padding: 5px 14px;
       border-radius: 20px;
@@ -321,8 +403,8 @@
 
     .slide-date {
       background: #ffffff;
-      color: #0b5d3b;
-      border: 1px solid #b9dec8;
+      color: #0b463c;
+      border: 1px solid #b4d4cc;
       padding: 5px 14px;
       border-radius: 20px;
       font-size: 12.5px;
@@ -332,37 +414,37 @@
     .slide-discipline {
       font-size: 13px;
       font-weight: 700;
-      color: #087f4f;
+      color: #12695b;
       text-transform: uppercase;
       letter-spacing: 0.6px;
       margin-bottom: 4px;
     }
 
     .slide-title {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 800;
-      color: #1c3a2b;
+      color: #163630;
       margin-bottom: 12px;
     }
 
     .slide-desc {
       font-size: 14.5px;
-      color: #43574c;
+      color: #3f5751;
       margin-bottom: 18px;
       line-height: 1.6;
     }
 
     .slide-activity-box {
       background: #ffffff;
-      border-left: 4px solid #087f4f;
+      border-left: 4px solid #d4a84b;
       padding: 13px 16px;
       border-radius: 8px;
       font-size: 13.5px;
-      color: #2c4236;
+      color: #27403b;
     }
 
     .slide-activity-box strong {
-      color: #0b5d3b;
+      color: #0b463c;
     }
 
     .slider-controls {
@@ -374,7 +456,7 @@
     }
 
     .slider-btn {
-      background: #0b5d3b;
+      background: #0b463c;
       color: #ffffff;
       border: none;
       padding: 10px 18px;
@@ -383,10 +465,11 @@
       font-weight: 700;
       cursor: pointer;
       transition: 0.25s;
+      font-family: inherit;
     }
 
     .slider-btn:hover {
-      background: #087f4f;
+      background: #146c5d;
     }
 
     .slider-dots {
@@ -400,16 +483,84 @@
       width: 11px;
       height: 11px;
       border-radius: 50%;
-      background: #c5dfd0;
+      background: #c1dad4;
       border: none;
       cursor: pointer;
       transition: 0.25s;
     }
 
     .dot.active {
-      background: #0b5d3b;
+      background: #0b463c;
       width: 26px;
       border-radius: 10px;
+    }
+
+    /* =====================================================
+       SEKSI NARASUMBER (ASATIDZ & PRAKTISI AHLI)
+       ===================================================== */
+    .speakers-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 30px 26px;
+      border: 1px solid #d5e5e1;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+      margin-bottom: 32px;
+    }
+
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .speaker-card {
+      background: linear-gradient(135deg, #f8fbfa, #edf5f3);
+      border: 1px solid #cde2dc;
+      border-radius: 16px;
+      padding: 24px 22px;
+      position: relative;
+    }
+
+    .speaker-badge {
+      display: inline-block;
+      background: #0b463c;
+      color: #f3d284;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .speaker-card h4 {
+      font-size: 18px;
+      color: #0b463c;
+      margin-bottom: 8px;
+    }
+
+    .speaker-card p {
+      font-size: 13.8px;
+      color: #465e58;
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+
+    .speaker-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .speaker-tags span {
+      background: #ffffff;
+      border: 1px solid #c3dcd6;
+      color: #164940;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 8px;
     }
 
     /* =====================================================
@@ -426,12 +577,12 @@
       background: #ffffff;
       border-radius: 16px;
       padding: 24px;
-      border: 1px solid #dceede;
+      border: 1px solid #d5e5e1;
       box-shadow: 0 4px 16px rgba(0,0,0,0.04);
     }
 
     .info-box h3 {
-      color: #0b5d3b;
+      color: #0b463c;
       font-size: 18px;
       margin-bottom: 12px;
       display: flex;
@@ -441,7 +592,7 @@
 
     .info-box p {
       font-size: 13.8px;
-      color: #4f6358;
+      color: #49615b;
       margin-bottom: 12px;
       line-height: 1.55;
     }
@@ -451,29 +602,30 @@
     }
 
     .funding-list li {
-      background: #f5faf7;
-      border: 1px solid #dceee3;
+      background: #f3f9f7;
+      border: 1px solid #d4e8e3;
       padding: 10px 14px;
       border-radius: 10px;
       margin-bottom: 9px;
       font-size: 13.5px;
       font-weight: 600;
-      color: #24352b;
+      color: #1f332e;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
     .funding-num {
-      background: #0b5d3b;
-      color: white;
-      width: 22px;
-      height: 22px;
+      background: #0b463c;
+      color: #f3d284;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 12px;
+      font-weight: 800;
       flex-shrink: 0;
     }
 
@@ -481,8 +633,8 @@
        CTA PENDAFTARAN / KONFIRMASI KEHADIRAN
        ===================================================== */
     .join-banner {
-      background: linear-gradient(135deg, #ffffff, #eef8f2);
-      border: 1px solid #c5e3d1;
+      background: linear-gradient(135deg, #ffffff, #eaf4f1);
+      border: 1px solid #bfe0d7;
       border-radius: 18px;
       padding: 28px 22px;
       text-align: center;
@@ -490,13 +642,13 @@
     }
 
     .join-banner h3 {
-      color: #0b5d3b;
+      color: #0b463c;
       font-size: 20px;
       margin-bottom: 8px;
     }
 
     .join-banner p {
-      color: #5b6e63;
+      color: #546b65;
       font-size: 14px;
       max-width: 600px;
       margin: 0 auto 18px;
@@ -522,78 +674,157 @@
     }
 
     /* =====================================================
-       FOOTER
+       FOOTER EKSKLUSIF & DINAMIS
        ===================================================== */
-    footer {
-      background: #0b5d3b;
-      color: white;
-      text-align: center;
-      padding: 35px 20px 25px;
+    footer.linsia-footer {
+      background: linear-gradient(180deg, #072f29 0%, #041d19 100%);
+      color: #e6f2ef;
+      padding: 40px 20px 26px;
+      border-top: 3px solid #d4a84b;
     }
 
-    footer h3 {
-      margin-bottom: 6px;
+    .footer-inner {
+      max-width: 980px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 28px;
+      text-align: left;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .footer-brand h3 {
       font-size: 20px;
+      color: #f3d284;
+      margin-bottom: 6px;
     }
 
-    footer .footer-subtitle {
-      opacity: 0.9;
-      margin-bottom: 18px;
-      font-size: 14px;
+    .footer-brand p {
+      font-size: 13.5px;
+      color: #b7dad2;
+      margin-bottom: 12px;
+      line-height: 1.55;
     }
 
-    footer .copyright {
-      margin-top: 18px;
-      padding-top: 15px;
-      border-top: 1px solid rgba(255,255,255,0.2);
+    .footer-quote-box {
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 3px solid #d4a84b;
+      padding: 12px 15px;
+      border-radius: 8px;
       font-size: 13px;
-      opacity: 0.8;
+      font-style: italic;
+      color: #e0f0ec;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      transition: opacity 0.4s ease;
+    }
+
+    .footer-info h4 {
+      font-size: 15px;
+      color: #f3d284;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .footer-info ul {
+      list-style: none;
+      font-size: 13.5px;
+      color: #c5e3dc;
+    }
+
+    .footer-info ul li {
+      margin-bottom: 7px;
+    }
+
+    .footer-bottom {
+      max-width: 980px;
+      margin: 18px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12.5px;
+      color: #9ec4bc;
+    }
+
+    .footer-bottom a {
+      color: #f3d284;
+      text-decoration: none;
+      font-weight: 700;
     }
 
     @media (max-width: 768px) {
-      .nav-container { flex-direction: column; gap: 10px; }
       .hero-landing h2 { font-size: 26px; }
       .pillars-grid { grid-template-columns: 1fr; }
+      .speakers-grid { grid-template-columns: 1fr; }
       .info-two-col { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; text-align: center; }
+      .footer-quote-box { text-align: left; }
+      .footer-bottom { justify-content: center; text-align: center; }
       .slide-card { padding: 22px 18px; }
-      .slide-title { font-size: 19px; }
+      .slide-title { font-size: 18.5px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
+  <!-- HEADER EKSKLUSIF -->
+  <header class="linsia-header">
+    <div class="header-orb orb-1"></div>
+    <div class="header-orb orb-2"></div>
     <div class="arabic">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
-    <h1>Program Dakwah & Pembinaan Jamaah</h1>
-    <p>Masjid Ar Ridhwan · Puri Nirwana 1</p>
+    <h1>Pesantren Linsia · Lintas Usia</h1>
+    <p class="subtitle">Sinergi Ilmu, Kebugaran Jasmani &amp; Ukhuwah · Masjid Ar Ridhwan Puri Nirwana 1</p>
   </header>
 
-  <!-- NAVBAR -->
-  <nav>
+  <!-- NAVBAR (HANYA MENU HOME) -->
+  <nav class="linsia-nav">
     <div class="nav-container">
       <div class="logo">
         <img src="logo_arridhwan.jpg" alt="Logo Masjid Ar Ridhwan">
-        <span>Masjid Ar Ridhwan</span>
+        <span>PESANTREN LINSIA</span>
       </div>
       <div class="nav-links">
-        <a href="../puri.html">🏠 Home</a>
-        <a href="profile.html">ℹ️ Tentang</a>
-        <a href="penceramah.html">🎙️ Penceramah</a>
-        <a href="rekap.html">📊 Laporan</a>
-        <a href="wakaf.html">🕌 Wakaf</a>
-        <a href="linsia.html" class="active">🌿 Pesantren Linsia</a>
+        <a href="../puri.html" class="home-only-btn">🏠 Home</a>
       </div>
     </div>
   </nav>
 
-  <!-- HERO LANDING PAGE -->
+  <!-- HERO LANDING PAGE + LIVE COUNTDOWN -->
   <section class="hero-landing">
     <span class="hero-badge">Program Unggulan Lintas Generasi</span>
     <h2>Pesantren Linsia (Lintas Usia)</h2>
     <p class="hero-sub">
-      Ruang belajar agama, silaturahmi, penguatan jasmani, dan tadabbur alam yang mempertemukan semangat remaja (usia SMA/kuliah) hingga kebijaksanaan orang tua (>55 tahun) dalam satu majelis yang hangat dan menyenangkan.
+      Ruang belajar agama, silaturahmi, penguatan jasmani, dan tadabbur alam yang mempertemukan semangat remaja (usia SMA/kuliah) hingga kebijaksanaan orang tua (&gt;55 tahun) dalam satu majelis yang hangat dan menyenangkan.
     </p>
+
+    <!-- LIVE COUNTDOWN MENUJU 1 APRIL 2028 (SABTU) -->
+    <div class="countdown-wrapper">
+      <div class="countdown-label">⏳ Hitung Mundur Menuju Sabtu, 1 April 2028</div>
+      <div class="countdown-grid">
+        <div class="cd-box">
+          <div class="cd-num" id="cd-days">0</div>
+          <div class="cd-unit">Hari</div>
+        </div>
+        <div class="cd-box">
+          <div class="cd-num" id="cd-hours">00</div>
+          <div class="cd-unit">Jam</div>
+        </div>
+        <div class="cd-box">
+          <div class="cd-num" id="cd-minutes">00</div>
+          <div class="cd-unit">Menit</div>
+        </div>
+        <div class="cd-box">
+          <div class="cd-num" id="cd-seconds">00</div>
+          <div class="cd-unit">Detik</div>
+        </div>
+      </div>
+    </div>
+
     <div class="hero-pills">
       <span class="hero-pill">📅 Setiap 2 Bulan Sekali (Sabtu/Ahad ke-3)</span>
       <span class="hero-pill">🚀 Batch 1: April 2027</span>
@@ -622,7 +853,7 @@
       </div>
       <div class="pillar-card">
         <div class="pillar-icon">🏕️</div>
-        <h3>Outing & Ukhuwah</h3>
+        <h3>Outing &amp; Ukhuwah</h3>
         <p>Belajar di ruang terbuka (tadabbur alam) untuk mempererat keakraban antara mahasiswa/pemuda dan jamaah senior.</p>
       </div>
     </div>
@@ -630,7 +861,7 @@
     <!-- SLIDER KURIKULUM 6 PERTEMUAN (1 TAHUN) -->
     <section class="slider-section" id="kurikulum-slider">
       <div class="section-header">
-        <h3>🗓️ Kurikulum & Agenda 1 Tahun (6 Pertemuan)</h3>
+        <h3>🗓️ Kurikulum &amp; Agenda 1 Tahun (6 Pertemuan)</h3>
         <p>Geser kartu di bawah untuk melihat rangkaian tema dan narasumber lintas disiplin (April 2027 – Februari 2028)</p>
       </div>
 
@@ -644,14 +875,14 @@
                 <span class="slide-session">Pertemuan 1 · Batch Perdana</span>
                 <span class="slide-date">📅 Ahad ke-3, April 2027</span>
               </div>
-              <div class="slide-discipline">Bidang: Akidah & Pondasi Iman</div>
+              <div class="slide-discipline">Bidang: Akidah &amp; Pondasi Iman</div>
               <h4 class="slide-title">Kunci Surga: Menjaga Tauhid di Tengah Dinamika Zaman</h4>
               <p class="slide-desc">
                 Memperkokoh keyakinan dan ketenangan hati dalam menghadapi tantangan dunia pendidikan, dinamika karier, hingga menjalani masa purnabakti yang penuh keberkahan.
               </p>
             </div>
             <div class="slide-activity-box">
-              <strong>Format & Jasmani:</strong> Kajian Interaktif di Masjid Ar Ridhwan, sesi perkenalan lintas usia (IRMAS & Senior), serta sarapan sehat bersama.
+              <strong>Format &amp; Jasmani:</strong> Kajian Interaktif di Masjid Ar Ridhwan, sesi perkenalan lintas usia (IRMAS &amp; Senior), serta sarapan sehat bersama.
             </div>
           </div>
 
@@ -662,14 +893,14 @@
                 <span class="slide-session">Pertemuan 2</span>
                 <span class="slide-date">📅 Ahad ke-3, Juni 2027</span>
               </div>
-              <div class="slide-discipline">Bidang: Kesehatan & Jasmani</div>
+              <div class="slide-discipline">Bidang: Kesehatan &amp; Jasmani</div>
               <h4 class="slide-title">Menjaga Amanah Raga: Jasmani Sehat, Ibadah Nikmat</h4>
               <p class="slide-desc">
                 Edukasi medis dan Thibbun Nabawi mengenai pencegahan penyakit metabolik bagi usia produktif dan lansia, serta manajemen stres dan pola tidur sehat bagi usia muda/pekerja.
               </p>
             </div>
             <div class="slide-activity-box">
-              <strong>Format & Jasmani:</strong> Senam kebugaran / jalan sehat, cek tensi & gula darah gratis, serta talkshow bersama praktisi kesehatan.
+              <strong>Format &amp; Jasmani:</strong> Senam kebugaran / jalan sehat, cek tensi &amp; gula darah gratis, serta talkshow bersama praktisi kesehatan.
             </div>
           </div>
 
@@ -680,14 +911,14 @@
                 <span class="slide-session">Pertemuan 3 · Outing Class</span>
                 <span class="slide-date">📅 Ahad ke-3, Agustus 2027</span>
               </div>
-              <div class="slide-discipline">Bidang: Muamalah & Tadabbur Alam</div>
-              <h4 class="slide-title">Etika Interaksi & Keberkahan Rezeki</h4>
+              <div class="slide-discipline">Bidang: Muamalah &amp; Tadabbur Alam</div>
+              <h4 class="slide-title">Etika Interaksi &amp; Keberkahan Rezeki</h4>
               <p class="slide-desc">
                 Membahas adab bermuamalah dalam dunia kerja, transaksi bisnis modern, dan harmoni bertetangga sesuai tuntunan syariat di suasana ruang terbuka yang sejuk.
               </p>
             </div>
             <div class="slide-activity-box">
-              <strong>Format & Jasmani:</strong> Outing Class ke ruang terbuka hijau / taman kota, jalan santai tadabbur alam, dan permainan kelompok kolaborasi pemuda & senior.
+              <strong>Format &amp; Jasmani:</strong> Outing Class ke ruang terbuka hijau / taman kota, jalan santai tadabbur alam, dan permainan kelompok kolaborasi pemuda &amp; senior.
             </div>
           </div>
 
@@ -698,14 +929,14 @@
                 <span class="slide-session">Pertemuan 4</span>
                 <span class="slide-date">📅 Ahad ke-3, Oktober 2027</span>
               </div>
-              <div class="slide-discipline">Bidang: Ibadah & Fiqih Praktis</div>
-              <h4 class="slide-title">Menyempurnakan Kualitas Thaharah & Shalat</h4>
+              <div class="slide-discipline">Bidang: Ibadah &amp; Fiqih Praktis</div>
+              <h4 class="slide-title">Menyempurnakan Kualitas Thaharah &amp; Shalat</h4>
               <p class="slide-desc">
                 Evaluasi gerakan dan kekhusyukan shalat berjamaah, serta panduan fiqih kemudahan beribadah bagi lansia maupun pekerja yang sering bepergian (safar).
               </p>
             </div>
             <div class="slide-activity-box">
-              <strong>Format & Jasmani:</strong> Kajian praktik langsung (simulasi) bersama Ustadz/Asatidz dan latihan peregangan otot & sendi (stretching) untuk menjaga kelenturan fisik saat shalat.
+              <strong>Format &amp; Jasmani:</strong> Kajian praktik langsung (simulasi) bersama Ustadz/Asatidz dan latihan peregangan otot &amp; sendi (stretching) untuk menjaga kelenturan fisik saat shalat.
             </div>
           </div>
 
@@ -716,14 +947,14 @@
                 <span class="slide-session">Pertemuan 5</span>
                 <span class="slide-date">📅 Ahad ke-3, Desember 2027</span>
               </div>
-              <div class="slide-discipline">Bidang: Ekonomi Syariah & Kemandirian</div>
-              <h4 class="slide-title">Perencanaan Keuangan Keluarga & Filantropi</h4>
+              <div class="slide-discipline">Bidang: Ekonomi Syariah &amp; Kemandirian</div>
+              <h4 class="slide-title">Perencanaan Keuangan Keluarga &amp; Filantropi</h4>
               <p class="slide-desc">
                 Kiat mengelola penghasilan bebas riba bagi generasi muda, strategi menyiapkan dana pensiun yang amanah, serta mengoptimalkan instrumen wakaf produktif.
               </p>
             </div>
             <div class="slide-activity-box">
-              <strong>Format & Jasmani:</strong> Bincang santai bersama praktisi ekonomi syariah/wirausaha jamaah, bazar produk UMKM warga, dan jalan pagi bersama.
+              <strong>Format &amp; Jasmani:</strong> Bincang santai bersama praktisi ekonomi syariah/wirausaha jamaah, bazar produk UMKM warga, dan jalan pagi bersama.
             </div>
           </div>
 
@@ -731,17 +962,17 @@
           <div class="slide-card">
             <div>
               <div class="slide-top">
-                <span class="slide-session">Pertemuan 6 · Outing & Apresiasi</span>
+                <span class="slide-session">Pertemuan 6 · Outing &amp; Apresiasi</span>
                 <span class="slide-date">📅 Ahad ke-3, Februari 2028</span>
               </div>
-              <div class="slide-discipline">Bidang: Sosial & Ukhuwah Islamiyah</div>
-              <h4 class="slide-title">Merawat Harmoni Keluarga & Peradaban Masjid</h4>
+              <div class="slide-discipline">Bidang: Sosial &amp; Ukhuwah Islamiyah</div>
+              <h4 class="slide-title">Merawat Harmoni Keluarga &amp; Peradaban Masjid</h4>
               <p class="slide-desc">
                 Membangun jembatan komunikasi yang hangat antara orang tua dan generasi muda dalam keluarga serta menghidupkan peran sosial masjid di tengah masyarakat.
               </p>
             </div>
             <div class="slide-activity-box">
-              <strong>Format & Jasmani:</strong> Outing / Gathering penutup tahun pertama, olahraga rekreasi ringan, dan apresiasi bagi peserta lintas usia paling aktif.
+              <strong>Format &amp; Jasmani:</strong> Outing / Gathering penutup tahun pertama, olahraga rekreasi ringan, dan apresiasi bagi peserta lintas usia paling aktif.
             </div>
           </div>
 
@@ -753,6 +984,42 @@
         <button type="button" class="slider-btn" onclick="moveSlide(-1)">‹ Sebelumnya</button>
         <div class="slider-dots" id="sliderDots"></div>
         <button type="button" class="slider-btn" onclick="moveSlide(1)">Berikutnya ›</button>
+      </div>
+    </section>
+
+    <!-- NARASUMBER: ASATIDZ & PRAKTISI AHLI -->
+    <section class="speakers-section">
+      <div class="section-header">
+        <h3>🎓 Narasumber &amp; Pemateri Lintas Disiplin</h3>
+        <p>Dipandu langsung oleh para Asatidz dan Praktisi profesional yang berkompeten di bidangnya</p>
+      </div>
+
+      <div class="speakers-grid">
+        <div class="speaker-card">
+          <span class="speaker-badge">Pembina Ilmu Syar'i</span>
+          <h4>🕌 Para Asatidz &amp; Ulama</h4>
+          <p>
+            Menghadirkan para ustadz dan guru agama yang kompeten untuk membimbing pemahaman Akidah yang lurus, praktik Ibadah sesuai sunnah, serta etika Muamalah dalam kehidupan sehari-hari.
+          </p>
+          <div class="speaker-tags">
+            <span>Akidah &amp; Tauhid</span>
+            <span>Fiqih Ibadah</span>
+            <span>Adab &amp; Muamalah</span>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <span class="speaker-badge">Pembina Wawasan Terapan</span>
+          <h4>💼 Praktisi &amp; Akademisi Ahli</h4>
+          <p>
+            Berbagi ilmu terapan bersama dokter/tenaga medis, praktisi ekonomi syariah, serta instruktur kebugaran yang ahli di bidangnya guna menunjang kesehatan jasmani dan kemandirian umat.
+          </p>
+          <div class="speaker-tags">
+            <span>Dokter &amp; Thibbun Nabawi</span>
+            <span>Ekonomi Syariah</span>
+            <span>Instruktur Jasmani</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -776,7 +1043,7 @@
         <ul class="funding-list">
           <li><span class="funding-num">1</span> Kas DKM Masjid Ar Ridhwan</li>
           <li><span class="funding-num">2</span> Infaq / Dana Sukarela Peserta</li>
-          <li><span class="funding-num">3</span> Sponsorship & Donatur Eksternal</li>
+          <li><span class="funding-num">3</span> Sponsorship &amp; Donatur Eksternal</li>
         </ul>
       </div>
     </div>
@@ -796,23 +1063,42 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <h3>Pesantren Linsia · Masjid Ar Ridhwan</h3>
-    <p class="footer-subtitle">Puri Nirwana 1 · Menjalin Ukhuwah Lintas Generasi</p>
-    <div class="copyright">
-      © 2026 DKM & Ikatan Remaja Masjid (IRMAS) Masjid Ar Ridhwan
+  <!-- FOOTER EKSKLUSIF & DINAMIS -->
+  <footer class="linsia-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Pesantren Linsia · Masjid Ar Ridhwan</h3>
+        <p>Puri Nirwana 1 · Wadah Pembinaan Iman, Ilmu, dan Jasmani Lintas Generasi.</p>
+        <div class="footer-quote-box" id="dynamicFooterQuote">
+          "Menuntut ilmu adalah kewajiban sepanjang hayat, dari buaian hingga ke liang lahat."
+        </div>
+      </div>
+
+      <div class="footer-info">
+        <h4>Informasi Program</h4>
+        <ul>
+          <li>🗓️ Jadwal: Setiap 2 Bulan (Sabtu/Ahad ke-3)</li>
+          <li>🎯 Target: Usia SMA/Kuliah s.d. 75 Tahun</li>
+          <li>🤝 Pelaksana: DKM &amp; IRMAS Masjid Ar Ridhwan</li>
+          <li>📍 Lokasi: Masjid Ar Ridhwan &amp; Lokasi Outing</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026–2028 Pesantren Linsia · Masjid Ar Ridhwan Puri Nirwana 1</span>
+      <a href="../puri.html">← Kembali ke Halaman Utama</a>
     </div>
   </footer>
 
-  <!-- SCRIPT SLIDER -->
+  <!-- SCRIPT SLIDER, COUNTDOWN & FOOTER DINAMIS -->
   <script>
+    // 1. SLIDER KURIKULUM
     const track = document.getElementById('sliderTrack');
     const slides = document.querySelectorAll('.slide-card');
     const dotsContainer = document.getElementById('sliderDots');
     let currentSlide = 0;
 
-    // Buat indikator titik sesuai jumlah slide
     slides.forEach((_, idx) => {
       const dot = document.createElement('button');
       dot.type = 'button';
@@ -838,7 +1124,6 @@
       updateSlider();
     }
 
-    // Dukungan geser layar sentuh (Swipe HP)
     let startX = 0;
     track.addEventListener('touchstart', e => {
       startX = e.touches[0].clientX;
@@ -850,6 +1135,54 @@
         moveSlide(diff > 0 ? 1 : -1);
       }
     });
+
+    // 2. LIVE COUNTDOWN KE SABTU, 1 APRIL 2028 (08:00 WIB)
+    const targetDate = new Date('2028-04-01T08:00:00+07:00').getTime();
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('cd-days').textContent = '0';
+        document.getElementById('cd-hours').textContent = '00';
+        document.getElementById('cd-minutes').textContent = '00';
+        document.getElementById('cd-seconds').textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('cd-days').textContent = days.toLocaleString('id-ID');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // 3. ROTASI KUTIPAN DINAMIS DI FOOTER
+    const footerQuotes = [
+      '"Menuntut ilmu adalah kewajiban sepanjang hayat, dari buaian hingga ke liang lahat."',
+      '"Mukmin yang kuat lebih baik dan lebih dicintai Allah daripada mukmin yang lemah." (HR. Muslim)',
+      '"Keberkahan majelis hadir ketika semangat yang muda bersatu dengan hikmah yang tua."',
+      '"Barang siapa menempuh jalan untuk mencari ilmu, Allah mudahkan baginya jalan menuju surga."'
+    ];
+    let quoteIdx = 0;
+    const quoteEl = document.getElementById('dynamicFooterQuote');
+
+    setInterval(() => {
+      quoteEl.style.opacity = '0';
+      setTimeout(() => {
+        quoteIdx = (quoteIdx + 1) % footerQuotes.length;
+        quoteEl.textContent = footerQuotes[quoteIdx];
+        quoteEl.style.opacity = '1';
+      }, 400);
+    }, 6000);
   </script>
 
 </body>
