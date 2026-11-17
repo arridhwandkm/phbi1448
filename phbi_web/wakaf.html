@@ -788,58 +788,40 @@
   .radio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
   .radio-option{position:relative}
   .radio-option input{position:absolute;opacity:0;pointer-events:none}
-  .radio-option label, .btn-bendahara-mode{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 12px;border:1px solid #cfe2d5;border-radius:10px;background:#f8fbf9;color:#345244;cursor:pointer;font-size:13px;font-weight:700;text-align:center;transition:0.2s ease;width:100%;font-family:inherit}
+  .radio-option label, .btn-bendahara-mode{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 12px;border:1px solid #cfe2d5;border-radius:10px;background:#f8fbf9;color:#345244;cursor:pointer;font-size:13px;font-weight:700;text-align:center;transition:0.2s ease;width:100%;font-family:inherit;user-select:none}
 
-  /* Styling Tombol Bendahara */
-  .btn-bendahara-mode {
-    background: #eef7ff;
-    border-color: #c9e2f7;
-    color: #245b86;
-  }
-  .btn-bendahara-mode:hover:not(:disabled) {
-    background: #d9edff;
-    border-color: #4b9bd5;
-  }
-  .btn-bendahara-mode.authenticated {
-    background: #e6f4ea;
-    border-color: #34a853;
-    color: #137333;
-    cursor: default;
+  /* Hover state umum sebelum dipilih */
+  .radio-option input:not(:disabled) + label:hover {
+    background: #eef6ff;
+    border-color: #90caf9;
+    color: #1565c0;
   }
 
-  /* Styling Pilihan Transaksi (Default & Mode Bendahara) */
-  .radio-option input:checked+label{box-shadow:0 0 0 2px rgba(11,127,79,.08)}
-  #transaksiTransfer+label{background:#eff9f2;border-color:#cfe8d6;color:#286244}
-  #transaksiTransfer:checked+label{background:#d9f0e1;border-color:#57a777;color:#145a34}
-
-  /* Saat Bendahara sudah login: tombol yang dipilih menjadi BIRU */
-  .bendahara-unlocked .radio-option input:checked+label {
+  /* SOROT BIRU TEGAS KETIKA USER MEMILIH (KLIK) SALAH SATU OPSI */
+  .radio-option input:checked + label {
     background: #1976d2 !important;
     border-color: #1565c0 !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.25) !important;
-  }
-  .bendahara-unlocked .radio-option input:not(:checked)+label {
-    background: #f4f8fc;
-    border-color: #c5d9ed;
-    color: #2c4c6e;
-  }
-  .bendahara-unlocked .radio-option input:not(:checked)+label:hover {
-    background: #e6f0fa;
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.30) !important;
+    transform: translateY(-1px);
   }
 
-  .bendahara-sub-options {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px dashed #cfe2d5;
+  /* Styling Tombol Bendahara */
+  .btn-bendahara-mode {
+    background: #f8fbf9;
+    border-color: #cfe2d5;
+    color: #345244;
   }
-  .bendahara-sub-options[hidden] {
-    display: none;
+  .btn-bendahara-mode:hover:not(:disabled) {
+    background: #eef6ff;
+    border-color: #90caf9;
+    color: #1565c0;
   }
+
   .bendahara-hint {
     font-size: 12px;
     color: #1976d2;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 8px;
     display: block;
   }
@@ -1144,7 +1126,7 @@
               <input class="form-input" type="text" id="namaLengkap" placeholder="Masukkan nama lengkap" required>
             </div>
 
-            <!-- JENIS TRANSAKSI -->
+            <!-- JENIS TRANSAKSI (TIDAK ADA YANG TERPILIH OTOMATIS) -->
             <div class="form-group" id="jenisTransaksiGroup">
               <span class="form-label">💳 Jenis Transaksi</span>
               
@@ -1156,13 +1138,13 @@
                   </button>
                 </div>
                 <div class="radio-option">
-                  <input type="radio" id="transaksiTransferDefault" name="jenisTransaksiDefault" value="Transfer" checked>
-                  <label for="transaksiTransferDefault" onclick="selectDefaultTransfer()">🏦 Transfer</label>
+                  <input type="radio" id="transaksiTransferDefault" name="jenisTransaksiDefault" value="Transfer" required>
+                  <label for="transaksiTransferDefault">🏦 Transfer</label>
                 </div>
               </div>
 
               <!-- TAMPILAN KHUSUS SETELAH BENDAHARA SUKSES LOGIN -->
-              <div id="bendaharaTransaksiGrid" class="bendahara-unlocked" hidden>
+              <div id="bendaharaTransaksiGrid" hidden>
                 <span class="bendahara-hint">✅ Mode Bendahara Aktif — Wajib pilih salah satu jenis transaksi:</span>
                 <div class="radio-grid">
                   <div class="radio-option">
@@ -1185,11 +1167,12 @@
               </div>
             </div>
 
+            <!-- PILIHAN WAKAF (TIDAK ADA YANG TERPILIH OTOMATIS, BIRU SAAT DIKLIK) -->
             <div class="form-group">
               <span class="form-label">🕌 Pilihan Wakaf</span>
               <div class="radio-grid">
                 <div class="radio-option">
-                  <input type="radio" id="wakafRenovasi" name="pilihanWakaf" value="Renovasi Masjid" required checked>
+                  <input type="radio" id="wakafRenovasi" name="pilihanWakaf" value="Renovasi Masjid" required>
                   <label for="wakafRenovasi">🕌 Renovasi Masjid</label>
                 </div>
                 <div class="radio-option">
@@ -1199,7 +1182,8 @@
               </div>
             </div>
 
-            <div class="form-group transfer-proof-group" id="transferProofBox">
+            <!-- KOTAK QRIS & UPLOAD BUKTI (MUNCUL SAAT TRANSFER DIPILIH) -->
+            <div class="form-group transfer-proof-group" id="transferProofBox" hidden>
               <div class="qris-wakaf-card">
                 <h4>📲 Pembayaran melalui QRIS</h4>
                 <p>Silakan pindai QRIS berikut untuk melakukan transfer wakaf.</p>
@@ -1209,7 +1193,7 @@
               <label for="buktiTransfer" id="buktiTransferLabel">
                 📎 Upload Bukti Transfer (JPG/JPEG atau PDF) <span id="buktiRequiredStar" aria-hidden="true">*</span>
               </label>
-              <input class="form-input" type="file" id="buktiTransfer" accept="image/jpeg,.jpg,.jpeg,application/pdf,.pdf" required>
+              <input class="form-input" type="file" id="buktiTransfer" accept="image/jpeg,.jpg,.jpeg,application/pdf,.pdf">
               <small class="date-note" id="buktiTransferNote">Wajib diisi. Format JPG/JPEG atau PDF, ukuran maksimal 5 MB.</small>
             </div>
 
@@ -1443,7 +1427,7 @@
   }
 
   function openBendaharaAuth() {
-    if (bendaharaSessionToken) return; // Sudah login
+    if (bendaharaSessionToken) return;
     const modal = document.getElementById('bendaharaAuthModal');
     const input = document.getElementById('bendaharaPassword');
     document.getElementById('bendaharaAuthStatus').className = 'form-status';
@@ -1493,8 +1477,10 @@
   }
 
   function activateBendaharaUI() {
-    // Sembunyikan tombol default, munculkan pilihan Tunai & Transfer yang enable semua
     document.getElementById('defaultTransaksiGrid').hidden = true;
+    document.getElementById('transaksiTransferDefault').checked = false;
+    document.getElementById('transaksiTransferDefault').required = false;
+
     const bGrid = document.getElementById('bendaharaTransaksiGrid');
     bGrid.hidden = false;
 
@@ -1507,18 +1493,19 @@
     rTunai.required = true;
     rTransfer.required = true;
 
-    // Ubah teks keterangan form
     document.getElementById('formIntroText').innerHTML =
-      '<strong>Mode Pencatatan Bendahara Aktif.</strong><br>Silakan pilih metode transaksi (Tunai atau Transfer) yang diterima dari Muwakif.';
+      '<strong>Mode Pencatatan Bendahara Aktif.</strong><br>Silakan klik pilihan transaksi (Tunai atau Transfer) dan Pilihan Wakaf.';
 
-    // Bukti transfer tidak wajib di mode Bendahara
     updateProofRequirement();
   }
 
   function resetBendaharaUI() {
     bendaharaSessionToken = '';
     document.getElementById('defaultTransaksiGrid').hidden = false;
-    document.getElementById('transaksiTransferDefault').checked = true;
+    const defTrans = document.getElementById('transaksiTransferDefault');
+    defTrans.checked = false;
+    defTrans.required = true;
+
     document.getElementById('bendaharaTransaksiGrid').hidden = true;
 
     const rTunai = document.getElementById('transaksiTunai');
@@ -1541,36 +1528,37 @@
     const note = document.getElementById('buktiTransferNote');
 
     if (bendaharaSessionToken) {
-      // Saat bendahara aktif:
       const selected = document.querySelector('input[name="jenisTransaksi"]:checked')?.value;
       if (selected === 'Transfer') {
         box.hidden = false;
-        file.required = false; // Tidak wajib untuk Bendahara
+        file.required = false;
         star.hidden = true;
         note.textContent = 'Opsional bagi Bendahara. Format JPG/JPEG atau PDF, maksimal 5 MB.';
       } else {
-        // Jika belum dipilih atau memilih Tunai, box bukti disembunyikan
         box.hidden = true;
         file.required = false;
         file.value = '';
       }
     } else {
-      // Mode Muwakif Biasa: Transfer selalu aktif dan bukti WAJIB
-      box.hidden = false;
-      file.required = true;
-      star.hidden = false;
-      note.textContent = 'Wajib diisi. Format JPG/JPEG atau PDF, ukuran maksimal 5 MB.';
+      const isDefaultTransferSelected = document.getElementById('transaksiTransferDefault')?.checked;
+      if (isDefaultTransferSelected) {
+        box.hidden = false;
+        file.required = true;
+        star.hidden = false;
+        note.textContent = 'Wajib diisi. Format JPG/JPEG atau PDF, ukuran maksimal 5 MB.';
+      } else {
+        box.hidden = true;
+        file.required = false;
+        file.value = '';
+      }
     }
   }
 
-  // Listener perubahan radio button saat mode Bendahara
+  // Listener perubahan pilihan transaksi baik di mode default maupun mode Bendahara
+  document.getElementById('transaksiTransferDefault').addEventListener('change', updateProofRequirement);
   document.querySelectorAll('input[name="jenisTransaksi"]').forEach(radio => {
     radio.addEventListener('change', updateProofRequirement);
   });
-
-  function selectDefaultTransfer() {
-    updateProofRequirement();
-  }
 
   async function authenticateBendahara(e) {
     e.preventDefault();
@@ -1588,7 +1576,7 @@
         bendaharaSessionToken = result.token;
         activateBendaharaUI();
         status.className = 'form-status success';
-        status.textContent = '✅ Autentikasi berhasil! Silakan pilih Tunai atau Transfer.';
+        status.textContent = '✅ Autentikasi berhasil! Silakan klik Tunai atau Transfer.';
         setTimeout(closeBendaharaAuth, 700);
       } else {
         status.className = 'form-status error';
@@ -1643,7 +1631,6 @@
     const pilihan = document.querySelector('input[name="pilihanWakaf"]:checked')?.value;
     const file = document.getElementById('buktiTransfer').files[0];
 
-    // Tentukan jenis transaksi berdasarkan mode (Bendahara atau Muwakif biasa)
     let jenis = '';
     if (bendaharaSessionToken) {
       jenis = document.querySelector('input[name="jenisTransaksi"]:checked')?.value || '';
@@ -1653,7 +1640,19 @@
         return;
       }
     } else {
-      jenis = 'Transfer';
+      const defSelected = document.querySelector('input[name="jenisTransaksiDefault"]:checked')?.value || '';
+      if (!defSelected) {
+        status.className = 'form-status error';
+        status.textContent = '⚠️ Silakan pilih jenis transaksi (Transfer) terlebih dahulu.';
+        return;
+      }
+      jenis = defSelected;
+    }
+
+    if (!pilihan) {
+      status.className = 'form-status error';
+      status.textContent = '⚠️ Silakan pilih salah satu Pilihan Wakaf (Renovasi Masjid).';
+      return;
     }
 
     if (!tanggal || !nama || !jenis || !nominal || !pilihan) {
@@ -1662,7 +1661,6 @@
       return;
     }
 
-    // Validasi bukti transfer: wajib untuk Muwakif biasa, opsional untuk Bendahara
     if (jenis === 'Transfer') {
       if (!bendaharaSessionToken && !file) {
         status.className = 'form-status error';
@@ -1745,7 +1743,7 @@
     }
   }
 
-  // Inisialisasi status awal upload bukti
+  // Inisialisasi awal
   updateProofRequirement();
 
   google.charts.load('current', { packages: ['table'] });
