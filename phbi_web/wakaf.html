@@ -478,15 +478,13 @@
       .social-link { width: 240px; justify-content: center; }
     }
   
-/* Tampilan opsi Tunai yang sedang dinonaktifkan.
-   Hapus/ubah aturan ini jika opsi Tunai diaktifkan kembali. */
-.radio-option input[type="radio"]:disabled + label {
-  opacity: .45;
-  cursor: not-allowed;
-}
-</style>
+    .radio-option input[type="radio"]:disabled + label {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+  </style>
   
-<style>
+  <style>
   /* =====================================================
      TAB WAKAF
      ===================================================== */
@@ -785,15 +783,69 @@
     }
   }
 
+  .report-tabs{display:flex;justify-content:center;gap:10px;margin:25px auto 18px;flex-wrap:wrap}.report-tab{border:1px solid #cfe5d7;background:#fff;color:#24543b;border-radius:12px;padding:12px 24px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.25s}.report-tab:hover{background:#f0f8f3;transform:translateY(-1px)}.report-tab.active{color:#fff;background:linear-gradient(135deg,#0b5d3b,#087f4f);border-color:#0b5d3b}.report-panel{display:none;animation:fadeIn .25s ease}.report-panel.active{display:block}.wakaf-form{max-width:720px;margin:0 auto;text-align:left}.form-card{background:#fff;border:1px solid #dceede;border-radius:16px;padding:24px;box-shadow:0 4px 18px rgba(0,0,0,.05)}.form-card h3{text-align:center;color:#0b5d3b;font-size:20px;margin-bottom:5px}.form-intro{text-align:center;color:#607268;font-size:13px;margin-bottom:22px}.form-group{margin-bottom:17px}.form-label,.form-group label{display:block;color:#345244;font-size:13px;font-weight:700;margin-bottom:7px}.form-input{width:100%;border:1px solid #cfe2d5;border-radius:10px;padding:11px 13px;font:inherit;color:#24352b;background:#fbfdfb;outline:none}.form-input:focus{border-color:#0b7c4d;box-shadow:0 0 0 3px rgba(11,124,77,.1);background:#fff}
 
-.report-tabs{display:flex;justify-content:center;gap:10px;margin:25px auto 18px;flex-wrap:wrap}.report-tab{border:1px solid #cfe5d7;background:#fff;color:#24543b;border-radius:12px;padding:12px 24px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.25s}.report-tab:hover{background:#f0f8f3;transform:translateY(-1px)}.report-tab.active{color:#fff;background:linear-gradient(135deg,#0b5d3b,#087f4f);border-color:#0b5d3b}.report-panel{display:none;animation:fadeIn .25s ease}.report-panel.active{display:block}.wakaf-form{max-width:720px;margin:0 auto;text-align:left}.form-card{background:#fff;border:1px solid #dceede;border-radius:16px;padding:24px;box-shadow:0 4px 18px rgba(0,0,0,.05)}.form-card h3{text-align:center;color:#0b5d3b;font-size:20px;margin-bottom:5px}.form-intro{text-align:center;color:#607268;font-size:13px;margin-bottom:22px}.form-group{margin-bottom:17px}.form-label,.form-group label{display:block;color:#345244;font-size:13px;font-weight:700;margin-bottom:7px}.form-input{width:100%;border:1px solid #cfe2d5;border-radius:10px;padding:11px 13px;font:inherit;color:#24352b;background:#fbfdfb;outline:none}.form-input:focus{border-color:#0b7c4d;box-shadow:0 0 0 3px rgba(11,124,77,.1);background:#fff}.radio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.radio-option{position:relative}.radio-option input{position:absolute;opacity:0;pointer-events:none}.radio-option label{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 12px;border:1px solid #cfe2d5;border-radius:10px;background:#f8fbf9;color:#345244;cursor:pointer;font-size:13px;font-weight:700;text-align:center}.radio-option input:checked+label{box-shadow:0 0 0 2px rgba(11,127,79,.08)}
-#transaksiTunai+label{background:#eef7ff;border-color:#c9e2f7;color:#245b86}
-#transaksiTunai:checked+label{background:#d9edff;border-color:#4b9bd5;color:#164f7a}
-#transaksiTransfer+label{background:#eff9f2;border-color:#cfe8d6;color:#286244}
-#transaksiTransfer:checked+label{background:#d9f0e1;border-color:#57a777;color:#145a34}.amount-wrap{position:relative}.amount-prefix{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#607268;font-weight:700;pointer-events:none}.amount-input{padding-left:42px}.form-submit{width:100%;border:0;border-radius:11px;padding:12px 18px;background:linear-gradient(135deg,#0b5d3b,#087f4f);color:#fff;font:inherit;font-size:14px;font-weight:800;cursor:pointer}.form-submit:disabled{opacity:.65;cursor:wait}.transfer-proof-group[hidden]{display:none}.qris-wakaf-card{margin:0 0 16px;padding:16px;border:1px solid #cfe5d7;border-radius:12px;background:#f5fbf7;text-align:center}.qris-wakaf-card h4{margin:0 0 6px;color:#0b5d3b;font-size:15px}.qris-wakaf-card p{margin:0 0 12px;color:#607268;font-size:13px}.qris-wakaf-image{display:block;width:min(100%,300px);height:auto;object-fit:contain;margin:0 auto;border-radius:8px;background:#fff}.transfer-proof-group input[type=file]{padding:10px;background:#fbfdfb}.date-note{display:block;margin-top:6px;color:#607268;font-size:12px}.form-status{margin-top:14px;border-radius:10px;padding:10px 13px;font-size:12.5px;display:none}.form-status.success{display:block;background:#e9f7ee;color:#17663f;border:1px solid #bfe2cc}.form-status.error{display:block;background:#fff0f0;color:#a13a3a;border:1px solid #efc5c5}.form-status.info{display:block;background:#eef6ff;color:#315d8a;border:1px solid #c8def5}.transparency-note{margin-top:16px;padding:13px 15px;border-radius:11px;background:#f4f9f6;color:#607268;font-size:12px;line-height:1.5}.report-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}.report-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}.report-controls input[type=search]{flex:1;min-width:220px}.report-controls label{font-size:12px;color:#607268;font-weight:700}.report-controls select{width:auto;min-width:75px}.report-pagination{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;margin:14px 0}.report-pagination button{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:8px;padding:7px 11px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.report-pagination button.active{background:#0b5d3b;color:#fff}.report-pagination button:disabled{opacity:.4;cursor:not-allowed}.refresh-report{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:9px;padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.auth-modal[hidden]{display:none}.auth-modal{position:fixed;inset:0;z-index:9999;background:rgba(9,30,20,.65);display:flex;align-items:center;justify-content:center;padding:18px}.auth-modal-card{position:relative;background:#fff;border-radius:16px;padding:26px;width:min(100%,420px);box-shadow:0 20px 60px rgba(0,0,0,.25)}.auth-modal-card h3{margin:0 0 8px;color:#0b5d3b;text-align:center}.auth-modal-card p{text-align:center;color:#607268;font-size:13px;margin-bottom:18px}.auth-modal-card input[type=password]{margin-bottom:12px}.auth-close{position:absolute;right:12px;top:8px;border:0;background:transparent;font-size:26px;color:#607268;cursor:pointer}.auth-modal-card .form-status{margin-bottom:12px}.auth-modal-card .form-status.info,.auth-modal-card .form-status.error{display:block}@media(max-width:768px){.radio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.form-card{padding:18px}.report-tab{width:100%;max-width:330px}}
+  .radio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .radio-option{position:relative}
+  .radio-option input{position:absolute;opacity:0;pointer-events:none}
+  .radio-option label, .btn-bendahara-mode{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 12px;border:1px solid #cfe2d5;border-radius:10px;background:#f8fbf9;color:#345244;cursor:pointer;font-size:13px;font-weight:700;text-align:center;transition:0.2s ease;width:100%;font-family:inherit}
 
+  /* Styling Tombol Bendahara */
+  .btn-bendahara-mode {
+    background: #eef7ff;
+    border-color: #c9e2f7;
+    color: #245b86;
+  }
+  .btn-bendahara-mode:hover:not(:disabled) {
+    background: #d9edff;
+    border-color: #4b9bd5;
+  }
+  .btn-bendahara-mode.authenticated {
+    background: #e6f4ea;
+    border-color: #34a853;
+    color: #137333;
+    cursor: default;
+  }
+
+  /* Styling Pilihan Transaksi (Default & Mode Bendahara) */
+  .radio-option input:checked+label{box-shadow:0 0 0 2px rgba(11,127,79,.08)}
+  #transaksiTransfer+label{background:#eff9f2;border-color:#cfe8d6;color:#286244}
+  #transaksiTransfer:checked+label{background:#d9f0e1;border-color:#57a777;color:#145a34}
+
+  /* Saat Bendahara sudah login: tombol yang dipilih menjadi BIRU */
+  .bendahara-unlocked .radio-option input:checked+label {
+    background: #1976d2 !important;
+    border-color: #1565c0 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.25) !important;
+  }
+  .bendahara-unlocked .radio-option input:not(:checked)+label {
+    background: #f4f8fc;
+    border-color: #c5d9ed;
+    color: #2c4c6e;
+  }
+  .bendahara-unlocked .radio-option input:not(:checked)+label:hover {
+    background: #e6f0fa;
+  }
+
+  .bendahara-sub-options {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #cfe2d5;
+  }
+  .bendahara-sub-options[hidden] {
+    display: none;
+  }
+  .bendahara-hint {
+    font-size: 12px;
+    color: #1976d2;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .amount-wrap{position:relative}.amount-prefix{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#607268;font-weight:700;pointer-events:none}.amount-input{padding-left:42px}.form-submit{width:100%;border:0;border-radius:11px;padding:12px 18px;background:linear-gradient(135deg,#0b5d3b,#087f4f);color:#fff;font:inherit;font-size:14px;font-weight:800;cursor:pointer}.form-submit:disabled{opacity:.65;cursor:wait}.transfer-proof-group[hidden]{display:none}.qris-wakaf-card{margin:0 0 16px;padding:16px;border:1px solid #cfe5d7;border-radius:12px;background:#f5fbf7;text-align:center}.qris-wakaf-card h4{margin:0 0 6px;color:#0b5d3b;font-size:15px}.qris-wakaf-card p{margin:0 0 12px;color:#607268;font-size:13px}.qris-wakaf-image{display:block;width:min(100%,300px);height:auto;object-fit:contain;margin:0 auto;border-radius:8px;background:#fff}.transfer-proof-group input[type=file]{padding:10px;background:#fbfdfb}.date-note{display:block;margin-top:6px;color:#607268;font-size:12px}.form-status{margin-top:14px;border-radius:10px;padding:10px 13px;font-size:12.5px;display:none}.form-status.success{display:block;background:#e9f7ee;color:#17663f;border:1px solid #bfe2cc}.form-status.error{display:block;background:#fff0f0;color:#a13a3a;border:1px solid #efc5c5}.form-status.info{display:block;background:#eef6ff;color:#315d8a;border:1px solid #c8def5}.transparency-note{margin-top:16px;padding:13px 15px;border-radius:11px;background:#f4f9f6;color:#607268;font-size:12px;line-height:1.5}.report-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}.report-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}.report-controls input[type=search]{flex:1;min-width:220px}.report-controls label{font-size:12px;color:#607268;font-weight:700}.report-controls select{width:auto;min-width:75px}.report-pagination{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;margin:14px 0}.report-pagination button{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:8px;padding:7px 11px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.report-pagination button.active{background:#0b5d3b;color:#fff}.report-pagination button:disabled{opacity:.4;cursor:not-allowed}.refresh-report{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:9px;padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.auth-modal[hidden]{display:none}.auth-modal{position:fixed;inset:0;z-index:9999;background:rgba(9,30,20,.65);display:flex;align-items:center;justify-content:center;padding:18px}.auth-modal-card{position:relative;background:#fff;border-radius:16px;padding:26px;width:min(100%,420px);box-shadow:0 20px 60px rgba(0,0,0,.25)}.auth-modal-card h3{margin:0 0 8px;color:#0b5d3b;text-align:center}.auth-modal-card p{text-align:center;color:#607268;font-size:13px;margin-bottom:18px}.auth-modal-card input[type=password]{margin-bottom:12px}.auth-close{position:absolute;right:12px;top:8px;border:0;background:transparent;font-size:26px;color:#607268;cursor:pointer}.auth-modal-card .form-status{margin-bottom:12px}.auth-modal-card .form-status.info,.auth-modal-card .form-status.error{display:block}@media(max-width:768px){.radio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.form-card{padding:18px}.report-tab{width:100%;max-width:330px}}
 </style>
-
 
   <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
@@ -837,7 +889,6 @@
       <h2>Program Wakaf Masjid Ar Ridhwan</h2>
       <h2>TUNTAS: Ta'awun · Ukhuwah · Nyata · Transparan · Amanah · Syar'i</h2>
       <p>Menabung Amal Jariyah yang Tiada Terputus, untuk Manfaat Hari ini dan Nanti...</p>
-      
     </div>
 
     <!-- TAB PILIHAN PROGRAM -->
@@ -920,48 +971,46 @@
       </div>
 
       <div style="display:flex; gap:20px; align-items:stretch; margin-top:25px;">
+        <section class="donation-box" style="flex:1;">
+          <h3>Kebutuhan Dana Renovasi</h3>
+          <p style="color:#607268;font-size:14px;">
+            Estimasi <a href="proposal.html" style="color:#607268;text-decoration:none;">Rencana Anggaran Biaya</a> (RAB):
+          </p>
 
-  <section class="donation-box" style="flex:1;">
-    <h3>Kebutuhan Dana Renovasi</h3>
-      <p style="color:#607268;font-size:14px;">
-  Estimasi <a href="proposal.html" style="color:#607268;text-decoration:none;">Rencana Anggaran Biaya</a> (RAB):
-</p>
+          <div class="bank-card">
+            <div class="account-number">Rp. 235.556.000,-</div>
+          </div>
 
-      <div class="bank-card">
-        <div class="account-number">Rp. 235.556.000,-</div>
+          <p style="font-size:13px;color:#607268;">
+            Direncanakan Renovasi Selesai Dalam 45 Hari Kalender.
+          </p>
+        </section>
+
+        <section class="donation-box" style="flex:1;">
+          <h3>Rekening Penampungan Wakaf</h3>
+          <p style="color:#607268;font-size:14px;">
+            Salurkan wakaf terbaik Bapak/Ibu melalui rekening resmi Panitia:
+          </p>
+
+          <div class="bank-card">
+            <div class="bank-name">Bank Mandiri</div>
+            <div class="account-number">157-001-456-1147</div>
+            <div class="account-holder">a.n. Fathunah Nur Rochmah</div>
+          </div>
+
+          <p style="font-size:13px;color:#607268;">
+            Konfirmasi transfer dapat melalui WhatsApp Panitia untuk pencatatan:
+          </p>
+
+          <a class="whatsapp-btn"
+             href="https://wa.me/6287770895897?text=Assalamualaikum..mas%20Arief%20Gandhi%20ya..%20Saya%20mau%20konfirmasi%20transfer%20Wakaf%20Renovasi%20Masjid%20Ar%20Ridhwan%20sebesar%20Rp%20%20"
+             target="_blank"
+             rel="noopener noreferrer">
+            <span>📱</span> Konfirmasi via WhatsApp
+          </a>
+        </section>
       </div>
-
-      <p style="font-size:13px;color:#607268;">
-        Direncanakan Renovasi Selesai Dalam 45 Hari Kalender.
-      </p>
-  </section>
-
-  <section class="donation-box" style="flex:1;">
-    <h3>Rekening Penampungan Wakaf</h3>
-      <p style="color:#607268;font-size:14px;">
-        Salurkan wakaf terbaik Bapak/Ibu melalui rekening resmi Panitia:
-      </p>
-
-    <div class="bank-card">
-      <div class="bank-name">Bank Mandiri</div>
-      <div class="account-number">157-001-456-1147</div>
-      <div class="account-holder">a.n. Fathunah Nur Rochmah</div>
-    </div>
-
-    <p style="font-size:13px;color:#607268;">
-      Konfirmasi transfer dapat melalui WhatsApp Panitia untuk pencatatan:
-    </p>
-
-    <a class="whatsapp-btn"
-       href="https://wa.me/6287770895897?text=Assalamualaikum..mas%20Arief%20Gandhi%20ya..%20Saya%20mau%20konfirmasi%20transfer%20Wakaf%20Renovasi%20Masjid%20Ar%20Ridhwan%20sebesar%20Rp%20%20"
-       target="_blank"
-       rel="noopener noreferrer">
-      <span>📱</span> Konfirmasi via WhatsApp
-    </a>
-  </section>
-
-  </div>
-  </section>
+    </section>
 
     <!-- =====================================================
          TAB 2: WAKAF SOUND SYSTEM
@@ -1043,9 +1092,139 @@
         </a>
       </section>
     </section>
-<section class="report-box" id="wakafTransparency"><div class="report-icon">📊🔍🧾</div><h3>Transparansi Data Wakaf</h3><p>Data wakaf ditampilkan langsung dari Formulir yang di-input oleh Muwakif secara mandiri atau Bendahara melalui Google Sheets.<br>Konfirmasi mandiri dapat dilakukan melalui tab menu yang tersedia di bawah ini.</p><div class="report-tabs"><button class="report-tab active" type="button" data-report-target="reportPanel">📊 Data Wakaf Tercatat</button><button class="report-tab" type="button" data-report-target="confirmPanel">✅ Konfirmasi Mandiri</button></div><section id="reportPanel" class="report-panel active"><div class="report-summary"><div class="table-status" id="reportStatus">⏳ Memuat data muwakif...</div><button type="button" class="refresh-report" onclick="loadWakafReport()">🔄 Perbarui Laporan</button></div><div class="report-controls"><input type="search" id="reportSearch" class="form-input" placeholder="🔍 Cari nama, tanggal, nominal, dan lainnya..." aria-label="Cari data laporan wakaf"><label for="reportPageSize">Baris per halaman</label><select id="reportPageSize" class="form-input" aria-label="Jumlah baris per halaman"><option value="5" selected>5</option><option value="10">10</option><option value="15">15</option></select></div><div class="table-wrapper"><table id="wakafReportTable"><thead></thead><tbody></tbody></table></div><div id="reportPagination" class="report-pagination" aria-label="Navigasi halaman laporan"></div></section><section id="confirmPanel" class="report-panel"><div class="form-card"><h3>Formulir Konfirmasi Wakaf Mandiri</h3><p class="form-intro">Silakan masukkan data wakaf yang telah dilakukan.<br>Formulir ini khusus untuk transaksi "Transfer" saja.<br>Silahkan upload bukti transfer (JPG/JPEG/PNG atau PDF).</p><form id="wakafConfirmForm" class="wakaf-form" onsubmit="submitWakafConfirmation(event)"><div class="form-group"><label for="tanggalWakaf">📅 Tanggal Wakaf</label><input class="form-input" type="date" id="tanggalWakaf" required max="">
-            <small class="date-note">Tanggal transfer dilakukan.</small></div><div class="form-group"><label for="namaLengkap">👤 Nama Lengkap</label><input class="form-input" type="text" id="namaLengkap" placeholder="Masukkan nama lengkap" required></div><div class="form-group"><span class="form-label">💳 Jenis Transaksi</span><div class="radio-grid"><div class="radio-option"><input type="radio" id="transaksiTunai" name="jenisTransaksi" value="Tunai"><label for="transaksiTunai">💵 Tunai (diisi Bendahara)</label></div><div class="radio-option"><input type="radio" id="transaksiTransfer" name="jenisTransaksi" value="Transfer"><label for="transaksiTransfer">🏦 Transfer</label></div></div></div><div class="form-group"><label for="nominalWakaf">💰 Nominal Wakaf</label><div class="amount-wrap"><span class="amount-prefix">Rp</span><input class="form-input amount-input" type="number" id="nominalWakaf" min="1" step="1" placeholder="Ex: 100000 (tidak pakai titik/koma)" required></div></div><div class="form-group"><span class="form-label">🕌 Pilihan Wakaf</span><div class="radio-grid"><div class="radio-option"><input type="radio" id="wakafRenovasi" name="pilihanWakaf" value="Renovasi Masjid" required checked><label for="wakafRenovasi">🕌 Renovasi Masjid</label></div><div class="radio-option"><input type="radio" id="wakafSound" name="pilihanWakaf" value="Sound System" disabled><label for="wakafSound" style="opacity: 0.45; cursor: not-allowed; text-decoration: line-through;">🎛️ Sound System (LUNAS)</label></div></div></div><div class="form-group transfer-proof-group" id="transferProofBox" hidden><div class="qris-wakaf-card"><h4>📲 Pembayaran melalui QRIS</h4><p>Silakan pindai QRIS berikut untuk melakukan transfer wakaf.</p><img src="qris_wakaf.jpeg" alt="QRIS Wakaf Masjid Ar Ridhwan" class="qris-wakaf-image" loading="lazy"><small class="date-note">Mohon pastikan nama penerima dan nominal sudah benar.</small></div><label for="buktiTransfer">📎 Upload Bukti Transfer (JPG/JPEG atau PDF) <span aria-hidden="true">*</span></label><input class="form-input" type="file" id="buktiTransfer" accept="image/jpeg,.jpg,.jpeg,application/pdf,.pdf" required><small class="date-note">Wajib diisi. Format JPG/JPEG atau PDF, ukuran maksimal 5 MB.</small></div><button type="submit" class="form-submit" id="submitWakafBtn">Kirim Konfirmasi Wakaf</button><div id="formStatus" class="form-status"></div></form><div class="transparency-note">🔐 <strong>Transparansi:</strong> konfirmasi ini digunakan sebagai pencatatan mandiri dari muwakif. 
-  <br>Data konfirmasi dan tautan bukti transfer dicatat ke Google Sheets; berkas bukti disimpan di Google Drive panitia.</div></div></section></section></main>
+
+    <section class="report-box" id="wakafTransparency">
+      <div class="report-icon">📊🔍🧾</div>
+      <h3>Transparansi Data Wakaf</h3>
+      <p>Data wakaf ditampilkan langsung dari Formulir yang di-input oleh Muwakif secara mandiri atau Bendahara melalui Google Sheets.<br>Konfirmasi mandiri dapat dilakukan melalui tab menu yang tersedia di bawah ini.</p>
+
+      <div class="report-tabs">
+        <button class="report-tab active" type="button" data-report-target="reportPanel">📊 Data Wakaf Tercatat</button>
+        <button class="report-tab" type="button" data-report-target="confirmPanel">✅ Konfirmasi Mandiri</button>
+      </div>
+
+      <section id="reportPanel" class="report-panel active">
+        <div class="report-summary">
+          <div class="table-status" id="reportStatus">⏳ Memuat data muwakif...</div>
+          <button type="button" class="refresh-report" onclick="loadWakafReport()">🔄 Perbarui Laporan</button>
+        </div>
+        <div class="report-controls">
+          <input type="search" id="reportSearch" class="form-input" placeholder="🔍 Cari nama, tanggal, nominal, dan lainnya..." aria-label="Cari data laporan wakaf">
+          <label for="reportPageSize">Baris per halaman</label>
+          <select id="reportPageSize" class="form-input" aria-label="Jumlah baris per halaman">
+            <option value="5" selected>5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+        </div>
+        <div class="table-wrapper">
+          <table id="wakafReportTable"><thead></thead><tbody></tbody></table>
+        </div>
+        <div id="reportPagination" class="report-pagination" aria-label="Navigasi halaman laporan"></div>
+      </section>
+
+      <section id="confirmPanel" class="report-panel">
+        <div class="form-card">
+          <h3>Formulir Konfirmasi Wakaf Mandiri</h3>
+          <p class="form-intro" id="formIntroText">
+            Silakan masukkan data wakaf yang telah dilakukan.<br>
+            Formulir ini khusus untuk transaksi "Transfer" saja.<br>
+            Silahkan upload bukti transfer (JPG/JPEG/PNG atau PDF).
+          </p>
+
+          <form id="wakafConfirmForm" class="wakaf-form" onsubmit="submitWakafConfirmation(event)">
+            <div class="form-group">
+              <label for="tanggalWakaf">📅 Tanggal Wakaf</label>
+              <input class="form-input" type="date" id="tanggalWakaf" required max="">
+              <small class="date-note">Tanggal wakaf/transfer dilakukan.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="namaLengkap">👤 Nama Lengkap</label>
+              <input class="form-input" type="text" id="namaLengkap" placeholder="Masukkan nama lengkap" required>
+            </div>
+
+            <!-- JENIS TRANSAKSI -->
+            <div class="form-group" id="jenisTransaksiGroup">
+              <span class="form-label">💳 Jenis Transaksi</span>
+              
+              <!-- TAMPILAN DEFAULT (SEBELUM LOGIN BENDAHARA) -->
+              <div class="radio-grid" id="defaultTransaksiGrid">
+                <div>
+                  <button type="button" class="btn-bendahara-mode" id="bendaharaLoginTrigger" onclick="openBendaharaAuth()">
+                    🔐 Bendahara
+                  </button>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" id="transaksiTransferDefault" name="jenisTransaksiDefault" value="Transfer" checked>
+                  <label for="transaksiTransferDefault" onclick="selectDefaultTransfer()">🏦 Transfer</label>
+                </div>
+              </div>
+
+              <!-- TAMPILAN KHUSUS SETELAH BENDAHARA SUKSES LOGIN -->
+              <div id="bendaharaTransaksiGrid" class="bendahara-unlocked" hidden>
+                <span class="bendahara-hint">✅ Mode Bendahara Aktif — Wajib pilih salah satu jenis transaksi:</span>
+                <div class="radio-grid">
+                  <div class="radio-option">
+                    <input type="radio" id="transaksiTunai" name="jenisTransaksi" value="Tunai">
+                    <label for="transaksiTunai">💵 Tunai</label>
+                  </div>
+                  <div class="radio-option">
+                    <input type="radio" id="transaksiTransfer" name="jenisTransaksi" value="Transfer">
+                    <label for="transaksiTransfer">🏦 Transfer</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="nominalWakaf">💰 Nominal Wakaf</label>
+              <div class="amount-wrap">
+                <span class="amount-prefix">Rp</span>
+                <input class="form-input amount-input" type="number" id="nominalWakaf" min="1" step="1" placeholder="Ex: 100000 (tidak pakai titik/koma)" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label">🕌 Pilihan Wakaf</span>
+              <div class="radio-grid">
+                <div class="radio-option">
+                  <input type="radio" id="wakafRenovasi" name="pilihanWakaf" value="Renovasi Masjid" required checked>
+                  <label for="wakafRenovasi">🕌 Renovasi Masjid</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" id="wakafSound" name="pilihanWakaf" value="Sound System" disabled>
+                  <label for="wakafSound" style="opacity: 0.45; cursor: not-allowed; text-decoration: line-through;">🎛️ Sound System (LUNAS)</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group transfer-proof-group" id="transferProofBox">
+              <div class="qris-wakaf-card">
+                <h4>📲 Pembayaran melalui QRIS</h4>
+                <p>Silakan pindai QRIS berikut untuk melakukan transfer wakaf.</p>
+                <img src="qris_wakaf.jpeg" alt="QRIS Wakaf Masjid Ar Ridhwan" class="qris-wakaf-image" loading="lazy">
+                <small class="date-note">Mohon pastikan nama penerima dan nominal sudah benar.</small>
+              </div>
+              <label for="buktiTransfer" id="buktiTransferLabel">
+                📎 Upload Bukti Transfer (JPG/JPEG atau PDF) <span id="buktiRequiredStar" aria-hidden="true">*</span>
+              </label>
+              <input class="form-input" type="file" id="buktiTransfer" accept="image/jpeg,.jpg,.jpeg,application/pdf,.pdf" required>
+              <small class="date-note" id="buktiTransferNote">Wajib diisi. Format JPG/JPEG atau PDF, ukuran maksimal 5 MB.</small>
+            </div>
+
+            <button type="submit" class="form-submit" id="submitWakafBtn">Kirim Konfirmasi Wakaf</button>
+            <div id="formStatus" class="form-status"></div>
+          </form>
+
+          <div class="transparency-note">
+            🔐 <strong>Transparansi:</strong> konfirmasi ini digunakan sebagai pencatatan mandiri dari muwakif. 
+            <br>Data konfirmasi dan tautan bukti transfer dicatat ke Google Sheets; berkas bukti disimpan di Google Drive panitia.
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
 
   <!-- MODAL AUTENTIKASI BENDAHARA -->
   <div id="bendaharaAuthModal" class="auth-modal" hidden role="dialog" aria-modal="true" aria-labelledby="bendaharaAuthTitle">
@@ -1135,199 +1314,443 @@
     });
   });
 
-const reportTabs=document.querySelectorAll('.report-tab');const reportPanels=document.querySelectorAll('.report-panel');reportTabs.forEach(tab=>tab.addEventListener('click',()=>{reportTabs.forEach(x=>x.classList.remove('active'));reportPanels.forEach(x=>x.classList.remove('active'));tab.classList.add('active');document.getElementById(tab.dataset.reportTarget).classList.add('active');if(tab.dataset.reportTarget==='reportPanel')loadWakafReport()}));
-// =====================================================
-// LAPORAN PUBLIK: PENCARIAN LANGSUNG + PAGINASI 15 BARIS
-// =====================================================
-const spreadsheetId='1F9HUDR27NEVIKH3lAg-VKdgjl7gvQVc0opfqqnzAdGk';
-const spreadsheetUrl='https://docs.google.com/spreadsheets/d/'+spreadsheetId+'/gviz/tq?sheet=Form%20Responses%201';
-let wakafReportHeaders=[];
-let wakafReportRows=[];
-let wakafReportPage=1;
-let wakafReportPageSize=15;
-const reportPageSizeSelect=document.getElementById('reportPageSize');
-reportPageSizeSelect.addEventListener('change',()=>{wakafReportPageSize=Number(reportPageSizeSelect.value)||15;wakafReportPage=1;renderWakafReport()});
+  const reportTabs = document.querySelectorAll('.report-tab');
+  const reportPanels = document.querySelectorAll('.report-panel');
+  reportTabs.forEach(tab => tab.addEventListener('click', () => {
+    reportTabs.forEach(x => x.classList.remove('active'));
+    reportPanels.forEach(x => x.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.reportTarget).classList.add('active');
+    if (tab.dataset.reportTarget === 'reportPanel') loadWakafReport();
+  }));
 
-function renderWakafReport(){
-  const status=document.getElementById('reportStatus');
-  const thead=document.querySelector('#wakafReportTable thead');
-  const tbody=document.querySelector('#wakafReportTable tbody');
-  const pager=document.getElementById('reportPagination');
-  const term=(document.getElementById('reportSearch')?.value||'').trim().toLocaleLowerCase('id-ID');
-  const filtered=wakafReportRows.filter(row=>row.some(value=>String(value).toLocaleLowerCase('id-ID').includes(term)));
-  const pages=Math.max(1,Math.ceil(filtered.length/wakafReportPageSize));
-  wakafReportPage=Math.min(wakafReportPage,pages);
-  const first=(wakafReportPage-1)*wakafReportPageSize;
-  const shown=filtered.slice(first,first+wakafReportPageSize);
-  thead.innerHTML='';tbody.innerHTML='';pager.innerHTML='';
-  const hr=document.createElement('tr');
-  wakafReportHeaders.forEach(label=>{const th=document.createElement('th');th.textContent=label;hr.appendChild(th)});
-  thead.appendChild(hr);
-  shown.forEach(row=>{const tr=document.createElement('tr');row.forEach(value=>{const td=document.createElement('td');td.textContent=value;tr.appendChild(td)});tbody.appendChild(tr)});
-  if(!shown.length){const tr=document.createElement('tr');const td=document.createElement('td');td.colSpan=Math.max(1,wakafReportHeaders.length);td.textContent='Tidak ada data yang cocok dengan pencarian.';tr.appendChild(td);tbody.appendChild(tr)}
-  status.textContent='Menampilkan '+(filtered.length?first+1:0)+'–'+Math.min(first+wakafReportPageSize,filtered.length)+' dari '+filtered.length+' data'+(term?' (hasil pencarian)':'')+'.';
-  const prev=document.createElement('button');prev.type='button';prev.textContent='‹ Sebelumnya';prev.disabled=wakafReportPage<=1;prev.onclick=()=>{wakafReportPage--;renderWakafReport()};pager.appendChild(prev);
-  for(let p=Math.max(1,wakafReportPage-2);p<=Math.min(pages,wakafReportPage+2);p++){const b=document.createElement('button');b.type='button';b.textContent=String(p);b.className=p===wakafReportPage?'active':'';b.setAttribute('aria-current',p===wakafReportPage?'page':'false');b.onclick=()=>{wakafReportPage=p;renderWakafReport()};pager.appendChild(b)}
-  const next=document.createElement('button');next.type='button';next.textContent='Berikutnya ›';next.disabled=wakafReportPage>=pages;next.onclick=()=>{wakafReportPage++;renderWakafReport()};pager.appendChild(next);
-}
-function loadWakafReport(){
-  const status=document.getElementById('reportStatus');
-  status.textContent='⏳ Memuat data laporan wakaf...';
-  const query=new google.visualization.Query(spreadsheetUrl);
-  query.setQuery('SELECT B, C, D, E, F');
-  query.setRefreshInterval(0);
-  query.send(response=>{
-    if(response.isError()){
-      console.error(response.getMessage(),response.getDetailedMessage());
-      status.textContent='⚠️ Data belum dapat ditampilkan. Pastikan Google Sheets dapat diakses secara publik.';
+  // =====================================================
+  // LAPORAN PUBLIK: PENCARIAN LANGSUNG + PAGINASI
+  // =====================================================
+  const spreadsheetId = '1F9HUDR27NEVIKH3lAg-VKdgjl7gvQVc0opfqqnzAdGk';
+  const spreadsheetUrl = 'https://docs.google.com/spreadsheets/d/' + spreadsheetId + '/gviz/tq?sheet=Form%20Responses%201';
+  let wakafReportHeaders = [];
+  let wakafReportRows = [];
+  let wakafReportPage = 1;
+  let wakafReportPageSize = 5;
+  const reportPageSizeSelect = document.getElementById('reportPageSize');
+  reportPageSizeSelect.addEventListener('change', () => {
+    wakafReportPageSize = Number(reportPageSizeSelect.value) || 5;
+    wakafReportPage = 1;
+    renderWakafReport();
+  });
+
+  function renderWakafReport() {
+    const status = document.getElementById('reportStatus');
+    const thead = document.querySelector('#wakafReportTable thead');
+    const tbody = document.querySelector('#wakafReportTable tbody');
+    const pager = document.getElementById('reportPagination');
+    const term = (document.getElementById('reportSearch')?.value || '').trim().toLocaleLowerCase('id-ID');
+    const filtered = wakafReportRows.filter(row => row.some(value => String(value).toLocaleLowerCase('id-ID').includes(term)));
+    const pages = Math.max(1, Math.ceil(filtered.length / wakafReportPageSize));
+    wakafReportPage = Math.min(wakafReportPage, pages);
+    const first = (wakafReportPage - 1) * wakafReportPageSize;
+    const shown = filtered.slice(first, first + wakafReportPageSize);
+    thead.innerHTML = ''; tbody.innerHTML = ''; pager.innerHTML = '';
+    const hr = document.createElement('tr');
+    wakafReportHeaders.forEach(label => {
+      const th = document.createElement('th');
+      th.textContent = label;
+      hr.appendChild(th);
+    });
+    thead.appendChild(hr);
+    shown.forEach(row => {
+      const tr = document.createElement('tr');
+      row.forEach(value => {
+        const td = document.createElement('td');
+        td.textContent = value;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    if (!shown.length) {
+      const tr = document.createElement('tr');
+      const td = document.createElement('td');
+      td.colSpan = Math.max(1, wakafReportHeaders.length);
+      td.textContent = 'Tidak ada data yang cocok dengan pencarian.';
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+    }
+    status.textContent = 'Menampilkan ' + (filtered.length ? first + 1 : 0) + '–' + Math.min(first + wakafReportPageSize, filtered.length) + ' dari ' + filtered.length + ' data' + (term ? ' (hasil pencarian)' : '') + '.';
+    const prev = document.createElement('button');
+    prev.type = 'button'; prev.textContent = '‹ Sebelumnya'; prev.disabled = wakafReportPage <= 1;
+    prev.onclick = () => { wakafReportPage--; renderWakafReport(); };
+    pager.appendChild(prev);
+    for (let p = Math.max(1, wakafReportPage - 2); p <= Math.min(pages, wakafReportPage + 2); p++) {
+      const b = document.createElement('button');
+      b.type = 'button'; b.textContent = String(p);
+      b.className = p === wakafReportPage ? 'active' : '';
+      b.setAttribute('aria-current', p === wakafReportPage ? 'page' : 'false');
+      b.onclick = () => { wakafReportPage = p; renderWakafReport(); };
+      pager.appendChild(b);
+    }
+    const next = document.createElement('button');
+    next.type = 'button'; next.textContent = 'Berikutnya ›'; next.disabled = wakafReportPage >= pages;
+    next.onclick = () => { wakafReportPage++; renderWakafReport(); };
+    pager.appendChild(next);
+  }
+
+  function loadWakafReport() {
+    const status = document.getElementById('reportStatus');
+    status.textContent = '⏳ Memuat data laporan wakaf...';
+    const query = new google.visualization.Query(spreadsheetUrl);
+    query.setQuery('SELECT B, C, D, E, F');
+    query.setRefreshInterval(0);
+    query.send(response => {
+      if (response.isError()) {
+        console.error(response.getMessage(), response.getDetailedMessage());
+        status.textContent = '⚠️ Data belum dapat ditampilkan. Pastikan Google Sheets dapat diakses secara publik.';
+        return;
+      }
+      const data = response.getDataTable();
+      wakafReportHeaders = [];
+      wakafReportRows = [];
+      for (let c = 0; c < data.getNumberOfColumns(); c++) wakafReportHeaders.push(data.getColumnLabel(c) || ('Kolom ' + (c + 1)));
+      for (let r = 0; r < data.getNumberOfRows(); r++) {
+        const row = [];
+        for (let c = 0; c < data.getNumberOfColumns(); c++) row.push(data.getFormattedValue(r, c));
+        wakafReportRows.push(row);
+      }
+      wakafReportPage = 1;
+      renderWakafReport();
+    });
+  }
+  document.getElementById('reportSearch').addEventListener('input', () => { wakafReportPage = 1; renderWakafReport(); });
+
+  /*
+   * KONFIGURASI PENGIRIMAN KONFIRMASI WAKAF & AUTENTIKASI BENDAHARA
+   */
+  const WAKAF_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwovVM3EtFcF68cC-AKJWjnRL6H7vi9AkNF8RSh4l3BbwuJuKNU9CbMOLMsEXXIZcpe8A/exec';
+
+  function setTanggalMaksimum() {
+    const input = document.getElementById('tanggalWakaf');
+    if (!input) return;
+    const today = new Date();
+    input.max = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+  }
+  setTanggalMaksimum();
+
+  let bendaharaSessionToken = '';
+  let bendaharaClientId = sessionStorage.getItem('wakafBendaharaClientId');
+  if (!bendaharaClientId) {
+    bendaharaClientId = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(36).slice(2));
+    sessionStorage.setItem('wakafBendaharaClientId', bendaharaClientId);
+  }
+
+  function openBendaharaAuth() {
+    if (bendaharaSessionToken) return; // Sudah login
+    const modal = document.getElementById('bendaharaAuthModal');
+    const input = document.getElementById('bendaharaPassword');
+    document.getElementById('bendaharaAuthStatus').className = 'form-status';
+    document.getElementById('bendaharaAuthStatus').textContent = '';
+    modal.hidden = false;
+    input.value = '';
+    setTimeout(() => input.focus(), 50);
+  }
+
+  function closeBendaharaAuth() {
+    document.getElementById('bendaharaAuthModal').hidden = true;
+    document.getElementById('bendaharaPassword').value = '';
+  }
+
+  document.getElementById('bendaharaAuthModal').addEventListener('click', e => {
+    if (e.target.id === 'bendaharaAuthModal') closeBendaharaAuth();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeBendaharaAuth();
+  });
+
+  function backendJsonp(params) {
+    return new Promise((resolve, reject) => {
+      const callback = 'wakafJsonp_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+      const script = document.createElement('script');
+      const timeout = setTimeout(() => {
+        cleanup();
+        reject(new Error('Waktu verifikasi habis. Coba kembali.'));
+      }, 15000);
+      function cleanup() {
+        clearTimeout(timeout);
+        delete window[callback];
+        script.remove();
+      }
+      window[callback] = data => {
+        cleanup();
+        resolve(data);
+      };
+      const query = new URLSearchParams({ ...params, callback });
+      script.src = WAKAF_WEB_APP_URL + '?' + query.toString();
+      script.onerror = () => {
+        cleanup();
+        reject(new Error('Tidak dapat menghubungi layanan autentikasi.'));
+      };
+      document.body.appendChild(script);
+    });
+  }
+
+  function activateBendaharaUI() {
+    // Sembunyikan tombol default, munculkan pilihan Tunai & Transfer yang enable semua
+    document.getElementById('defaultTransaksiGrid').hidden = true;
+    const bGrid = document.getElementById('bendaharaTransaksiGrid');
+    bGrid.hidden = false;
+
+    const rTunai = document.getElementById('transaksiTunai');
+    const rTransfer = document.getElementById('transaksiTransfer');
+    rTunai.disabled = false;
+    rTransfer.disabled = false;
+    rTunai.checked = false;
+    rTransfer.checked = false;
+    rTunai.required = true;
+    rTransfer.required = true;
+
+    // Ubah teks keterangan form
+    document.getElementById('formIntroText').innerHTML =
+      '<strong>Mode Pencatatan Bendahara Aktif.</strong><br>Silakan pilih metode transaksi (Tunai atau Transfer) yang diterima dari Muwakif.';
+
+    // Bukti transfer tidak wajib di mode Bendahara
+    updateProofRequirement();
+  }
+
+  function resetBendaharaUI() {
+    bendaharaSessionToken = '';
+    document.getElementById('defaultTransaksiGrid').hidden = false;
+    document.getElementById('transaksiTransferDefault').checked = true;
+    document.getElementById('bendaharaTransaksiGrid').hidden = true;
+
+    const rTunai = document.getElementById('transaksiTunai');
+    const rTransfer = document.getElementById('transaksiTransfer');
+    rTunai.checked = false;
+    rTransfer.checked = false;
+    rTunai.required = false;
+    rTransfer.required = false;
+
+    document.getElementById('formIntroText').innerHTML =
+      'Silakan masukkan data wakaf yang telah dilakukan.<br>Formulir ini khusus untuk transaksi "Transfer" saja.<br>Silahkan upload bukti transfer (JPG/JPEG/PNG atau PDF).';
+
+    updateProofRequirement();
+  }
+
+  function updateProofRequirement() {
+    const box = document.getElementById('transferProofBox');
+    const file = document.getElementById('buktiTransfer');
+    const star = document.getElementById('buktiRequiredStar');
+    const note = document.getElementById('buktiTransferNote');
+
+    if (bendaharaSessionToken) {
+      // Saat bendahara aktif:
+      const selected = document.querySelector('input[name="jenisTransaksi"]:checked')?.value;
+      if (selected === 'Transfer') {
+        box.hidden = false;
+        file.required = false; // Tidak wajib untuk Bendahara
+        star.hidden = true;
+        note.textContent = 'Opsional bagi Bendahara. Format JPG/JPEG atau PDF, maksimal 5 MB.';
+      } else {
+        // Jika belum dipilih atau memilih Tunai, box bukti disembunyikan
+        box.hidden = true;
+        file.required = false;
+        file.value = '';
+      }
+    } else {
+      // Mode Muwakif Biasa: Transfer selalu aktif dan bukti WAJIB
+      box.hidden = false;
+      file.required = true;
+      star.hidden = false;
+      note.textContent = 'Wajib diisi. Format JPG/JPEG atau PDF, ukuran maksimal 5 MB.';
+    }
+  }
+
+  // Listener perubahan radio button saat mode Bendahara
+  document.querySelectorAll('input[name="jenisTransaksi"]').forEach(radio => {
+    radio.addEventListener('change', updateProofRequirement);
+  });
+
+  function selectDefaultTransfer() {
+    updateProofRequirement();
+  }
+
+  async function authenticateBendahara(e) {
+    e.preventDefault();
+    const password = document.getElementById('bendaharaPassword').value;
+    const status = document.getElementById('bendaharaAuthStatus');
+    const button = document.getElementById('bendaharaAuthSubmit');
+    button.disabled = true;
+    button.textContent = 'Memeriksa...';
+    status.className = 'form-status info';
+    status.textContent = '⏳ Memverifikasi password...';
+
+    try {
+      const result = await backendJsonp({ action: 'auth', password, clientId: bendaharaClientId });
+      if (result && result.ok && result.token) {
+        bendaharaSessionToken = result.token;
+        activateBendaharaUI();
+        status.className = 'form-status success';
+        status.textContent = '✅ Autentikasi berhasil! Silakan pilih Tunai atau Transfer.';
+        setTimeout(closeBendaharaAuth, 700);
+      } else {
+        status.className = 'form-status error';
+        status.textContent = (result && result.locked)
+          ? '⛔ Tiga kali percobaan gagal. Anda dikembalikan ke halaman wakaf. Muat ulang halaman setelah menghubungi pengurus.'
+          : '❌ Password salah. Sisa percobaan: ' + (result && Number.isFinite(result.remaining) ? result.remaining : '—') + '.';
+        if (result && result.locked) {
+          setTimeout(() => {
+            closeBendaharaAuth();
+            const triggerBtn = document.getElementById('bendaharaLoginTrigger');
+            if (triggerBtn) triggerBtn.disabled = true;
+            document.getElementById('confirmPanel').classList.remove('active');
+            document.getElementById('reportPanel').classList.add('active');
+            document.querySelectorAll('.report-tab').forEach(t => t.classList.toggle('active', t.dataset.reportTarget === 'reportPanel'));
+          }, 2200);
+        }
+      }
+    } catch (err) {
+      status.className = 'form-status error';
+      status.textContent = '⚠️ ' + err.message;
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Verifikasi Password';
+    }
+  }
+
+  function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const result = String(reader.result || '');
+        resolve(result.substring(result.indexOf(',') + 1));
+      };
+      reader.onerror = () => reject(new Error('Berkas tidak dapat dibaca. Silakan pilih ulang.'));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  async function submitWakafConfirmation(e) {
+    e.preventDefault();
+    const form = document.getElementById('wakafConfirmForm');
+    const status = document.getElementById('formStatus');
+    const button = document.getElementById('submitWakafBtn');
+    if (!status || !button) {
+      alert('Formulir tidak lengkap. Muat ulang halaman dan coba kembali.');
       return;
     }
-    const data=response.getDataTable();
-    wakafReportHeaders=[];
-    wakafReportRows=[];
-    for(let c=0;c<data.getNumberOfColumns();c++)wakafReportHeaders.push(data.getColumnLabel(c)||('Kolom '+(c+1)));
-    for(let r=0;r<data.getNumberOfRows();r++){
-      const row=[];
-      for(let c=0;c<data.getNumberOfColumns();c++)row.push(data.getFormattedValue(r,c));
-      wakafReportRows.push(row);
+
+    const tanggal = document.getElementById('tanggalWakaf').value;
+    const nama = document.getElementById('namaLengkap').value.trim();
+    const nominal = document.getElementById('nominalWakaf').value;
+    const pilihan = document.querySelector('input[name="pilihanWakaf"]:checked')?.value;
+    const file = document.getElementById('buktiTransfer').files[0];
+
+    // Tentukan jenis transaksi berdasarkan mode (Bendahara atau Muwakif biasa)
+    let jenis = '';
+    if (bendaharaSessionToken) {
+      jenis = document.querySelector('input[name="jenisTransaksi"]:checked')?.value || '';
+      if (!jenis) {
+        status.className = 'form-status error';
+        status.textContent = '⚠️ Silakan pilih salah satu jenis transaksi (Tunai atau Transfer).';
+        return;
+      }
+    } else {
+      jenis = 'Transfer';
     }
-    wakafReportPage=1;renderWakafReport();
-  });
-}
-document.getElementById('reportSearch').addEventListener('input',()=>{wakafReportPage=1;renderWakafReport()});
 
-/*
- * KONFIGURASI PENGIRIMAN KONFIRMASI WAKAF
- * Setelah Apps Script backend dideploy sebagai Web App, tempel URL /exec di bawah.
- * Instruksi setup tersedia pada file wakaf_backend.gs.
- */
-const WAKAF_WEB_APP_URL='https://script.google.com/macros/s/AKfycbwovVM3EtFcF68cC-AKJWjnRL6H7vi9AkNF8RSh4l3BbwuJuKNU9CbMOLMsEXXIZcpe8A/exec';
-
-// Tanggal hari ini menjadi batas maksimum.
-function setTanggalMaksimum(){
-  const input=document.getElementById('tanggalWakaf');
-  if(!input) return;
-  const today=new Date();
-  input.max=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
-}
-setTanggalMaksimum();
-
-// Password tidak disimpan dalam HTML. Backend menyimpan hash pada Script Properties.
-// Autentikasi memakai endpoint JSONP Apps Script agar hasil verifikasi dapat dibaca
-// dari situs statis. Password dikirim lewat HTTPS sebagai parameter; lihat catatan keamanan
-// di wakaf_backend.gs dan gunakan password khusus, bukan password akun pribadi.
-let bendaharaSessionToken='';
-let bendaharaClientId=sessionStorage.getItem('wakafBendaharaClientId');
-if(!bendaharaClientId){bendaharaClientId=(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random().toString(36).slice(2));sessionStorage.setItem('wakafBendaharaClientId',bendaharaClientId)}
-function openBendaharaAuth(){
-  const modal=document.getElementById('bendaharaAuthModal');
-  const input=document.getElementById('bendaharaPassword');
-  document.getElementById('bendaharaAuthStatus').className='form-status';
-  document.getElementById('bendaharaAuthStatus').textContent='';
-  modal.hidden=false;input.value='';setTimeout(()=>input.focus(),50);
-}
-function closeBendaharaAuth(){document.getElementById('bendaharaAuthModal').hidden=true;document.getElementById('bendaharaPassword').value=''}
-document.getElementById('bendaharaAuthModal').addEventListener('click',e=>{if(e.target.id==='bendaharaAuthModal')closeBendaharaAuth()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBendaharaAuth()});
-function backendJsonp(params){
-  return new Promise((resolve,reject)=>{
-    const callback='wakafJsonp_'+Date.now()+'_'+Math.random().toString(36).slice(2);
-    const script=document.createElement('script');
-    const timeout=setTimeout(()=>{cleanup();reject(new Error('Waktu verifikasi habis. Coba kembali.'))},15000);
-    function cleanup(){clearTimeout(timeout);delete window[callback];script.remove()}
-    window[callback]=data=>{cleanup();resolve(data)};
-    const query=new URLSearchParams({...params,callback});
-    script.src=WAKAF_WEB_APP_URL+'?'+query.toString();
-    script.onerror=()=>{cleanup();reject(new Error('Tidak dapat menghubungi layanan autentikasi.'))};
-    document.body.appendChild(script);
-  });
-}
-async function authenticateBendahara(e){
-  e.preventDefault();
-  const password=document.getElementById('bendaharaPassword').value;
-  const status=document.getElementById('bendaharaAuthStatus');
-  const button=document.getElementById('bendaharaAuthSubmit');
-  button.disabled=true;button.textContent='Memeriksa...';
-  status.className='form-status info';status.textContent='⏳ Memverifikasi password...';
-  try{
-    const result=await backendJsonp({action:'auth',password,clientId:bendaharaClientId});
-    if(result&&result.ok&&result.token){
-      bendaharaSessionToken=result.token;
-      const cash=document.getElementById('transaksiTunai');
-      cash.checked=true;
-      toggleTransferProof();
-      status.className='form-status success';status.textContent='✅ Autentikasi berhasil. Transaksi Tunai dipilih.';
-      setTimeout(closeBendaharaAuth,700);
-    }else{
-      status.className='form-status error';
-      status.textContent=(result&&result.locked)?'⛔ Tiga kali percobaan gagal. Anda dikembalikan ke halaman wakaf. Muat ulang halaman setelah menghubungi pengurus.':'❌ Password salah. Sisa percobaan: '+(result&&Number.isFinite(result.remaining)?result.remaining:'—')+'.';
-      if(result&&result.locked){setTimeout(()=>{closeBendaharaAuth();document.getElementById('transaksiTunai').checked=false;document.getElementById('transaksiTunai').disabled=true;document.getElementById('transaksiTransfer').checked=true;toggleTransferProof();document.getElementById('confirmPanel').classList.remove('active');document.getElementById('reportPanel').classList.add('active');document.querySelectorAll('.report-tab').forEach(t=>t.classList.toggle('active',t.dataset.reportTarget==='reportPanel'));},2200)}
+    if (!tanggal || !nama || !jenis || !nominal || !pilihan) {
+      status.className = 'form-status error';
+      status.textContent = '⚠️ Mohon lengkapi seluruh data.';
+      return;
     }
-  }catch(err){status.className='form-status error';status.textContent='⚠️ '+err.message}
-  finally{button.disabled=false;button.textContent='Verifikasi Password'}
-}
-function toggleTransferProof(){
-  const selected=document.querySelector('input[name="jenisTransaksi"]:checked');
-  const box=document.getElementById('transferProofBox');
-  const file=document.getElementById('buktiTransfer');
-  const isTransfer=!!selected&&selected.value==='Transfer';
-  box.hidden=!isTransfer;file.required=isTransfer;
-  if(!isTransfer)file.value='';
-}
-document.querySelectorAll('input[name="jenisTransaksi"]').forEach(r=>r.addEventListener('click',function(e){
-  if(this.value==='Tunai'&&!bendaharaSessionToken){
-    e.preventDefault();
-    this.checked=false;
-    openBendaharaAuth();
-    return;
-  }
-  toggleTransferProof();
-}));
-document.getElementById('transaksiTransfer').addEventListener('change',toggleTransferProof);
 
-function fileToBase64(file){
-  return new Promise((resolve,reject)=>{
-    const reader=new FileReader();
-    reader.onload=()=>{const result=String(reader.result||'');resolve(result.substring(result.indexOf(',')+1))};
-    reader.onerror=()=>reject(new Error('Berkas tidak dapat dibaca. Silakan pilih ulang.'));
-    reader.readAsDataURL(file);
-  });
-}
-async function submitWakafConfirmation(e){
-  e.preventDefault();
-  const form=document.getElementById('wakafConfirmForm');
-  const status=document.getElementById('formStatus');
-  const button=document.getElementById('submitWakafBtn');
-  if(!status||!button){console.error('Elemen status/tombol konfirmasi tidak ditemukan.');alert('Formulir tidak lengkap. Muat ulang halaman dan coba kembali.');return;}
-  const tanggal=document.getElementById('tanggalWakaf').value;
-  const nama=document.getElementById('namaLengkap').value.trim();
-  const jenis=document.querySelector('input[name="jenisTransaksi"]:checked')?.value;
-  const nominal=document.getElementById('nominalWakaf').value;
-  const pilihan=document.querySelector('input[name="pilihanWakaf"]:checked')?.value;
-  const file=document.getElementById('buktiTransfer').files[0];
-  if(!tanggal||!nama||!jenis||!nominal||!pilihan){status.className='form-status error';status.textContent='⚠️ Mohon lengkapi seluruh data.';return}
-  if(jenis==='Tunai'&&!bendaharaSessionToken){status.className='form-status error';status.textContent='⚠️ Opsi Tunai hanya dapat digunakan setelah autentikasi Bendahara.';return}
-  if(jenis==='Transfer'){
-    if(!file){status.className='form-status error';status.textContent='⚠️ Bukti transfer wajib diunggah.';return}
-    const allowedTypes=['image/jpeg','application/pdf'];const lowerName=file.name.toLowerCase();
-    if(!allowedTypes.includes(file.type)||!(lowerName.endsWith('.jpg')||lowerName.endsWith('.jpeg')||lowerName.endsWith('.pdf'))){status.className='form-status error';status.textContent='⚠️ Format bukti harus JPG/JPEG atau PDF.';return}
-    if(file.size>5*1024*1024){status.className='form-status error';status.textContent='⚠️ Ukuran bukti transfer maksimal 5 MB.';return}
-  }
-  const today=new Date();const todayString=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
-  if(tanggal>todayString){status.className='form-status error';status.textContent='⚠️ Tanggal wakaf tidak boleh melebihi hari ini.';return}
-  if(!WAKAF_WEB_APP_URL.startsWith('https://script.google.com/macros/s/')||!WAKAF_WEB_APP_URL.endsWith('/exec')){status.className='form-status error';status.textContent='⚠️ Layanan penyimpanan belum dikonfigurasi.';return}
-  button.disabled=true;button.textContent='Mengirim data...';status.className='form-status info';status.textContent='⏳ Menyiapkan dan mengirim data...';
-  try{
-    let payload={action:'submit',tanggal,nama,jenisTransaksi:jenis,nominal:Number(nominal),pilihanWakaf:pilihan,token:jenis==='Tunai'?bendaharaSessionToken:''};
-    if(jenis==='Transfer'){payload.fileData=await fileToBase64(file);payload.fileName=file.name;payload.fileMimeType=file.type}
-    await fetch(WAKAF_WEB_APP_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(payload)});
-    status.className='form-status info';status.textContent='✅ Permintaan pencatatan telah dikirim. Mohon periksa tab "Data Wakaf Tercatat" untuk memastikan data telah masuk. Jangan menginput ulang sebelum memeriksa laporan.';
-    form.reset();bendaharaSessionToken='';document.getElementById('transaksiTunai').checked=false;document.getElementById('transaksiTunai').disabled=true;const bendaharaAuthBtn=document.getElementById('bendaharaAuthBtn');if(bendaharaAuthBtn)bendaharaAuthBtn.textContent='🔐 Autentikasi Bendahara untuk Tunai';toggleTransferProof();setTanggalMaksimum();setTimeout(loadWakafReport,4000);
-  }catch(err){console.error(err);status.className='form-status error';status.textContent='⚠️ Pengiriman gagal dimulai: '+(err.message||'terjadi kesalahan')+'. Silakan coba kembali.'}
-  finally{button.disabled=false;button.textContent='Kirim Konfirmasi Wakaf'}
-}
+    // Validasi bukti transfer: wajib untuk Muwakif biasa, opsional untuk Bendahara
+    if (jenis === 'Transfer') {
+      if (!bendaharaSessionToken && !file) {
+        status.className = 'form-status error';
+        status.textContent = '⚠️ Bukti transfer wajib diunggah.';
+        return;
+      }
+      if (file) {
+        const allowedTypes = ['image/jpeg', 'application/pdf'];
+        const lowerName = file.name.toLowerCase();
+        if (!allowedTypes.includes(file.type) || !(lowerName.endsWith('.jpg') || lowerName.endsWith('.jpeg') || lowerName.endsWith('.pdf'))) {
+          status.className = 'form-status error';
+          status.textContent = '⚠️ Format bukti harus JPG/JPEG atau PDF.';
+          return;
+        }
+        if (file.size > 5 * 1024 * 1024) {
+          status.className = 'form-status error';
+          status.textContent = '⚠️ Ukuran bukti transfer maksimal 5 MB.';
+          return;
+        }
+      }
+    }
 
-google.charts.load('current',{packages:['table']});google.charts.setOnLoadCallback(loadWakafReport);</script>
+    const today = new Date();
+    const todayString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    if (tanggal > todayString) {
+      status.className = 'form-status error';
+      status.textContent = '⚠️ Tanggal wakaf tidak boleh melebihi hari ini.';
+      return;
+    }
+
+    if (!WAKAF_WEB_APP_URL.startsWith('https://script.google.com/macros/s/') || !WAKAF_WEB_APP_URL.endsWith('/exec')) {
+      status.className = 'form-status error';
+      status.textContent = '⚠️ Layanan penyimpanan belum dikonfigurasi.';
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = 'Mengirim data...';
+    status.className = 'form-status info';
+    status.textContent = '⏳ Menyiapkan dan mengirim data...';
+
+    try {
+      let payload = {
+        action: 'submit',
+        tanggal,
+        nama,
+        jenisTransaksi: jenis,
+        nominal: Number(nominal),
+        pilihanWakaf: pilihan,
+        token: bendaharaSessionToken || ''
+      };
+
+      if (jenis === 'Transfer' && file) {
+        payload.fileData = await fileToBase64(file);
+        payload.fileName = file.name;
+        payload.fileMimeType = file.type;
+      }
+
+      await fetch(WAKAF_WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: JSON.stringify(payload)
+      });
+
+      status.className = 'form-status info';
+      status.textContent = '✅ Permintaan pencatatan telah dikirim. Mohon periksa tab "Data Wakaf Tercatat" untuk memastikan data telah masuk. Jangan menginput ulang sebelum memeriksa laporan.';
+
+      form.reset();
+      resetBendaharaUI();
+      setTanggalMaksimum();
+      setTimeout(loadWakafReport, 4000);
+    } catch (err) {
+      console.error(err);
+      status.className = 'form-status error';
+      status.textContent = '⚠️ Pengiriman gagal dimulai: ' + (err.message || 'terjadi kesalahan') + '. Silakan coba kembali.';
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Kirim Konfirmasi Wakaf';
+    }
+  }
+
+  // Inisialisasi status awal upload bukti
+  updateProofRequirement();
+
+  google.charts.load('current', { packages: ['table'] });
+  google.charts.setOnLoadCallback(loadWakafReport);
+</script>
 
 </body>
 </html>
