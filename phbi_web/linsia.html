@@ -40,7 +40,6 @@
       box-shadow: 0 8px 25px rgba(4, 29, 25, 0.28);
     }
 
-    /* Ornamen Geometris / Cahaya Mengambang */
     .header-orb {
       position: absolute;
       border-radius: 50%;
@@ -181,7 +180,6 @@
       line-height: 1.65;
     }
 
-    /* COUNTDOWN TIMER KE 1 APRIL 2027 */
     .countdown-wrapper {
       background: rgba(4, 29, 25, 0.45);
       border: 1px solid rgba(243, 210, 132, 0.4);
@@ -430,7 +428,7 @@
     .slide-desc {
       font-size: 14.5px;
       color: #3f5751;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       line-height: 1.6;
     }
 
@@ -441,10 +439,85 @@
       border-radius: 8px;
       font-size: 13.5px;
       color: #27403b;
+      margin-bottom: 14px;
     }
 
     .slide-activity-box strong {
       color: #0b463c;
+    }
+
+    /* Rincian Kebutuhan Biaya General Per Slide */
+    .slide-budget-box {
+      background: #ffffff;
+      border: 1px solid #cce0db;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 14px;
+    }
+
+    .slide-budget-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: #0b463c;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .budget-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .budget-item {
+      background: #f4f9f8;
+      border: 1px solid #dbece8;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 12.5px;
+    }
+
+    .budget-item span {
+      display: block;
+      color: #546b65;
+      font-size: 11.5px;
+      margin-bottom: 2px;
+    }
+
+    .budget-item strong {
+      color: #0b463c;
+      font-weight: 800;
+    }
+
+    /* Tombol Link Materi Per Slide */
+    .slide-material-row {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .material-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #0b463c;
+      color: #f3d284;
+      text-decoration: none;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid #0b463c;
+      transition: 0.25s;
+    }
+
+    .material-link-btn:hover {
+      background: #146c5d;
+      color: #ffffff;
+      transform: translateY(-1px);
     }
 
     .slider-controls {
@@ -630,47 +703,130 @@
     }
 
     /* =====================================================
-       CTA PENDAFTARAN / KONFIRMASI KEHADIRAN
+       FORM PENDAFTARAN PESERTA (KONFIRMASI KE WA PANITIA)
        ===================================================== */
-    .join-banner {
+    .form-section {
       background: linear-gradient(135deg, #ffffff, #eaf4f1);
       border: 1px solid #bfe0d7;
       border-radius: 18px;
-      padding: 28px 22px;
+      padding: 32px 26px;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.05);
+    }
+
+    .form-section-header {
       text-align: center;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+      margin-bottom: 22px;
     }
 
-    .join-banner h3 {
+    .form-section-header h3 {
       color: #0b463c;
-      font-size: 20px;
-      margin-bottom: 8px;
+      font-size: 21px;
+      margin-bottom: 6px;
     }
 
-    .join-banner p {
+    .form-section-header p {
       color: #546b65;
       font-size: 14px;
-      max-width: 600px;
-      margin: 0 auto 18px;
     }
 
-    .wa-join-btn {
+    .linsia-form {
+      max-width: 620px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label.field-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #0b463c;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="tel"],
+    .form-group select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #b8d6cf;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 14px;
+      color: #1f332e;
+      background: #ffffff;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #0b463c;
+      box-shadow: 0 0 0 3px rgba(11, 70, 60, 0.12);
+    }
+
+    .batch-checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      background: #ffffff;
+      border: 1px solid #c3dfd8;
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-size: 13px;
+      color: #1f332e;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .checkbox-item:hover {
+      border-color: #0b463c;
+      background: #f5fbf9;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: #0b463c;
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .wa-submit-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      gap: 9px;
       background: #25D366;
       color: #ffffff;
-      text-decoration: none;
-      padding: 12px 26px;
+      border: none;
+      padding: 14px 26px;
       border-radius: 30px;
-      font-size: 14.5px;
-      font-weight: 700;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
       transition: 0.25s;
+      margin-top: 6px;
     }
 
-    .wa-join-btn:hover {
+    .wa-submit-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.35);
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+      background: #20bd5a;
     }
 
     /* =====================================================
@@ -762,6 +918,8 @@
       .pillars-grid { grid-template-columns: 1fr; }
       .speakers-grid { grid-template-columns: 1fr; }
       .info-two-col { grid-template-columns: 1fr; }
+      .budget-grid { grid-template-columns: 1fr; }
+      .batch-checkbox-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; text-align: center; }
       .footer-quote-box { text-align: left; }
       .footer-bottom { justify-content: center; text-align: center; }
@@ -828,12 +986,12 @@
     <div class="hero-pills">
       <span class="hero-pill">📅 Setiap 2 Bulan Sekali (Sabtu/Ahad ke-3)</span>
       <span class="hero-pill">🚀 Batch 1: April 2027</span>
-      <span class="hero-pill">👥 Usia SMA/Kuliah s.d. 75 Tahun</span>
+      <span class="hero-pill">👥 Target Peserta: ± 30 Jama'ah (SMA/Kuliah s.d. 75 Thn)</span>
       <span class="hero-pill">🤝 Bersama IRMAS Ar Ridhwan</span>
     </div>
     <div class="hero-cta-group">
       <a href="#kurikulum-slider" class="btn-primary">📖 Lihat Kurikulum 1 Tahun</a>
-      <a href="#daftar-linsia" class="btn-outline">📲 Gabung Komunitas</a>
+      <a href="#daftar-linsia" class="btn-outline">📲 Form Pendaftaran</a>
     </div>
   </section>
 
@@ -862,7 +1020,7 @@
     <section class="slider-section" id="kurikulum-slider">
       <div class="section-header">
         <h3>🗓️ Kurikulum &amp; Agenda 1 Tahun (6 Pertemuan)</h3>
-        <p>Geser kartu di bawah untuk melihat rangkaian tema dan narasumber lintas disiplin (April 2027 – Februari 2028)</p>
+        <p>Geser kartu di bawah untuk melihat rangkaian tema, rincian kebutuhan biaya general, dan tautan materi (April 2027 – Februari 2028)</p>
       </div>
 
       <div class="slider-viewport">
@@ -881,8 +1039,21 @@
                 Memperkokoh keyakinan dan ketenangan hati dalam menghadapi tantangan dunia pendidikan, dinamika karier, hingga menjalani masa purnabakti yang penuh keberkahan.
               </p>
             </div>
-            <div class="slide-activity-box">
-              <strong>Format &amp; Jasmani:</strong> Kajian Interaktif di Masjid Ar Ridhwan, sesi perkenalan lintas usia (IRMAS &amp; Senior), serta sarapan sehat bersama.
+            <div>
+              <div class="slide-activity-box">
+                <strong>Format &amp; Jasmani:</strong> Kajian Interaktif di Masjid Ar Ridhwan, sesi perkenalan lintas usia (IRMAS &amp; Senior), serta sarapan sehat bersama.
+              </div>
+              <div class="slide-budget-box">
+                <div class="slide-budget-title">💰 Estimasi Kebutuhan Biaya General (Target ± 30 Jama'ah)</div>
+                <div class="budget-grid">
+                  <div class="budget-item"><span>Konsumsi</span><strong>Rp. 1.000.000</strong></div>
+                  <div class="budget-item"><span>Transportasi</span><strong>Rp. -</strong></div>
+                  <div class="budget-item"><span>Materi / Narasumber</span><strong>Rp. 500.000</strong></div>
+                </div>
+              </div>
+              <div class="slide-material-row">
+                <a href="#" class="material-link-btn" target="_blank" rel="noopener noreferrer">📄 Link Materi Batch 1 (PDF / Drive)</a>
+              </div>
             </div>
           </div>
 
@@ -899,8 +1070,21 @@
                 Edukasi medis dan Thibbun Nabawi mengenai pencegahan penyakit metabolik bagi usia produktif dan lansia, serta manajemen stres dan pola tidur sehat bagi usia muda/pekerja.
               </p>
             </div>
-            <div class="slide-activity-box">
-              <strong>Format &amp; Jasmani:</strong> Senam kebugaran / jalan sehat, cek tensi &amp; gula darah gratis, serta talkshow bersama praktisi kesehatan.
+            <div>
+              <div class="slide-activity-box">
+                <strong>Format &amp; Jasmani:</strong> Senam kebugaran / jalan sehat, cek tensi &amp; gula darah gratis, serta talkshow bersama praktisi kesehatan.
+              </div>
+              <div class="slide-budget-box">
+                <div class="slide-budget-title">💰 Estimasi Kebutuhan Biaya General (Target ± 30 Jama'ah)</div>
+                <div class="budget-grid">
+                  <div class="budget-item"><span>Konsumsi</span><strong>Rp. 1.000.000</strong></div>
+                  <div class="budget-item"><span>Transportasi</span><strong>Rp. -</strong></div>
+                  <div class="budget-item"><span>Materi / Narasumber</span><strong>Rp. 500.000</strong></div>
+                </div>
+              </div>
+              <div class="slide-material-row">
+                <a href="#" class="material-link-btn" target="_blank" rel="noopener noreferrer">📄 Link Materi Batch 2 (PDF / Drive)</a>
+              </div>
             </div>
           </div>
 
@@ -917,8 +1101,21 @@
                 Membahas adab bermuamalah dalam dunia kerja, transaksi bisnis modern, dan harmoni bertetangga sesuai tuntunan syariat di suasana ruang terbuka yang sejuk.
               </p>
             </div>
-            <div class="slide-activity-box">
-              <strong>Format &amp; Jasmani:</strong> Outing Class ke ruang terbuka hijau / taman kota, jalan santai tadabbur alam, dan permainan kelompok kolaborasi pemuda &amp; senior.
+            <div>
+              <div class="slide-activity-box">
+                <strong>Format &amp; Jasmani:</strong> Outing Class ke ruang terbuka hijau / taman kota, jalan santai tadabbur alam, dan permainan kelompok kolaborasi pemuda &amp; senior.
+              </div>
+              <div class="slide-budget-box">
+                <div class="slide-budget-title">💰 Estimasi Kebutuhan Biaya General (Target ± 30 Jama'ah)</div>
+                <div class="budget-grid">
+                  <div class="budget-item"><span>Konsumsi</span><strong>Rp. 1.000.000</strong></div>
+                  <div class="budget-item"><span>Transportasi (Outing)</span><strong>Rp. 500.000</strong></div>
+                  <div class="budget-item"><span>Materi / Narasumber</span><strong>Rp. 500.000</strong></div>
+                </div>
+              </div>
+              <div class="slide-material-row">
+                <a href="#" class="material-link-btn" target="_blank" rel="noopener noreferrer">📄 Link Materi Batch 3 (PDF / Drive)</a>
+              </div>
             </div>
           </div>
 
@@ -935,8 +1132,21 @@
                 Evaluasi gerakan dan kekhusyukan shalat berjamaah, serta panduan fiqih kemudahan beribadah bagi lansia maupun pekerja yang sering bepergian (safar).
               </p>
             </div>
-            <div class="slide-activity-box">
-              <strong>Format &amp; Jasmani:</strong> Kajian praktik langsung (simulasi) bersama Ustadz/Asatidz dan latihan peregangan otot &amp; sendi (stretching) untuk menjaga kelenturan fisik saat shalat.
+            <div>
+              <div class="slide-activity-box">
+                <strong>Format &amp; Jasmani:</strong> Kajian praktik langsung (simulasi) bersama Ustadz/Asatidz dan latihan peregangan otot &amp; sendi (stretching) untuk menjaga kelenturan fisik saat shalat.
+              </div>
+              <div class="slide-budget-box">
+                <div class="slide-budget-title">💰 Estimasi Kebutuhan Biaya General (Target ± 30 Jama'ah)</div>
+                <div class="budget-grid">
+                  <div class="budget-item"><span>Konsumsi</span><strong>Rp. 1.000.000</strong></div>
+                  <div class="budget-item"><span>Transportasi</span><strong>Rp. -</strong></div>
+                  <div class="budget-item"><span>Materi / Narasumber</span><strong>Rp. 500.000</strong></div>
+                </div>
+              </div>
+              <div class="slide-material-row">
+                <a href="#" class="material-link-btn" target="_blank" rel="noopener noreferrer">📄 Link Materi Batch 4 (PDF / Drive)</a>
+              </div>
             </div>
           </div>
 
@@ -953,8 +1163,21 @@
                 Kiat mengelola penghasilan bebas riba bagi generasi muda, strategi menyiapkan dana pensiun yang amanah, serta mengoptimalkan instrumen wakaf produktif.
               </p>
             </div>
-            <div class="slide-activity-box">
-              <strong>Format &amp; Jasmani:</strong> Bincang santai bersama praktisi ekonomi syariah/wirausaha jamaah, bazar produk UMKM warga, dan jalan pagi bersama.
+            <div>
+              <div class="slide-activity-box">
+                <strong>Format &amp; Jasmani:</strong> Bincang santai bersama praktisi ekonomi syariah/wirausaha jamaah, bazar produk UMKM warga, dan jalan pagi bersama.
+              </div>
+              <div class="slide-budget-box">
+                <div class="slide-budget-title">💰 Estimasi Kebutuhan Biaya General (Target ± 30 Jama'ah)</div>
+                <div class="budget-grid">
+                  <div class="budget-item"><span>Konsumsi</span><strong>Rp. 1.000.000</strong></div>
+                  <div class="budget-item"><span>Transportasi</span><strong>Rp. -</strong></div>
+                  <div class="budget-item"><span>Materi / Narasumber</span><strong>Rp. 500.000</strong></div>
+                </div>
+              </div>
+              <div class="slide-material-row">
+                <a href="#" class="material-link-btn" target="_blank" rel="noopener noreferrer">📄 Link Materi Batch 5 (PDF / Drive)</a>
+              </div>
             </div>
           </div>
 
@@ -971,8 +1194,21 @@
                 Membangun jembatan komunikasi yang hangat antara orang tua dan generasi muda dalam keluarga serta menghidupkan peran sosial masjid di tengah masyarakat.
               </p>
             </div>
-            <div class="slide-activity-box">
-              <strong>Format &amp; Jasmani:</strong> Outing / Gathering penutup tahun pertama, olahraga rekreasi ringan, dan apresiasi bagi peserta lintas usia paling aktif.
+            <div>
+              <div class="slide-activity-box">
+                <strong>Format &amp; Jasmani:</strong> Outing / Gathering penutup tahun pertama, olahraga rekreasi ringan, dan apresiasi bagi peserta lintas usia paling aktif.
+              </div>
+              <div class="slide-budget-box">
+                <div class="slide-budget-title">💰 Estimasi Kebutuhan Biaya General (Target ± 30 Jama'ah)</div>
+                <div class="budget-grid">
+                  <div class="budget-item"><span>Konsumsi</span><strong>Rp. 1.000.000</strong></div>
+                  <div class="budget-item"><span>Transportasi (Outing)</span><strong>Rp. 500.000</strong></div>
+                  <div class="budget-item"><span>Materi / Narasumber</span><strong>Rp. 500.000</strong></div>
+                </div>
+              </div>
+              <div class="slide-material-row">
+                <a href="#" class="material-link-btn" target="_blank" rel="noopener noreferrer">📄 Link Materi Batch 6 (PDF / Drive)</a>
+              </div>
             </div>
           </div>
 
@@ -1048,18 +1284,69 @@
       </div>
     </div>
 
-    <!-- CALL TO ACTION -->
-    <section class="join-banner" id="daftar-linsia">
-      <h3>Siap Bergabung di Batch 1 (April 2027)?</h3>
-      <p>
-        Mari ajak orang tua, putra-putri yang sudah kuliah, maupun tetangga sekitar untuk tumbuh bersama dalam keilmuan dan kesehatan jasmani.
-      </p>
-      <a class="wa-join-btn"
-         href="https://wa.me/6282124104548?text=Assalamualaikum...%20Panitia%20Linsia%20Ar%20Ridhwan,%20saya%20tertarik%20mendaftar%20sebagai%20peserta%20Pesantren%20Linsia%20(Lintas%20Usia)."
-         target="_blank"
-         rel="noopener noreferrer">
-        <span>📱</span> Konfirmasi Keikutsertaan via WhatsApp
-      </a>
+    <!-- FORM PENDAFTARAN PESERTA -->
+    <section class="form-section" id="daftar-linsia">
+      <div class="form-section-header">
+        <h3>📝 Formulir Pendaftaran Peserta Pesantren Linsia</h3>
+        <p>Target Peserta: ± 30 Jama'ah per Pertemuan. Silakan lengkapi data berikut untuk konfirmasi kehadiran.</p>
+      </div>
+
+      <form class="linsia-form" id="formPesertaLinsia" onsubmit="kirimKonfirmasiWA(event)">
+        <div class="form-group">
+          <label class="field-label" for="namaLengkap">Nama Lengkap</label>
+          <input type="text" id="namaLengkap" name="namaLengkap" placeholder="Masukkan nama lengkap Anda" required>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="nomorWA">Nomor WhatsApp</label>
+          <input type="tel" id="nomorWA" name="nomorWA" placeholder="Contoh: 081234567890" required>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="rentangUsia">Rentang Usia</label>
+          <select id="rentangUsia" name="rentangUsia" required>
+            <option value="" disabled selected>Pilih rentang usia</option>
+            <option value="17 - 25 Tahun (SMA / Mahasiswa)">17 - 25 Tahun (SMA / Mahasiswa)</option>
+            <option value="26 - 40 Tahun (Dewasa Muda / Pekerja)">26 - 40 Tahun (Dewasa Muda / Pekerja)</option>
+            <option value="41 - 55 Tahun (Dewasa Madya)">41 - 55 Tahun (Dewasa Madya)</option>
+            <option value="> 55 Tahun (Senior / Purnabakti s.d. 75 Tahun)">&gt; 55 Tahun (Senior / Purnabakti s.d. 75 Tahun)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Pilihan Batch (Bisa pilih lebih dari satu)</label>
+          <div class="batch-checkbox-grid">
+            <label class="checkbox-item">
+              <input type="checkbox" name="pilihanBatch" value="Batch 1 (April 2027 - Akidah)" checked>
+              <span>Batch 1 · April 2027 (Akidah)</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="pilihanBatch" value="Batch 2 (Juni 2027 - Kesehatan & Jasmani)">
+              <span>Batch 2 · Juni 2027 (Kesehatan)</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="pilihanBatch" value="Batch 3 (Agustus 2027 - Outing Muamalah)">
+              <span>Batch 3 · Agustus 2027 (Outing)</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="pilihanBatch" value="Batch 4 (Oktober 2027 - Ibadah Praktis)">
+              <span>Batch 4 · Oktober 2027 (Ibadah)</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="pilihanBatch" value="Batch 5 (Desember 2027 - Ekonomi Syariah)">
+              <span>Batch 5 · Desember 2027 (Ekonomi)</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="pilihanBatch" value="Batch 6 (Februari 2028 - Outing & Sosial)">
+              <span>Batch 6 · Februari 2028 (Outing)</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="wa-submit-btn">
+          <span>📱</span> Kirim Konfirmasi ke WhatsApp Panitia
+        </button>
+      </form>
     </section>
   </main>
 
@@ -1078,7 +1365,7 @@
         <h4>Informasi Program</h4>
         <ul>
           <li>🗓️ Jadwal: Setiap 2 Bulan (Sabtu/Ahad ke-3)</li>
-          <li>🎯 Target: Usia SMA/Kuliah s.d. 75 Tahun</li>
+          <li>👥 Target Peserta: ± 30 Jama'ah (SMA/Kuliah s.d. 75 Thn)</li>
           <li>🤝 Pelaksana: DKM &amp; IRMAS Masjid Ar Ridhwan</li>
           <li>📍 Lokasi: Masjid Ar Ridhwan &amp; Lokasi Outing</li>
         </ul>
@@ -1091,7 +1378,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPT SLIDER, COUNTDOWN & FOOTER DINAMIS -->
+  <!-- SCRIPT SLIDER, COUNTDOWN, FORM WA & FOOTER DINAMIS -->
   <script>
     // 1. SLIDER KURIKULUM
     const track = document.getElementById('sliderTrack');
@@ -1165,7 +1452,37 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // 3. ROTASI KUTIPAN DINAMIS DI FOOTER
+    // 3. FORM KONFIRMASI KE WHATSAPP PANITIA
+    function kirimKonfirmasiWA(event) {
+      event.preventDefault();
+
+      const nama = document.getElementById('namaLengkap').value.trim();
+      const wa = document.getElementById('nomorWA').value.trim();
+      const usia = document.getElementById('rentangUsia').value;
+      const batchChecked = Array.from(document.querySelectorAll('input[name="pilihanBatch"]:checked'))
+        .map(cb => cb.value);
+
+      if (batchChecked.length === 0) {
+        alert('Silakan pilih minimal satu Batch pertemuan terlebih dahulu.');
+        return;
+      }
+
+      const daftarBatchText = batchChecked.map(b => `- ${b}`).join('\n');
+
+      const pesan = `Assalamualaikum Panitia Linsia Ar Ridhwan,\n` +
+                    `Saya ingin mendaftar sebagai peserta *Pesantren Linsia (Lintas Usia)* dengan data berikut:\n\n` +
+                    `*Nama Lengkap:* ${nama}\n` +
+                    `*Nomor WhatsApp:* ${wa}\n` +
+                    `*Rentang Usia:* ${usia}\n` +
+                    `*Pilihan Batch:*\n${daftarBatchText}\n\n` +
+                    `Terima kasih.`;
+
+      const nomorPanitia = '6282124104548';
+      const urlWA = `https://wa.me/${nomorPanitia}?text=${encodeURIComponent(pesan)}`;
+      window.open(urlWA, '_blank', 'noopener,noreferrer');
+    }
+
+    // 4. ROTASI KUTIPAN DINAMIS DI FOOTER
     const footerQuotes = [
       '"Wahai orang-orang yang beriman! Bertakwalah kepada Allah dengan sebenar-benar takwa kepada-Nya dan janganlah kamu mati kecuali dalam keadaan Muslim. (QS:3:102)"',
       '"Mukmin yang kuat lebih baik dan lebih dicintai Allah daripada mukmin yang lemah." (HR. Muslim)',
