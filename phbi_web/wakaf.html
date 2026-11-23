@@ -1608,10 +1608,11 @@
     resetBendaharaUI();
     const form = document.getElementById('wakafConfirmForm');
     if (form) form.reset();
+    // Saat tidak sedang login, pastikan tidak ada pesan/tulisan di kotak status
     const status = document.getElementById('formStatus');
     if (status) {
-      status.className = 'form-status info';
-      status.textContent = '🔒 Anda telah logout dari Mode Bendahara.';
+      status.className = 'form-status';
+      status.textContent = '';
     }
     setTanggalMaksimum();
   }
@@ -1683,6 +1684,13 @@
     document.getElementById('formIntroText').innerHTML =
       '<strong>Mode Pencatatan Bendahara Aktif.</strong><br>Silakan klik pilihan transaksi (Tunai atau Transfer) dan Pilihan Wakaf. Sesi tetap aktif sampai Anda menekan tombol Logout.';
 
+    // Tampilkan status di bawah form bahwa sedang login sebagai Bendahara
+    const status = document.getElementById('formStatus');
+    if (status) {
+      status.className = 'form-status success';
+      status.textContent = '✅ Anda sedang login sebagai Bendahara';
+    }
+
     updateProofRequirement();
   }
 
@@ -1712,6 +1720,13 @@
 
     document.getElementById('formIntroText').innerHTML =
       'Silakan masukkan data wakaf yang telah dilakukan.<br>Formulir ini khusus untuk transaksi "Transfer" saja.<br>Silahkan upload bukti transfer (JPG/JPEG/PNG atau PDF).';
+
+    // Kosongkan status di bawah form saat tidak sedang login
+    const status = document.getElementById('formStatus');
+    if (status) {
+      status.className = 'form-status';
+      status.textContent = '';
+    }
 
     updateProofRequirement();
   }
@@ -1922,18 +1937,17 @@
 
       const wasBendaharaLoggedIn = Boolean(bendaharaSessionToken);
 
-      status.className = 'form-status success';
-      status.textContent = wasBendaharaLoggedIn
-        ? '✅ Data berhasil dikirim! Sesi Bendahara masih aktif untuk input data berikutnya.'
-        : '✅ Permintaan pencatatan telah dikirim. Mohon periksa tab "Data Wakaf Tercatat" untuk memastikan data telah masuk.';
-
       form.reset();
 
       if (wasBendaharaLoggedIn) {
-        // Pertahankan sesi login Bendahara agar tidak logout otomatis
+        // Pertahankan sesi login Bendahara & pesan status login
         activateBendaharaUI();
+        status.className = 'form-status success';
+        status.textContent = '✅ Data tersimpan. Anda sedang login sebagai Bendahara';
       } else {
         resetBendaharaUI();
+        status.className = 'form-status info';
+        status.textContent = '✅ Permintaan pencatatan telah dikirim. Mohon periksa tab "Data Wakaf Tercatat" untuk memastikan data telah masuk.';
       }
 
       setTanggalMaksimum();
@@ -1956,9 +1970,7 @@
   function parseSheetDateToISO(str) {
     if (!str) return '';
     const clean = String(str).trim();
-    // Jika sudah format YYYY-MM-DD
     if (/^\d{4}-\d{2}-\d{2}$/.test(clean)) return clean;
-    // Jika format DD/MM/YYYY atau D/M/YYYY
     const m = clean.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
     if (m) {
       return `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}`;
@@ -1997,10 +2009,7 @@
       return;
     }
 
-    // Muat ulang data terbaru dari Google Sheets lalu filter
     loadWakafReport(() => {
-      // Deteksi posisi kolom Jenis Transaksi & Pilihan Wakaf berdasarkan header sheet
-      // Header query: [0]=Tanggal Wakaf, [1]=Nama Lengkap, [2]=Nominal, [3]=Kolom E, [4]=Kolom F
       const h3 = (wakafReportHeaders[3] || '').toLowerCase();
       const isColEJenis = h3.includes('transaksi') || h3.includes('jenis') || h3.includes('metode');
       const idxJenis = isColEJenis ? 3 : 4;
