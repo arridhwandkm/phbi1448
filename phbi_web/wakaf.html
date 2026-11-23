@@ -835,7 +835,8 @@
 
   #defaultTransaksiGrid[hidden],
   #bendaharaTransaksiGrid[hidden],
-  #bendaharaReportBuilder[hidden] {
+  #bendaharaReportBuilder[hidden],
+  #bendaharaReceiptBuilder[hidden] {
     display: none !important;
   }
 
@@ -854,7 +855,7 @@
   }
 
   /* =====================================================
-     PANEL PEMBUATAN LAPORAN PEKANAN BENDAHARA (PDF)
+     PANEL KHUSUS BENDAHARA (TANDA TERIMA & LAPORAN PEKANAN)
      ===================================================== */
   .bendahara-report-card {
     max-width: 720px;
@@ -867,6 +868,17 @@
     text-align: left;
   }
 
+  .bendahara-receipt-card {
+    max-width: 720px;
+    margin: 24px auto 0;
+    background: #ffffff;
+    border: 1.5px solid #81c784;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 20px rgba(11, 93, 59, 0.08);
+    text-align: left;
+  }
+
   .bendahara-report-card h3 {
     text-align: center;
     color: #1565c0;
@@ -874,11 +886,26 @@
     margin-bottom: 4px;
   }
 
-  .bendahara-report-card .sub {
+  .bendahara-receipt-card h3 {
+    text-align: center;
+    color: #0b5d3b;
+    font-size: 19px;
+    margin-bottom: 4px;
+  }
+
+  .bendahara-report-card .sub,
+  .bendahara-receipt-card .sub {
     text-align: center;
     color: #607268;
     font-size: 13px;
     margin-bottom: 18px;
+  }
+
+  .filter-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
   }
 
   .filter-row-3 {
@@ -945,7 +972,7 @@
     color: #24352b;
   }
 
-  .amount-wrap{position:relative}.amount-prefix{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#607268;font-weight:700;pointer-events:none}.amount-input{padding-left:42px}.form-submit{width:100%;border:0;border-radius:11px;padding:12px 18px;background:linear-gradient(135deg,#0b5d3b,#087f4f);color:#fff;font:inherit;font-size:14px;font-weight:800;cursor:pointer}.form-submit:disabled{opacity:.65;cursor:wait}.transfer-proof-group[hidden]{display:none}.qris-wakaf-card{margin:0 0 16px;padding:16px;border:1px solid #cfe5d7;border-radius:12px;background:#f5fbf7;text-align:center}.qris-wakaf-card h4{margin:0 0 6px;color:#0b5d3b;font-size:15px}.qris-wakaf-card p{margin:0 0 12px;color:#607268;font-size:13px}.qris-wakaf-image{display:block;width:min(100%,300px);height:auto;object-fit:contain;margin:0 auto;border-radius:8px;background:#fff}.transfer-proof-group input[type=file]{padding:10px;background:#fbfdfb}.date-note{display:block;margin-top:6px;color:#607268;font-size:12px}.form-status{margin-top:14px;border-radius:10px;padding:10px 13px;font-size:12.5px;display:none}.form-status.success{display:block;background:#e9f7ee;color:#17663f;border:1px solid #bfe2cc}.form-status.error{display:block;background:#fff0f0;color:#a13a3a;border:1px solid #efc5c5}.form-status.info{display:block;background:#eef6ff;color:#315d8a;border:1px solid #c8def5}.transparency-note{margin-top:16px;padding:13px 15px;border-radius:11px;background:#f4f9f6;color:#607268;font-size:12px;line-height:1.5}.report-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}.report-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}.report-controls input[type=search]{flex:1;min-width:220px}.report-controls label{font-size:12px;color:#607268;font-weight:700}.report-controls select{width:auto;min-width:75px}.report-pagination{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;margin:14px 0}.report-pagination button{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:8px;padding:7px 11px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.report-pagination button.active{background:#0b5d3b;color:#fff}.report-pagination button:disabled{opacity:.4;cursor:not-allowed}.refresh-report{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:9px;padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.auth-modal[hidden]{display:none}.auth-modal{position:fixed;inset:0;z-index:9999;background:rgba(9,30,20,.65);display:flex;align-items:center;justify-content:center;padding:18px}.auth-modal-card{position:relative;background:#fff;border-radius:16px;padding:26px;width:min(100%,420px);box-shadow:0 20px 60px rgba(0,0,0,.25)}.auth-modal-card h3{margin:0 0 8px;color:#0b5d3b;text-align:center}.auth-modal-card p{text-align:center;color:#607268;font-size:13px;margin-bottom:18px}.auth-modal-card input[type=password]{margin-bottom:12px}.auth-close{position:absolute;right:12px;top:8px;border:0;background:transparent;font-size:26px;color:#607268;cursor:pointer}.auth-modal-card .form-status{margin-bottom:12px}.auth-modal-card .form-status.info,.auth-modal-card .form-status.error{display:block}@media(max-width:768px){.radio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filter-row-3{grid-template-columns:1fr}.form-card{padding:18px}.report-tab{width:100%;max-width:330px}}
+  .amount-wrap{position:relative}.amount-prefix{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#607268;font-weight:700;pointer-events:none}.amount-input{padding-left:42px}.form-submit{width:100%;border:0;border-radius:11px;padding:12px 18px;background:linear-gradient(135deg,#0b5d3b,#087f4f);color:#fff;font:inherit;font-size:14px;font-weight:800;cursor:pointer}.form-submit:disabled{opacity:.65;cursor:wait}.transfer-proof-group[hidden]{display:none}.qris-wakaf-card{margin:0 0 16px;padding:16px;border:1px solid #cfe5d7;border-radius:12px;background:#f5fbf7;text-align:center}.qris-wakaf-card h4{margin:0 0 6px;color:#0b5d3b;font-size:15px}.qris-wakaf-card p{margin:0 0 12px;color:#607268;font-size:13px}.qris-wakaf-image{display:block;width:min(100%,300px);height:auto;object-fit:contain;margin:0 auto;border-radius:8px;background:#fff}.transfer-proof-group input[type=file]{padding:10px;background:#fbfdfb}.date-note{display:block;margin-top:6px;color:#607268;font-size:12px}.form-status{margin-top:14px;border-radius:10px;padding:10px 13px;font-size:12.5px;display:none}.form-status.success{display:block;background:#e9f7ee;color:#17663f;border:1px solid #bfe2cc}.form-status.error{display:block;background:#fff0f0;color:#a13a3a;border:1px solid #efc5c5}.form-status.info{display:block;background:#eef6ff;color:#315d8a;border:1px solid #c8def5}.transparency-note{margin-top:16px;padding:13px 15px;border-radius:11px;background:#f4f9f6;color:#607268;font-size:12px;line-height:1.5}.report-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}.report-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}.report-controls input[type=search]{flex:1;min-width:220px}.report-controls label{font-size:12px;color:#607268;font-weight:700}.report-controls select{width:auto;min-width:75px}.report-pagination{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;margin:14px 0}.report-pagination button{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:8px;padding:7px 11px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.report-pagination button.active{background:#0b5d3b;color:#fff}.report-pagination button:disabled{opacity:.4;cursor:not-allowed}.refresh-report{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:9px;padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.auth-modal[hidden]{display:none}.auth-modal{position:fixed;inset:0;z-index:9999;background:rgba(9,30,20,.65);display:flex;align-items:center;justify-content:center;padding:18px}.auth-modal-card{position:relative;background:#fff;border-radius:16px;padding:26px;width:min(100%,420px);box-shadow:0 20px 60px rgba(0,0,0,.25)}.auth-modal-card h3{margin:0 0 8px;color:#0b5d3b;text-align:center}.auth-modal-card p{text-align:center;color:#607268;font-size:13px;margin-bottom:18px}.auth-modal-card input[type=password]{margin-bottom:12px}.auth-close{position:absolute;right:12px;top:8px;border:0;background:transparent;font-size:26px;color:#607268;cursor:pointer}.auth-modal-card .form-status{margin-bottom:12px}.auth-modal-card .form-status.info,.auth-modal-card .form-status.error{display:block}@media(max-width:768px){.radio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filter-row-3,.filter-row-2{grid-template-columns:1fr}.form-card{padding:18px}.report-tab{width:100%;max-width:330px}}
 </style>
 
   <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -1237,7 +1264,7 @@
             <div class="form-group">
               <label for="tanggalWakaf">📅 Tanggal Wakaf</label>
               <input class="form-input" type="date" id="tanggalWakaf" required max="">
-              <small class="date-note">Tanggal wakaf/transfer dilakukan.</small>
+              <small class="date-note">Tanggal wakaf/transfer dilakukan (maksimal hari ini).</small>
             </div>
 
             <div class="form-group">
@@ -1326,7 +1353,46 @@
           </div>
         </div>
 
-        <!-- PANEL KHUSUS BENDAHARA: PEMBUATAN LAPORAN PEKANAN (PDF) -->
+        <!-- PANEL 1 KHUSUS BENDAHARA: PEMBUATAN TANDA TERIMA WAKAF (PDF) -->
+        <div id="bendaharaReceiptBuilder" class="bendahara-receipt-card" hidden>
+          <h3>🧾 Buat Tanda Terima Wakaf (PDF)</h3>
+          <p class="sub">Cetak atau simpan Tanda Terima Wakaf berstempel resmi untuk diberikan kepada Muwakif.</p>
+
+          <div class="filter-row-2">
+            <div>
+              <label class="form-label" for="ttNamaMuwakif">👤 Nama Muwakif</label>
+              <input type="text" id="ttNamaMuwakif" class="form-input" placeholder="Masukkan nama lengkap Muwakif">
+            </div>
+            <div>
+              <label class="form-label" for="ttBentukWakaf">📦 Bentuk Wakaf</label>
+              <select id="ttBentukWakaf" class="form-input" onchange="updateReceiptDetailPlaceholder()">
+                <option value="Uang">Uang</option>
+                <option value="Material">Material</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-row-3">
+            <div>
+              <label class="form-label" for="ttKeterangan">📝 Nominal / Rincian Wakaf</label>
+              <input type="text" id="ttKeterangan" class="form-input" placeholder="Contoh: Rp 500.000,-">
+            </div>
+            <div>
+              <label class="form-label" for="ttTanggalBuat">📅 Tanggal Pembuatan</label>
+              <input type="date" id="ttTanggalBuat" class="form-input" max="">
+            </div>
+            <div>
+              <label class="form-label" for="ttNamaBendahara">✍️ Nama Bendahara</label>
+              <input type="text" id="ttNamaBendahara" class="form-input" placeholder="Nama lengkap Bendahara">
+            </div>
+          </div>
+
+          <div class="btn-action-row" style="margin-bottom:0;">
+            <button type="button" class="btn-pdf" onclick="exportTandaTerimaPDF()">🖨️ Cetak / Simpan Tanda Terima (PDF)</button>
+          </div>
+        </div>
+
+        <!-- PANEL 2 KHUSUS BENDAHARA: PEMBUATAN LAPORAN PEKANAN (PDF) -->
         <div id="bendaharaReportBuilder" class="bendahara-report-card" hidden>
           <h3>📑 Laporan Transaksi Wakaf (Periode / Pekanan)</h3>
           <p class="sub">Pilih rentang tanggal transaksi dan isi nama Bendahara untuk mencetak/menyimpan laporan dalam format PDF.</p>
@@ -1334,11 +1400,11 @@
           <div class="filter-row-3">
             <div>
               <label class="form-label" for="lapTanggalMulai">📅 Dari Tanggal</label>
-              <input type="date" id="lapTanggalMulai" class="form-input">
+              <input type="date" id="lapTanggalMulai" class="form-input" max="">
             </div>
             <div>
               <label class="form-label" for="lapTanggalAkhir">📅 Sampai Tanggal</label>
-              <input type="date" id="lapTanggalAkhir" class="form-input">
+              <input type="date" id="lapTanggalAkhir" class="form-input" max="">
             </div>
             <div>
               <label class="form-label" for="lapNamaBendahara">✍️ Nama Bendahara</label>
@@ -1580,13 +1646,23 @@
    */
   const WAKAF_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxUPtYTO65alaP8Wl1dsS0O2C-7e7J3awB3MjNVtc5sYIS3OALSTXSKfHxBPhXb5McJVA/exec';
 
-  function setTanggalMaksimum() {
-    const input = document.getElementById('tanggalWakaf');
-    if (!input) return;
+  function getTodayISOString() {
     const today = new Date();
-    input.max = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
   }
-  setTanggalMaksimum();
+
+  // Terapkan validasi maksimal tanggal hari ini untuk SELURUH input tanggal di halaman
+  function setAllDateInputsMaxToday() {
+    const todayStr = getTodayISOString();
+    document.querySelectorAll('input[type="date"]').forEach(input => {
+      input.max = todayStr;
+    });
+    const ttDate = document.getElementById('ttTanggalBuat');
+    if (ttDate && !ttDate.value) {
+      ttDate.value = todayStr;
+    }
+  }
+  setAllDateInputsMaxToday();
 
   let bendaharaSessionToken = '';
   let bendaharaClientId = sessionStorage.getItem('wakafBendaharaClientId');
@@ -1595,7 +1671,6 @@
     sessionStorage.setItem('wakafBendaharaClientId', bendaharaClientId);
   }
 
-  // Tombol Bendahara berfungsi ganda: Login saat belum masuk, Logout saat sudah login
   function handleBendaharaButton() {
     if (bendaharaSessionToken) {
       logoutBendahara();
@@ -1608,13 +1683,12 @@
     resetBendaharaUI();
     const form = document.getElementById('wakafConfirmForm');
     if (form) form.reset();
-    // Saat tidak sedang login, pastikan tidak ada pesan/tulisan di kotak status
     const status = document.getElementById('formStatus');
     if (status) {
       status.className = 'form-status';
       status.textContent = '';
     }
-    setTanggalMaksimum();
+    setAllDateInputsMaxToday();
   }
 
   function openBendaharaAuth() {
@@ -1653,19 +1727,16 @@
   }
 
   function activateBendaharaUI() {
-    // Ubah tombol Bendahara menjadi tombol Logout aktif
     const triggerBtn = document.getElementById('bendaharaLoginTrigger');
     triggerBtn.textContent = '🚪 Logout Bendahara';
     triggerBtn.classList.add('logout-mode');
     triggerBtn.disabled = false;
 
-    // Nonaktifkan radio Transfer default di sebelah tombol Logout
     const defTrans = document.getElementById('transaksiTransferDefault');
     defTrans.checked = false;
     defTrans.required = false;
     defTrans.disabled = true;
 
-    // Munculkan pilihan transaksi khusus Bendahara (Tunai / Transfer)
     const bGrid = document.getElementById('bendaharaTransaksiGrid');
     bGrid.hidden = false;
 
@@ -1678,13 +1749,14 @@
     rTunai.required = true;
     rTransfer.required = true;
 
-    // Tampilkan panel pembuatan laporan pekanan PDF untuk Bendahara
+    // Tampilkan panel Tanda Terima PDF & Laporan Pekanan PDF untuk Bendahara
+    document.getElementById('bendaharaReceiptBuilder').hidden = false;
     document.getElementById('bendaharaReportBuilder').hidden = false;
+    setAllDateInputsMaxToday();
 
     document.getElementById('formIntroText').innerHTML =
       '<strong>Mode Pencatatan Bendahara Aktif.</strong><br>Silakan klik pilihan transaksi (Tunai atau Transfer) dan Pilihan Wakaf. Sesi tetap aktif sampai Anda menekan tombol Logout.';
 
-    // Tampilkan status di bawah form bahwa sedang login sebagai Bendahara
     const status = document.getElementById('formStatus');
     if (status) {
       status.className = 'form-status success';
@@ -1708,6 +1780,7 @@
     defTrans.required = true;
 
     document.getElementById('bendaharaTransaksiGrid').hidden = true;
+    document.getElementById('bendaharaReceiptBuilder').hidden = true;
     document.getElementById('bendaharaReportBuilder').hidden = true;
     document.getElementById('bendaharaReportPreview').hidden = true;
 
@@ -1721,7 +1794,6 @@
     document.getElementById('formIntroText').innerHTML =
       'Silakan masukkan data wakaf yang telah dilakukan.<br>Formulir ini khusus untuk transaksi "Transfer" saja.<br>Silahkan upload bukti transfer (JPG/JPEG/PNG atau PDF).';
 
-    // Kosongkan status di bawah form saat tidak sedang login
     const status = document.getElementById('formStatus');
     if (status) {
       status.className = 'form-status';
@@ -1892,8 +1964,7 @@
       }
     }
 
-    const today = new Date();
-    const todayString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    const todayString = getTodayISOString();
     if (tanggal > todayString) {
       status.className = 'form-status error';
       status.textContent = '⚠️ Tanggal wakaf tidak boleh melebihi hari ini.';
@@ -1940,7 +2011,6 @@
       form.reset();
 
       if (wasBendaharaLoggedIn) {
-        // Pertahankan sesi login Bendahara & pesan status login
         activateBendaharaUI();
         status.className = 'form-status success';
         status.textContent = '✅ Data tersimpan. Anda sedang login sebagai Bendahara';
@@ -1950,7 +2020,7 @@
         status.textContent = '✅ Permintaan pencatatan telah dikirim. Mohon periksa tab "Data Wakaf Tercatat" untuk memastikan data telah masuk.';
       }
 
-      setTanggalMaksimum();
+      setAllDateInputsMaxToday();
       setTimeout(() => loadWakafReport(), 3500);
     } catch (err) {
       console.error(err);
@@ -1963,10 +2033,8 @@
   }
 
   // =====================================================
-  // FUNGSI LAPORAN PEKANAN BENDAHARA (PERIODE TANGGAL -> PDF)
+  // FUNGSI HELPER TANGGAL & URL STEMPEL (cap.png)
   // =====================================================
-  let filteredBendaharaReportData = [];
-
   function parseSheetDateToISO(str) {
     if (!str) return '';
     const clean = String(str).trim();
@@ -1990,13 +2058,280 @@
     return digits ? Number(digits) : 0;
   }
 
+  function getCapImageUrl() {
+    try {
+      return new URL('cap.png', window.location.href).href;
+    } catch (e) {
+      return 'cap.png';
+    }
+  }
+
+  function escapeHtml(text) {
+    return String(text || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  // =====================================================
+  // FITUR BARU: TANDA TERIMA WAKAF (PDF + STEMPEL cap.png)
+  // =====================================================
+  function updateReceiptDetailPlaceholder() {
+    const bentuk = document.getElementById('ttBentukWakaf').value;
+    const ketInput = document.getElementById('ttKeterangan');
+    if (bentuk === 'Material') {
+      ketInput.placeholder = 'Contoh: 10 Sak Semen Tiga Roda / 1 Truk Pasir';
+    } else {
+      ketInput.placeholder = 'Contoh: Rp 500.000,-';
+    }
+  }
+
+  function exportTandaTerimaPDF() {
+    const namaMuwakif = document.getElementById('ttNamaMuwakif').value.trim();
+    const bentukWakaf = document.getElementById('ttBentukWakaf').value;
+    const keterangan = document.getElementById('ttKeterangan').value.trim();
+    const tanggalBuat = document.getElementById('ttTanggalBuat').value;
+    const namaBendahara = document.getElementById('ttNamaBendahara').value.trim();
+    const todayStr = getTodayISOString();
+
+    if (!namaMuwakif) {
+      alert('Mohon masukkan Nama Muwakif terlebih dahulu.');
+      document.getElementById('ttNamaMuwakif').focus();
+      return;
+    }
+    if (!tanggalBuat) {
+      alert('Mohon pilih Tanggal Pembuatan tanda terima.');
+      document.getElementById('ttTanggalBuat').focus();
+      return;
+    }
+    if (tanggalBuat > todayStr) {
+      alert('Tanggal pembuatan tidak boleh melebihi hari ini.');
+      document.getElementById('ttTanggalBuat').value = todayStr;
+      return;
+    }
+    if (!namaBendahara) {
+      alert('Mohon masukkan Nama Bendahara.');
+      document.getElementById('ttNamaBendahara').focus();
+      return;
+    }
+
+    const capUrl = getCapImageUrl();
+    const tglIndo = formatTanggalIndo(tanggalBuat);
+    const rincianText = keterangan
+      ? `${escapeHtml(bentukWakaf)} (${escapeHtml(keterangan)})`
+      : escapeHtml(bentukWakaf);
+
+    const printWin = window.open('', '_blank', 'width=850,height=650');
+    if (!printWin) {
+      alert('Pop-up diblokir oleh browser. Izinkan pop-up untuk mencetak/menyimpan PDF.');
+      return;
+    }
+
+    printWin.document.write(`
+      <!DOCTYPE html>
+      <html lang="id">
+      <head>
+        <meta charset="UTF-8">
+        <title>Tanda Terima Wakaf - ${escapeHtml(namaMuwakif)}</title>
+        <style>
+          body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: #1c2e26;
+            padding: 32px;
+            background: #ffffff;
+          }
+          .receipt-box {
+            max-width: 720px;
+            margin: 0 auto;
+            border: 2.5px solid #0b5d3b;
+            border-radius: 14px;
+            padding: 28px 34px;
+            position: relative;
+          }
+          .bismillah {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #0b5d3b;
+            margin-bottom: 6px;
+            direction: rtl;
+          }
+          .bismillah-latin {
+            text-align: center;
+            font-size: 13px;
+            font-style: italic;
+            color: #4a6357;
+            margin-bottom: 14px;
+          }
+          .kop {
+            text-align: center;
+            border-bottom: 3px double #0b5d3b;
+            padding-bottom: 12px;
+            margin-bottom: 22px;
+          }
+          .kop h2 {
+            color: #0b5d3b;
+            margin: 0 0 4px;
+            font-size: 19px;
+            letter-spacing: 0.4px;
+          }
+          .kop p {
+            margin: 2px 0;
+            font-size: 12.5px;
+            color: #4b5e53;
+          }
+          .doc-title {
+            text-align: center;
+            font-size: 17px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #0b5d3b;
+            margin-bottom: 22px;
+            text-decoration: underline;
+          }
+          .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 22px;
+            font-size: 14.5px;
+          }
+          .detail-table td {
+            padding: 9px 6px;
+            vertical-align: top;
+          }
+          .detail-table td.label {
+            width: 185px;
+            font-weight: 700;
+            color: #24352b;
+          }
+          .detail-table td.colon {
+            width: 18px;
+            font-weight: 700;
+          }
+          .detail-table td.value {
+            border-bottom: 1px dotted #7fa392;
+            font-weight: 600;
+            color: #0b3d28;
+          }
+          .ttd-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 24px;
+            margin-bottom: 22px;
+          }
+          .ttd-box {
+            text-align: center;
+            width: 240px;
+            font-size: 13.5px;
+            position: relative;
+          }
+          .ttd-area {
+            height: 85px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .cap-stamp {
+            width: 112px;
+            height: auto;
+            opacity: 0.90;
+            transform: rotate(-6deg);
+            pointer-events: none;
+          }
+          .doa-footer {
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1.5px dashed #9ec2b0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            font-style: italic;
+            color: #0b5d3b;
+          }
+          @media print {
+            body { padding: 0; }
+            .receipt-box { border: 2px solid #0b5d3b; }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="receipt-box">
+          <div class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+          <div class="bismillah-latin">Bismillahirrahmanirrahiim</div>
+
+          <div class="kop">
+            <h2>PANITIA WAKAF DAN RENOVASI MASJID AR-RIDHWAN</h2>
+            <p>Perumahan Puri Nirwana 1 · Cibinong, Kab. Bogor</p>
+          </div>
+
+          <div class="doc-title">TANDA TERIMA WAKAF</div>
+
+          <table class="detail-table">
+            <tr>
+              <td class="label">Telah Diterima dari</td>
+              <td class="colon">:</td>
+              <td class="value">${escapeHtml(namaMuwakif)}</td>
+            </tr>
+            <tr>
+              <td class="label">Bentuk Wakaf</td>
+              <td class="colon">:</td>
+              <td class="value">${rincianText}</td>
+            </tr>
+            <tr>
+              <td class="label">Untuk Program</td>
+              <td class="colon">:</td>
+              <td class="value">Wakaf Pembangunan / Renovasi Masjid Ar-Ridhwan</td>
+            </tr>
+          </table>
+
+          <div class="ttd-section">
+            <div class="ttd-box">
+              <div>Cibinong, ${tglIndo}</div>
+              <div>Bendahara,</div>
+              <div class="ttd-area">
+                <img src="${capUrl}" alt="Cap Wakaf Masjid Ar Ridhwan" class="cap-stamp">
+              </div>
+              <div><strong><u>${escapeHtml(namaBendahara)}</u></strong></div>
+            </div>
+          </div>
+
+          <div class="doa-footer">
+            "Semoga Allah SWT menerima Amal Sedekah Jariyah Kita..Aamiin"
+          </div>
+        </div>
+
+        <script>
+          window.onload = function() {
+            setTimeout(function() { window.print(); }, 300);
+          };
+        <\/script>
+      </body>
+      </html>
+    `);
+    printWin.document.close();
+  }
+
+  // =====================================================
+  // FUNGSI LAPORAN PEKANAN BENDAHARA (PERIODE TANGGAL -> PDF + STEMPEL cap.png)
+  // =====================================================
+  let filteredBendaharaReportData = [];
+
   function generateBendaharaReportPreview() {
     const start = document.getElementById('lapTanggalMulai').value;
     const end = document.getElementById('lapTanggalAkhir').value;
     const bendaharaName = document.getElementById('lapNamaBendahara').value.trim();
+    const todayStr = getTodayISOString();
 
     if (!start || !end) {
       alert('Mohon pilih tanggal mulai dan tanggal akhir periode laporan.');
+      return;
+    }
+    if (start > todayStr || end > todayStr) {
+      alert('Tanggal laporan tidak boleh melebihi hari ini.');
       return;
     }
     if (start > end) {
@@ -2036,11 +2371,11 @@
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td style="text-align:center;">${idx + 1}</td>
-          <td>${item.tanggal}</td>
-          <td>${item.nama}</td>
+          <td>${escapeHtml(item.tanggal)}</td>
+          <td>${escapeHtml(item.nama)}</td>
           <td style="text-align:right;">Rp ${item.nominalNum.toLocaleString('id-ID')}</td>
-          <td>${item.jenis}</td>
-          <td>${item.wakaf}</td>
+          <td>${escapeHtml(item.jenis)}</td>
+          <td>${escapeHtml(item.wakaf)}</td>
         `;
         tbody.appendChild(tr);
       });
@@ -2059,12 +2394,9 @@
         tbody.appendChild(trTotal);
       }
 
-      const today = new Date();
-      const todayISO = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-
       document.getElementById('bendaharaReportSummaryText').textContent =
         `Periode: ${formatTanggalIndo(start)} s.d. ${formatTanggalIndo(end)} (${filteredBendaharaReportData.length} transaksi)`;
-      document.getElementById('lapTanggalCetak').textContent = formatTanggalIndo(todayISO);
+      document.getElementById('lapTanggalCetak').textContent = formatTanggalIndo(todayStr);
       document.getElementById('lapTtdBendahara').textContent = bendaharaName;
 
       document.getElementById('bendaharaReportPreview').hidden = false;
@@ -2078,6 +2410,7 @@
     const bendaharaName = document.getElementById('lapNamaBendahara').value.trim();
     const tanggalCetak = document.getElementById('lapTanggalCetak').textContent;
     const tableHtml = document.getElementById('bendaharaPdfTable').outerHTML;
+    const capUrl = getCapImageUrl();
 
     const printWin = window.open('', '_blank', 'width=900,height=700');
     if (!printWin) {
@@ -2101,9 +2434,20 @@
           th { background: #0b5d3b !important; color: #ffffff !important; padding: 9px 10px; border: 1px solid #0b5d3b; text-align: left; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
           td { padding: 8px 10px; border: 1px solid #cde2d6; }
           tr:nth-child(even) td { background: #f8fbf9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-          .ttd-wrap { display: flex; justify-content: flex-end; margin-top: 30px; }
-          .ttd-box { text-align: center; min-width: 220px; font-size: 13.5px; }
-          .ttd-space { height: 65px; }
+          .ttd-wrap { display: flex; justify-content: flex-end; margin-top: 24px; }
+          .ttd-box { text-align: center; min-width: 240px; font-size: 13.5px; }
+          .ttd-area {
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .cap-stamp {
+            width: 112px;
+            height: auto;
+            opacity: 0.90;
+            transform: rotate(-6deg);
+          }
           @media print {
             body { padding: 10px; }
           }
@@ -2123,12 +2467,16 @@
           <div class="ttd-box">
             <div>Cibinong, ${tanggalCetak}</div>
             <div>Bendahara,</div>
-            <div class="ttd-space"></div>
-            <div><strong><u>${bendaharaName}</u></strong></div>
+            <div class="ttd-area">
+              <img src="${capUrl}" alt="Cap Wakaf Masjid Ar Ridhwan" class="cap-stamp">
+            </div>
+            <div><strong><u>${escapeHtml(bendaharaName)}</u></strong></div>
           </div>
         </div>
         <script>
-          window.onload = function() { window.print(); };
+          window.onload = function() {
+            setTimeout(function() { window.print(); }, 300);
+          };
         <\/script>
       </body>
       </html>
