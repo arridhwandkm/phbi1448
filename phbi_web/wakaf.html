@@ -727,7 +727,7 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  #wakafReportTable {
+  #wakafReportTable, #bendaharaPdfTable {
     width: 100%;
     min-width: 650px;
     border-collapse: collapse;
@@ -735,7 +735,7 @@
     color: #33483b;
   }
 
-  #wakafReportTable th {
+  #wakafReportTable th, #bendaharaPdfTable th {
     background: #0b5d3b;
     color: #ffffff;
     font-weight: 700;
@@ -747,14 +747,14 @@
     z-index: 1;
   }
 
-  #wakafReportTable td {
+  #wakafReportTable td, #bendaharaPdfTable td {
     padding: 10px 12px;
     border-bottom: 1px solid #e3efe7;
     text-align: left;
     vertical-align: middle;
   }
 
-  #wakafReportTable tbody tr:nth-child(even) {
+  #wakafReportTable tbody tr:nth-child(even), #bendaharaPdfTable tbody tr:nth-child(even) {
     background: #f7faf8;
   }
 
@@ -763,7 +763,9 @@
   }
 
   #wakafReportTable td:first-child,
-  #wakafReportTable th:first-child {
+  #wakafReportTable th:first-child,
+  #bendaharaPdfTable td:first-child,
+  #bendaharaPdfTable th:first-child {
     text-align: center;
   }
 
@@ -772,13 +774,15 @@
   }
 
   @media (max-width: 768px) {
-    #wakafReportTable {
+    #wakafReportTable, #bendaharaPdfTable {
       min-width: 600px;
       font-size: 12px;
     }
 
     #wakafReportTable th,
-    #wakafReportTable td {
+    #wakafReportTable td,
+    #bendaharaPdfTable th,
+    #bendaharaPdfTable td {
       padding: 9px 10px;
     }
   }
@@ -806,7 +810,7 @@
     transform: translateY(-1px);
   }
 
-  /* Styling Tombol Bendahara */
+  /* Styling Tombol Bendahara & Logout */
   .btn-bendahara-mode {
     background: #f8fbf9;
     border-color: #cfe2d5;
@@ -817,15 +821,21 @@
     border-color: #90caf9;
     color: #1565c0;
   }
-  .btn-bendahara-mode.active-badge {
-    background: #e6f4ea;
-    border-color: #34a853;
-    color: #137333;
-    cursor: default;
+  .btn-bendahara-mode.logout-mode {
+    background: #fff0f0;
+    border-color: #e57373;
+    color: #c62828;
+    cursor: pointer;
+  }
+  .btn-bendahara-mode.logout-mode:hover {
+    background: #ffcdd2;
+    border-color: #d32f2f;
+    color: #b71c1c;
   }
 
   #defaultTransaksiGrid[hidden],
-  #bendaharaTransaksiGrid[hidden] {
+  #bendaharaTransaksiGrid[hidden],
+  #bendaharaReportBuilder[hidden] {
     display: none !important;
   }
 
@@ -843,7 +853,99 @@
     display: block;
   }
 
-  .amount-wrap{position:relative}.amount-prefix{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#607268;font-weight:700;pointer-events:none}.amount-input{padding-left:42px}.form-submit{width:100%;border:0;border-radius:11px;padding:12px 18px;background:linear-gradient(135deg,#0b5d3b,#087f4f);color:#fff;font:inherit;font-size:14px;font-weight:800;cursor:pointer}.form-submit:disabled{opacity:.65;cursor:wait}.transfer-proof-group[hidden]{display:none}.qris-wakaf-card{margin:0 0 16px;padding:16px;border:1px solid #cfe5d7;border-radius:12px;background:#f5fbf7;text-align:center}.qris-wakaf-card h4{margin:0 0 6px;color:#0b5d3b;font-size:15px}.qris-wakaf-card p{margin:0 0 12px;color:#607268;font-size:13px}.qris-wakaf-image{display:block;width:min(100%,300px);height:auto;object-fit:contain;margin:0 auto;border-radius:8px;background:#fff}.transfer-proof-group input[type=file]{padding:10px;background:#fbfdfb}.date-note{display:block;margin-top:6px;color:#607268;font-size:12px}.form-status{margin-top:14px;border-radius:10px;padding:10px 13px;font-size:12.5px;display:none}.form-status.success{display:block;background:#e9f7ee;color:#17663f;border:1px solid #bfe2cc}.form-status.error{display:block;background:#fff0f0;color:#a13a3a;border:1px solid #efc5c5}.form-status.info{display:block;background:#eef6ff;color:#315d8a;border:1px solid #c8def5}.transparency-note{margin-top:16px;padding:13px 15px;border-radius:11px;background:#f4f9f6;color:#607268;font-size:12px;line-height:1.5}.report-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}.report-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}.report-controls input[type=search]{flex:1;min-width:220px}.report-controls label{font-size:12px;color:#607268;font-weight:700}.report-controls select{width:auto;min-width:75px}.report-pagination{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;margin:14px 0}.report-pagination button{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:8px;padding:7px 11px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.report-pagination button.active{background:#0b5d3b;color:#fff}.report-pagination button:disabled{opacity:.4;cursor:not-allowed}.refresh-report{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:9px;padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.auth-modal[hidden]{display:none}.auth-modal{position:fixed;inset:0;z-index:9999;background:rgba(9,30,20,.65);display:flex;align-items:center;justify-content:center;padding:18px}.auth-modal-card{position:relative;background:#fff;border-radius:16px;padding:26px;width:min(100%,420px);box-shadow:0 20px 60px rgba(0,0,0,.25)}.auth-modal-card h3{margin:0 0 8px;color:#0b5d3b;text-align:center}.auth-modal-card p{text-align:center;color:#607268;font-size:13px;margin-bottom:18px}.auth-modal-card input[type=password]{margin-bottom:12px}.auth-close{position:absolute;right:12px;top:8px;border:0;background:transparent;font-size:26px;color:#607268;cursor:pointer}.auth-modal-card .form-status{margin-bottom:12px}.auth-modal-card .form-status.info,.auth-modal-card .form-status.error{display:block}@media(max-width:768px){.radio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.form-card{padding:18px}.report-tab{width:100%;max-width:330px}}
+  /* =====================================================
+     PANEL PEMBUATAN LAPORAN PEKANAN BENDAHARA (PDF)
+     ===================================================== */
+  .bendahara-report-card {
+    max-width: 720px;
+    margin: 24px auto 0;
+    background: #ffffff;
+    border: 1.5px solid #90caf9;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 20px rgba(25, 118, 210, 0.08);
+    text-align: left;
+  }
+
+  .bendahara-report-card h3 {
+    text-align: center;
+    color: #1565c0;
+    font-size: 19px;
+    margin-bottom: 4px;
+  }
+
+  .bendahara-report-card .sub {
+    text-align: center;
+    color: #607268;
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+
+  .filter-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .btn-action-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .btn-blue {
+    flex: 1;
+    background: #1976d2;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 11px 16px;
+    font: inherit;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .btn-blue:hover { background: #1565c0; }
+
+  .btn-pdf {
+    flex: 1;
+    background: #0b5d3b;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 11px 16px;
+    font: inherit;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .btn-pdf:hover { background: #087f4f; }
+  .btn-pdf:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  .pdf-preview-box {
+    border: 1px solid #dceede;
+    border-radius: 12px;
+    padding: 16px;
+    background: #fbfdfb;
+  }
+
+  .pdf-meta-footer {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed #cfe2d5;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 13px;
+    color: #24352b;
+  }
+
+  .amount-wrap{position:relative}.amount-prefix{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#607268;font-weight:700;pointer-events:none}.amount-input{padding-left:42px}.form-submit{width:100%;border:0;border-radius:11px;padding:12px 18px;background:linear-gradient(135deg,#0b5d3b,#087f4f);color:#fff;font:inherit;font-size:14px;font-weight:800;cursor:pointer}.form-submit:disabled{opacity:.65;cursor:wait}.transfer-proof-group[hidden]{display:none}.qris-wakaf-card{margin:0 0 16px;padding:16px;border:1px solid #cfe5d7;border-radius:12px;background:#f5fbf7;text-align:center}.qris-wakaf-card h4{margin:0 0 6px;color:#0b5d3b;font-size:15px}.qris-wakaf-card p{margin:0 0 12px;color:#607268;font-size:13px}.qris-wakaf-image{display:block;width:min(100%,300px);height:auto;object-fit:contain;margin:0 auto;border-radius:8px;background:#fff}.transfer-proof-group input[type=file]{padding:10px;background:#fbfdfb}.date-note{display:block;margin-top:6px;color:#607268;font-size:12px}.form-status{margin-top:14px;border-radius:10px;padding:10px 13px;font-size:12.5px;display:none}.form-status.success{display:block;background:#e9f7ee;color:#17663f;border:1px solid #bfe2cc}.form-status.error{display:block;background:#fff0f0;color:#a13a3a;border:1px solid #efc5c5}.form-status.info{display:block;background:#eef6ff;color:#315d8a;border:1px solid #c8def5}.transparency-note{margin-top:16px;padding:13px 15px;border-radius:11px;background:#f4f9f6;color:#607268;font-size:12px;line-height:1.5}.report-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}.report-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}.report-controls input[type=search]{flex:1;min-width:220px}.report-controls label{font-size:12px;color:#607268;font-weight:700}.report-controls select{width:auto;min-width:75px}.report-pagination{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;margin:14px 0}.report-pagination button{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:8px;padding:7px 11px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.report-pagination button.active{background:#0b5d3b;color:#fff}.report-pagination button:disabled{opacity:.4;cursor:not-allowed}.refresh-report{border:1px solid #cfe5d7;background:#fff;color:#0b5d3b;border-radius:9px;padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.auth-modal[hidden]{display:none}.auth-modal{position:fixed;inset:0;z-index:9999;background:rgba(9,30,20,.65);display:flex;align-items:center;justify-content:center;padding:18px}.auth-modal-card{position:relative;background:#fff;border-radius:16px;padding:26px;width:min(100%,420px);box-shadow:0 20px 60px rgba(0,0,0,.25)}.auth-modal-card h3{margin:0 0 8px;color:#0b5d3b;text-align:center}.auth-modal-card p{text-align:center;color:#607268;font-size:13px;margin-bottom:18px}.auth-modal-card input[type=password]{margin-bottom:12px}.auth-close{position:absolute;right:12px;top:8px;border:0;background:transparent;font-size:26px;color:#607268;cursor:pointer}.auth-modal-card .form-status{margin-bottom:12px}.auth-modal-card .form-status.info,.auth-modal-card .form-status.error{display:block}@media(max-width:768px){.radio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filter-row-3{grid-template-columns:1fr}.form-card{padding:18px}.report-tab{width:100%;max-width:330px}}
 </style>
 
   <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -1147,10 +1249,10 @@
             <div class="form-group" id="jenisTransaksiGroup">
               <span class="form-label">💳 Jenis Transaksi</span>
               
-              <!-- BARIS ATAS: TOMBOL BENDAHARA & TRANSFER MANDIRI -->
+              <!-- BARIS ATAS: TOMBOL BENDAHARA (BERUBAH JADI LOGOUT SAAT LOGIN) & TRANSFER MANDIRI -->
               <div class="radio-grid" id="defaultTransaksiGrid">
                 <div>
-                  <button type="button" class="btn-bendahara-mode" id="bendaharaLoginTrigger" onclick="openBendaharaAuth()">
+                  <button type="button" class="btn-bendahara-mode" id="bendaharaLoginTrigger" onclick="handleBendaharaButton()">
                     🔐 Bendahara
                   </button>
                 </div>
@@ -1184,7 +1286,7 @@
               </div>
             </div>
 
-            <!-- PILIHAN WAKAF (TIDAK ADA YANG TERPILIH OTOMATIS, BIRU SAAT DIKLIK) -->
+            <!-- PILIHAN WAKAF -->
             <div class="form-group">
               <span class="form-label">🕌 Pilihan Wakaf</span>
               <div class="radio-grid">
@@ -1199,7 +1301,7 @@
               </div>
             </div>
 
-            <!-- KOTAK QRIS & UPLOAD BUKTI (MUNCUL SAAT TRANSFER DIPILIH) -->
+            <!-- KOTAK QRIS & UPLOAD BUKTI -->
             <div class="form-group transfer-proof-group" id="transferProofBox" hidden>
               <div class="qris-wakaf-card">
                 <h4>📲 Pembayaran melalui QRIS</h4>
@@ -1221,6 +1323,55 @@
           <div class="transparency-note">
             🔐 <strong>Transparansi:</strong> konfirmasi ini digunakan sebagai pencatatan mandiri dari muwakif. 
             <br>Data konfirmasi dan tautan bukti transfer dicatat ke Google Sheets; berkas bukti disimpan di Google Drive panitia.
+          </div>
+        </div>
+
+        <!-- PANEL KHUSUS BENDAHARA: PEMBUATAN LAPORAN PEKANAN (PDF) -->
+        <div id="bendaharaReportBuilder" class="bendahara-report-card" hidden>
+          <h3>📑 Laporan Transaksi Wakaf (Periode / Pekanan)</h3>
+          <p class="sub">Pilih rentang tanggal transaksi dan isi nama Bendahara untuk mencetak/menyimpan laporan dalam format PDF.</p>
+
+          <div class="filter-row-3">
+            <div>
+              <label class="form-label" for="lapTanggalMulai">📅 Dari Tanggal</label>
+              <input type="date" id="lapTanggalMulai" class="form-input">
+            </div>
+            <div>
+              <label class="form-label" for="lapTanggalAkhir">📅 Sampai Tanggal</label>
+              <input type="date" id="lapTanggalAkhir" class="form-input">
+            </div>
+            <div>
+              <label class="form-label" for="lapNamaBendahara">✍️ Nama Bendahara</label>
+              <input type="text" id="lapNamaBendahara" class="form-input" placeholder="Nama lengkap Bendahara">
+            </div>
+          </div>
+
+          <div class="btn-action-row">
+            <button type="button" class="btn-blue" onclick="generateBendaharaReportPreview()">🔍 Tampilkan Transaksi Periode Ini</button>
+            <button type="button" class="btn-pdf" id="exportPdfBtn" onclick="exportBendaharaReportPDF()" disabled>🖨️ Cetak / Simpan PDF</button>
+          </div>
+
+          <div id="bendaharaReportPreview" class="pdf-preview-box" hidden>
+            <div id="bendaharaReportSummaryText" style="font-size:13px; font-weight:700; color:#0b5d3b; margin-bottom:10px;"></div>
+            <div class="table-wrapper">
+              <table id="bendaharaPdfTable">
+                <thead>
+                  <tr>
+                    <th style="width:7%;">No</th>
+                    <th style="width:18%;">Tanggal Wakaf</th>
+                    <th style="width:27%;">Nama Muwakif</th>
+                    <th style="width:18%;">Nominal</th>
+                    <th style="width:15%;">Jenis Transaksi</th>
+                    <th style="width:15%;">Pilihan Wakaf</th>
+                  </tr>
+                </thead>
+                <tbody id="bendaharaPdfBody"></tbody>
+              </table>
+            </div>
+            <div class="pdf-meta-footer">
+              <div><strong>Tanggal Pembuatan Laporan:</strong> <span id="lapTanggalCetak">-</span></div>
+              <div><strong>Bendahara:</strong> <span id="lapTtdBendahara">-</span></div>
+            </div>
           </div>
         </div>
       </section>
@@ -1396,7 +1547,7 @@
     pager.appendChild(next);
   }
 
-  function loadWakafReport() {
+  function loadWakafReport(callbackAfterLoad) {
     const status = document.getElementById('reportStatus');
     status.textContent = '⏳ Memuat data laporan wakaf...';
     const query = new google.visualization.Query(spreadsheetUrl);
@@ -1419,6 +1570,7 @@
       }
       wakafReportPage = 1;
       renderWakafReport();
+      if (typeof callbackAfterLoad === 'function') callbackAfterLoad();
     });
   }
   document.getElementById('reportSearch').addEventListener('input', () => { wakafReportPage = 1; renderWakafReport(); });
@@ -1441,6 +1593,27 @@
   if (!bendaharaClientId) {
     bendaharaClientId = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(36).slice(2));
     sessionStorage.setItem('wakafBendaharaClientId', bendaharaClientId);
+  }
+
+  // Tombol Bendahara berfungsi ganda: Login saat belum masuk, Logout saat sudah login
+  function handleBendaharaButton() {
+    if (bendaharaSessionToken) {
+      logoutBendahara();
+    } else {
+      openBendaharaAuth();
+    }
+  }
+
+  function logoutBendahara() {
+    resetBendaharaUI();
+    const form = document.getElementById('wakafConfirmForm');
+    if (form) form.reset();
+    const status = document.getElementById('formStatus');
+    if (status) {
+      status.className = 'form-status info';
+      status.textContent = '🔒 Anda telah logout dari Mode Bendahara.';
+    }
+    setTanggalMaksimum();
   }
 
   function openBendaharaAuth() {
@@ -1479,18 +1652,19 @@
   }
 
   function activateBendaharaUI() {
-    // Biarkan baris atas tetap tampil, ubah status Bendahara & disable Transfer di sebelahnya
+    // Ubah tombol Bendahara menjadi tombol Logout aktif
     const triggerBtn = document.getElementById('bendaharaLoginTrigger');
-    triggerBtn.textContent = '✅ Bendahara Aktif';
-    triggerBtn.classList.add('active-badge');
-    triggerBtn.disabled = true;
+    triggerBtn.textContent = '🚪 Logout Bendahara';
+    triggerBtn.classList.add('logout-mode');
+    triggerBtn.disabled = false;
 
+    // Nonaktifkan radio Transfer default di sebelah tombol Logout
     const defTrans = document.getElementById('transaksiTransferDefault');
     defTrans.checked = false;
     defTrans.required = false;
     defTrans.disabled = true;
 
-    // Munculkan satu pasang pilihan transaksi khusus Bendahara (Tunai / Transfer)
+    // Munculkan pilihan transaksi khusus Bendahara (Tunai / Transfer)
     const bGrid = document.getElementById('bendaharaTransaksiGrid');
     bGrid.hidden = false;
 
@@ -1503,8 +1677,11 @@
     rTunai.required = true;
     rTransfer.required = true;
 
+    // Tampilkan panel pembuatan laporan pekanan PDF untuk Bendahara
+    document.getElementById('bendaharaReportBuilder').hidden = false;
+
     document.getElementById('formIntroText').innerHTML =
-      '<strong>Mode Pencatatan Bendahara Aktif.</strong><br>Silakan klik pilihan transaksi (Tunai atau Transfer) dan Pilihan Wakaf.';
+      '<strong>Mode Pencatatan Bendahara Aktif.</strong><br>Silakan klik pilihan transaksi (Tunai atau Transfer) dan Pilihan Wakaf. Sesi tetap aktif sampai Anda menekan tombol Logout.';
 
     updateProofRequirement();
   }
@@ -1514,7 +1691,7 @@
 
     const triggerBtn = document.getElementById('bendaharaLoginTrigger');
     triggerBtn.textContent = '🔐 Bendahara';
-    triggerBtn.classList.remove('active-badge');
+    triggerBtn.classList.remove('logout-mode');
     triggerBtn.disabled = false;
 
     const defTrans = document.getElementById('transaksiTransferDefault');
@@ -1523,6 +1700,8 @@
     defTrans.required = true;
 
     document.getElementById('bendaharaTransaksiGrid').hidden = true;
+    document.getElementById('bendaharaReportBuilder').hidden = true;
+    document.getElementById('bendaharaReportPreview').hidden = true;
 
     const rTunai = document.getElementById('transaksiTunai');
     const rTransfer = document.getElementById('transaksiTransfer');
@@ -1570,7 +1749,6 @@
     }
   }
 
-  // Listener perubahan pilihan transaksi baik di mode default maupun mode Bendahara
   document.getElementById('transaksiTransferDefault').addEventListener('change', updateProofRequirement);
   document.querySelectorAll('input[name="jenisTransaksi"]').forEach(radio => {
     radio.addEventListener('change', updateProofRequirement);
@@ -1742,13 +1920,24 @@
         body: JSON.stringify(payload)
       });
 
-      status.className = 'form-status info';
-      status.textContent = '✅ Permintaan pencatatan telah dikirim. Mohon periksa tab "Data Wakaf Tercatat" untuk memastikan data telah masuk. Jangan menginput ulang sebelum memeriksa laporan.';
+      const wasBendaharaLoggedIn = Boolean(bendaharaSessionToken);
+
+      status.className = 'form-status success';
+      status.textContent = wasBendaharaLoggedIn
+        ? '✅ Data berhasil dikirim! Sesi Bendahara masih aktif untuk input data berikutnya.'
+        : '✅ Permintaan pencatatan telah dikirim. Mohon periksa tab "Data Wakaf Tercatat" untuk memastikan data telah masuk.';
 
       form.reset();
-      resetBendaharaUI();
+
+      if (wasBendaharaLoggedIn) {
+        // Pertahankan sesi login Bendahara agar tidak logout otomatis
+        activateBendaharaUI();
+      } else {
+        resetBendaharaUI();
+      }
+
       setTanggalMaksimum();
-      setTimeout(loadWakafReport, 4000);
+      setTimeout(() => loadWakafReport(), 3500);
     } catch (err) {
       console.error(err);
       status.className = 'form-status error';
@@ -1757,6 +1946,185 @@
       button.disabled = false;
       button.textContent = 'Kirim Konfirmasi Wakaf';
     }
+  }
+
+  // =====================================================
+  // FUNGSI LAPORAN PEKANAN BENDAHARA (PERIODE TANGGAL -> PDF)
+  // =====================================================
+  let filteredBendaharaReportData = [];
+
+  function parseSheetDateToISO(str) {
+    if (!str) return '';
+    const clean = String(str).trim();
+    // Jika sudah format YYYY-MM-DD
+    if (/^\d{4}-\d{2}-\d{2}$/.test(clean)) return clean;
+    // Jika format DD/MM/YYYY atau D/M/YYYY
+    const m = clean.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
+    if (m) {
+      return `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}`;
+    }
+    return clean;
+  }
+
+  function formatTanggalIndo(isoStr) {
+    if (!isoStr || !/^\d{4}-\d{2}-\d{2}$/.test(isoStr)) return isoStr || '-';
+    const bulan = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+    const [y, m, d] = isoStr.split('-');
+    return `${Number(d)} ${bulan[Number(m) - 1]} ${y}`;
+  }
+
+  function parseNominalNumber(val) {
+    const digits = String(val || '0').replace(/[^\d]/g, '');
+    return digits ? Number(digits) : 0;
+  }
+
+  function generateBendaharaReportPreview() {
+    const start = document.getElementById('lapTanggalMulai').value;
+    const end = document.getElementById('lapTanggalAkhir').value;
+    const bendaharaName = document.getElementById('lapNamaBendahara').value.trim();
+
+    if (!start || !end) {
+      alert('Mohon pilih tanggal mulai dan tanggal akhir periode laporan.');
+      return;
+    }
+    if (start > end) {
+      alert('Tanggal mulai tidak boleh lebih besar dari tanggal akhir.');
+      return;
+    }
+    if (!bendaharaName) {
+      alert('Mohon isi nama Bendahara terlebih dahulu.');
+      document.getElementById('lapNamaBendahara').focus();
+      return;
+    }
+
+    // Muat ulang data terbaru dari Google Sheets lalu filter
+    loadWakafReport(() => {
+      // Deteksi posisi kolom Jenis Transaksi & Pilihan Wakaf berdasarkan header sheet
+      // Header query: [0]=Tanggal Wakaf, [1]=Nama Lengkap, [2]=Nominal, [3]=Kolom E, [4]=Kolom F
+      const h3 = (wakafReportHeaders[3] || '').toLowerCase();
+      const isColEJenis = h3.includes('transaksi') || h3.includes('jenis') || h3.includes('metode');
+      const idxJenis = isColEJenis ? 3 : 4;
+      const idxWakaf = isColEJenis ? 4 : 3;
+
+      filteredBendaharaReportData = wakafReportRows.filter(row => {
+        const rowIsoDate = parseSheetDateToISO(row[0]);
+        return rowIsoDate >= start && rowIsoDate <= end;
+      }).map(row => ({
+        tanggal: row[0] || '-',
+        nama: row[1] || '-',
+        nominalRaw: row[2] || '0',
+        nominalNum: parseNominalNumber(row[2]),
+        jenis: row[idxJenis] || '-',
+        wakaf: row[idxWakaf] || '-'
+      }));
+
+      const tbody = document.getElementById('bendaharaPdfBody');
+      tbody.innerHTML = '';
+
+      let totalNominal = 0;
+      filteredBendaharaReportData.forEach((item, idx) => {
+        totalNominal += item.nominalNum;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="text-align:center;">${idx + 1}</td>
+          <td>${item.tanggal}</td>
+          <td>${item.nama}</td>
+          <td style="text-align:right;">Rp ${item.nominalNum.toLocaleString('id-ID')}</td>
+          <td>${item.jenis}</td>
+          <td>${item.wakaf}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      if (filteredBendaharaReportData.length === 0) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td colspan="6" style="text-align:center; padding:16px;">Tidak ditemukan transaksi pada periode ${formatTanggalIndo(start)} s.d. ${formatTanggalIndo(end)}.</td>`;
+        tbody.appendChild(tr);
+      } else {
+        const trTotal = document.createElement('tr');
+        trTotal.innerHTML = `
+          <td colspan="3" style="text-align:right; font-weight:bold; background:#eef8f1;">TOTAL PENERIMAAN PERIODE INI</td>
+          <td style="text-align:right; font-weight:bold; color:#0b5d3b; background:#eef8f1;">Rp ${totalNominal.toLocaleString('id-ID')}</td>
+          <td colspan="2" style="background:#eef8f1;"></td>
+        `;
+        tbody.appendChild(trTotal);
+      }
+
+      const today = new Date();
+      const todayISO = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+
+      document.getElementById('bendaharaReportSummaryText').textContent =
+        `Periode: ${formatTanggalIndo(start)} s.d. ${formatTanggalIndo(end)} (${filteredBendaharaReportData.length} transaksi)`;
+      document.getElementById('lapTanggalCetak').textContent = formatTanggalIndo(todayISO);
+      document.getElementById('lapTtdBendahara').textContent = bendaharaName;
+
+      document.getElementById('bendaharaReportPreview').hidden = false;
+      document.getElementById('exportPdfBtn').disabled = false;
+    });
+  }
+
+  function exportBendaharaReportPDF() {
+    const start = document.getElementById('lapTanggalMulai').value;
+    const end = document.getElementById('lapTanggalAkhir').value;
+    const bendaharaName = document.getElementById('lapNamaBendahara').value.trim();
+    const tanggalCetak = document.getElementById('lapTanggalCetak').textContent;
+    const tableHtml = document.getElementById('bendaharaPdfTable').outerHTML;
+
+    const printWin = window.open('', '_blank', 'width=900,height=700');
+    if (!printWin) {
+      alert('Pop-up diblokir oleh browser. Izinkan pop-up untuk mencetak/menyimpan PDF.');
+      return;
+    }
+
+    printWin.document.write(`
+      <!DOCTYPE html>
+      <html lang="id">
+      <head>
+        <meta charset="UTF-8">
+        <title>Laporan Wakaf Masjid Ar Ridhwan (${start} s.d. ${end})</title>
+        <style>
+          body { font-family: "Segoe UI", Arial, sans-serif; color: #1f2d26; padding: 30px; }
+          .kop { text-align: center; border-bottom: 3px double #0b5d3b; padding-bottom: 12px; margin-bottom: 20px; }
+          .kop h2 { color: #0b5d3b; margin: 0 0 4px; font-size: 20px; }
+          .kop p { margin: 2px 0; font-size: 13px; color: #4b5e53; }
+          .info-periode { margin-bottom: 15px; font-size: 13.5px; }
+          table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-bottom: 25px; }
+          th { background: #0b5d3b !important; color: #ffffff !important; padding: 9px 10px; border: 1px solid #0b5d3b; text-align: left; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+          td { padding: 8px 10px; border: 1px solid #cde2d6; }
+          tr:nth-child(even) td { background: #f8fbf9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+          .ttd-wrap { display: flex; justify-content: flex-end; margin-top: 30px; }
+          .ttd-box { text-align: center; min-width: 220px; font-size: 13.5px; }
+          .ttd-space { height: 65px; }
+          @media print {
+            body { padding: 10px; }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="kop">
+          <h2>PANITIA PHBI & PEMBANGUNAN MASJID AR RIDHWAN</h2>
+          <p>Perumahan Puri Nirwana 1 · Cibinong, Kab. Bogor</p>
+          <p><strong>LAPORAN PENERIMAAN DANA WAKAF</strong></p>
+        </div>
+        <div class="info-periode">
+          <strong>Periode Transaksi:</strong> ${formatTanggalIndo(start)} s.d. ${formatTanggalIndo(end)}
+        </div>
+        ${tableHtml}
+        <div class="ttd-wrap">
+          <div class="ttd-box">
+            <div>Cibinong, ${tanggalCetak}</div>
+            <div>Bendahara,</div>
+            <div class="ttd-space"></div>
+            <div><strong><u>${bendaharaName}</u></strong></div>
+          </div>
+        </div>
+        <script>
+          window.onload = function() { window.print(); };
+        <\/script>
+      </body>
+      </html>
+    `);
+    printWin.document.close();
   }
 
   // Inisialisasi awal
